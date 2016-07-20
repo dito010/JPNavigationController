@@ -6,36 +6,6 @@
 //  Copyright © 2016年 Chris. All rights reserved.
 //
 
-/*
- 首先根控制器是一个导航控制器,这个导航控制器管理所有的页面的push和pop操作,并且这个导航控制器的导航栏navigationBar是隐藏的,并且是用setNavigationBarHidden:的方式隐藏,而不是navgationBar.hidden = YES,因为setNavigationBarHidden:的方式其实是直接将navigationBar给移除了,而navgationBar.hidden = YES只是让navigationBar变透明了.
- 
- 这个根的UINavigationControler下面还有一个UIViewController,是因为如果我们需要显示的界面本身也是一个UINavigationControler,那就会出问题了,UINavigationControler嵌套UINavigationControler的方式是不被允许的,和后面第三条相似.所以要进行包装.
- 
- 然后每当push一个ViewControler时,给这个ViewController进行了包装,先在外面包了一个UINavigationController,这样做的原因是UINavigationControler不能push另一个UINavigationControler,所以需要再包一层UIViewController.
- 
- 最后我们真真正正在界面上看到的导航栏就是属于这个包在UIViewControler外的UINavigationControler的.因为每个页面都有属于自己的导航控制器,然后再有最外层的UINavigationControler来管理页面的push和pop操作,也就实现了我们想要的效果.
- 
- 这个页面分析完,首页的结构也就不难理解了:
- 
- UIWindow
- |
- UINavigationController
- |
- UIViewController
- |
- UITabBarController
- |
- UINavigationController
- |
- UIViewController
- |
- UINavigationController
- |
- UIViewController
- 
- 最外层的UINavigationControler是固定不变的,用来操作push和pop操作,UITabBarController的viewControllers也存放的是UINavigationControler,那么这个UINavigationControler的rootViewController也就需要进行一次UIViewController-UINavgationController的包装.也就形成了目前的这个结构.
- */
-
 #import "JPNavigationController.h"
 #import "UIViewController+NavExtesion.h"
 
