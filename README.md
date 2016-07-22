@@ -2,7 +2,7 @@
 
 可以为每个页面的导航条自定义透明度, 以及设置颜色.并且支持全屏右滑返回手势.
 
-![JPNavigationController.gif](http://upload-images.jianshu.io/upload_images/2122663-477beac6d361ed7e.gif?imageMogr2/auto-orient/strip)
+![窗口结构图.png](http://upload-images.jianshu.io/upload_images/2122663-f76b7e926a7a0684.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 具体实现原理介绍可以参照我的[简书文章](http://www.jianshu.com/p/88bc827f0692)
 
