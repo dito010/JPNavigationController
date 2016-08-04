@@ -12,6 +12,9 @@
 @implementation JPThirdVc
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    NSLog(@"加载了第二个控制器");
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsDefault];
 }

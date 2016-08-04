@@ -12,6 +12,9 @@
 @implementation JPSecondVC
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    NSLog(@"加载了第二个控制器");
+    
     self.view.backgroundColor = [UIColor redColor];
     
     UIButton *btn = [[UIButton alloc]init];

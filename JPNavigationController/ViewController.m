@@ -22,6 +22,8 @@ static NSString *reuseID = @"reuse";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"加载了第一个控制器");
+    
     // 隐藏导航条
     self.navigationController.navigationBarHidden = YES;
     

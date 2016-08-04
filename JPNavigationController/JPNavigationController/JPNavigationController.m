@@ -34,7 +34,7 @@
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:backImage style:UIBarButtonItemStylePlain target:self action:@selector(didTapBackButton)];
     
     // 注意, 这里压入的是一个包装过后的控制器JPWarpViewController
-    [self.navigationController pushViewController:[JPWarpViewController warpViewController:viewController] animated:animated];
+    [self.navigationController pushViewController:[[JPWarpViewController new] warpViewController:viewController] animated:animated];
 }
 
 /** 点击返回按钮 */
@@ -72,22 +72,34 @@
 #pragma mark JPWarpViewController
 @interface JPWarpViewController()
 
+/** 用户的传进来的控制器包装一层以后的nav ----> 解决懒加载问题 */
+@property(nonatomic, strong)JPWarpNavigationController *warpNav;
+
 @end
+
 
 static NSValue *jp_tabBarRectValue;
 @implementation JPWarpViewController
-+(JPWarpViewController *)warpViewController:(UIViewController *)viewController{
+-(JPWarpViewController *)warpViewController:(UIViewController *)viewController{
     // 创建导航控制器
     JPWarpNavigationController *warpNav = [[JPWarpNavigationController alloc]init];
     // 把传进来的控制器用导航控制器包装
     warpNav.viewControllers = @[viewController];
-    // 创建一个新的JPWarpViewController
-    JPWarpViewController *warp = [[JPWarpViewController alloc]init];
-    // 把导航控制器的view添加到到新建的viewController上面, 把导航控制器作为新建view的子控制器
-    [warp.view addSubview:warpNav.view];
-    [warp addChildViewController:warpNav];
+    
+    [self addChildViewController:warpNav];
+    
+    self.warpNav = warpNav;
+    
     // 返回
-    return warp;
+    return self;
+}
+
+/* 解决懒加载问题 */
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    
+    // 把导航控制器的view添加到到新建的viewController上面, 把导航控制器作为新建view的子控制器
+    [self.view addSubview:self.warpNav.view];
 }
 
 /** 传进来的被包装的控制器 */
@@ -161,7 +173,7 @@ static NSValue *jp_tabBarRectValue;
     self = [super initWithRootViewController:rootViewController];
     if (self) {
         rootViewController.jp_navigationController = self;
-        self.viewControllers = @[[JPWarpViewController warpViewController:rootViewController]];
+        self.viewControllers = @[[[JPWarpViewController new]warpViewController:rootViewController]];
     }
     return self;
 }
@@ -170,7 +182,7 @@ static NSValue *jp_tabBarRectValue;
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.viewControllers.firstObject.jp_navigationController = self;
-        self.viewControllers = @[[JPWarpViewController warpViewController:self.viewControllers.firstObject]];
+        self.viewControllers = @[[[JPWarpViewController new] warpViewController:self.viewControllers.firstObject]];
     }
     return self;
 }
