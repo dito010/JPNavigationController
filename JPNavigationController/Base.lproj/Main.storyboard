@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="8Sa-oK-mUK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram01" translatesAutoresizingMaskIntoConstraints="NO" id="8Sa-oK-mUK">
+                                <rect key="frame" x="0.0" y="-100" width="375" height="470"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="370" id="gyr-PV-mVs"/>
+                                    <constraint firstAttribute="height" constant="470" id="gyr-PV-mVs"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFc-NF-yAq">
@@ -32,7 +32,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8Sa-oK-mUK" secondAttribute="trailing" id="4yi-oU-ZKq"/>
                             <constraint firstItem="8Sa-oK-mUK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uxh-Ud-UJM"/>
-                            <constraint firstItem="8Sa-oK-mUK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vrw-le-bDv"/>
+                            <constraint firstItem="8Sa-oK-mUK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-100" id="Vrw-le-bDv"/>
                             <constraint firstItem="vFc-NF-yAq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f3R-kr-ZGU"/>
                             <constraint firstItem="vFc-NF-yAq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="szA-eL-EC2"/>
                             <constraint firstAttribute="trailing" secondItem="vFc-NF-yAq" secondAttribute="trailing" id="t12-8u-J1Y"/>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="girl" width="482" height="556"/>
+        <image name="instagram01" width="1080" height="1349"/>
     </resources>
 </document>

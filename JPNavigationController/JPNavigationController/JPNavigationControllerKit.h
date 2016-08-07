@@ -9,5 +9,8 @@
 #ifndef JPNavigationControllerKit_h
 #define JPNavigationControllerKit_h
 
+#import "UINavigationController+JPLink.h"
+#import "JPLinkContainerView.h"
+#import "JPNavigationController.h"
 
 #endif /* JPNavigationControllerKit_h */

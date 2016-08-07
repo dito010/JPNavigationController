@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+// 这个类是自定义导航条
+
 @interface JPNavigationBar : UINavigationBar
 
 @end

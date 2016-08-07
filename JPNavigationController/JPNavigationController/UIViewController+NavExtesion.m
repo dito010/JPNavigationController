@@ -12,19 +12,19 @@
 @implementation UIViewController (NavExtesion)
 
 -(void)setJp_fullScreenPopGestureEnabled:(BOOL)jp_fullScreenPopGestureEnabled{
-    objc_setAssociatedObject(self, @"fullScreenPopGestureEnabled", @(jp_fullScreenPopGestureEnabled), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(jp_fullScreenPopGestureEnabled), @(jp_fullScreenPopGestureEnabled), OBJC_ASSOCIATION_ASSIGN);
 }
 
 -(BOOL)jp_fullScreenPopGestureEnabled{
-    return objc_getAssociatedObject(self, @"fullScreenPopGestureEnabled");
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
 -(void)setJp_navigationController:(JPNavigationController *)jp_navigationController{
-    objc_setAssociatedObject(self, @"jp_navigationController", jp_navigationController, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @selector(jp_navigationController), jp_navigationController, OBJC_ASSOCIATION_RETAIN);
 }
 
 -(JPNavigationController *)jp_navigationController{
-    return objc_getAssociatedObject(self, @"jp_navigationController");
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 @end

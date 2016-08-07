@@ -26,9 +26,20 @@
 @property (nonatomic, strong) UIImage *backButtonImage;
 
 /** 全屏右滑返回手势是否可用 */
-@property (nonatomic, assign) BOOL fullScreenPopGestureEnabled;
+@property (nonatomic, assign) BOOL jp_fullScreenPopGestureEnabled;
 
 /** 栈里传进被包装的控制器数组 */
 @property (nonatomic, copy, readonly) NSArray *jp_viewControllers;
+
+@end
+
+
+@interface UINavigationController (JPFullScreenPopGesture)
+
+/** 最大允许开始pop手势离屏幕最左侧的距离, 默认为屏幕宽度, 代表全屏滑动 */
+@property (nonatomic) CGFloat jp_interactivePopMaxAllowedInitialDistanceToLeftEdge;
+
+/** 暂时关闭pop手势 */
+@property(nonatomic)BOOL jp_closePopForTemporary;
 
 @end

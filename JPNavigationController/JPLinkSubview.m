@@ -10,12 +10,22 @@
 
 @implementation JPLinkSubview
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++(instancetype)viewForXib{
+    return [[NSBundle mainBundle]loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
 }
-*/
+
+- (IBAction)collectionBtnClick:(UIButton *)sender {
+    if ([self.jp_delegate respondsToSelector:@selector(linkSubview:didClickClosePop:)]) {
+        [self.jp_delegate linkSubview:self didClickClosePop:sender];
+    }
+    NSLog(@"点击了%@", sender.titleLabel.text);
+}
+
+- (IBAction)buyBtnClick:(UIButton *)sender {
+    if ([self.jp_delegate respondsToSelector:@selector(linkSubview:didClickBuy:)]) {
+        [self.jp_delegate linkSubview:self didClickBuy:sender];
+    }
+    NSLog(@"点击了%@", sender.titleLabel.text);
+}
 
 @end

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "JPNavigationController.h"
-#import "JPSecondVC.h"
 
 @interface AppDelegate ()
 
@@ -21,19 +20,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [sb instantiateInitialViewController];
-    vc.title = @"first";
+    vc.title = @"One";
     
-    JPSecondVC *secondVC = [[JPSecondVC alloc]init];
-    secondVC.title = @"second";
+    UIViewController *aVC = [[UIViewController alloc]init];
+    aVC.title = @"Two";
     
     JPNavigationController *nav = [[JPNavigationController alloc]initWithRootViewController:vc];
-    nav.fullScreenPopGestureEnabled = YES;
+    nav.jp_fullScreenPopGestureEnabled = YES;
     
     UITabBarController *tabBar = [[UITabBarController alloc]init];
-    tabBar.viewControllers  = @[nav, secondVC];
+    tabBar.viewControllers  = @[nav, aVC];
     
     self.window.rootViewController = tabBar;
     

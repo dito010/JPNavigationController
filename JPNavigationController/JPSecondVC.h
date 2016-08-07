@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JPSecondVC : UIViewController
+@interface JPSecondVC : UITableViewController
 
 @end
