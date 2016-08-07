@@ -56,14 +56,14 @@ static NSString *sec_reuseID = @"reuse";
     
     // 如果识别到你当前控制器为UITableViewController的时候, 并且有联动底部视图, 就会自动为你添加jp_linkViewHeight高度的底部额外滚动区域
     
-//    if (<#condition#>) {
-//        <#statements#>
-//    }
-    cell.textLabel.text = @"有联动底部视图, 已自动添加底部额外滚动区域";
+     cell.textLabel.text = @"盼哥最帅";
+    if (indexPath.row == 15) {
+         cell.textLabel.text = @"有联动底部视图, 已自动添加底部额外滚动区域";
+    }
+    
     cell.textLabel.font = [UIFont systemFontOfSize:16];
     return cell;
 }
-
 
 
 #pragma mark --------------------------------------------------

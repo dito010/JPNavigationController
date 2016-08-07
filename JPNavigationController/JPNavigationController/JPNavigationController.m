@@ -322,6 +322,7 @@ static NSValue *jp_tabBarRectValue;
 -(void)viewDidLoad{
     [super viewDidLoad];
     
+    // 测地隐藏导航栏
     [self setNavigationBarHidden:YES];
     
     // 添加pop手势(懒加载)
