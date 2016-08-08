@@ -25,7 +25,7 @@
 /** 返回按钮图片 */
 @property (nonatomic, strong) UIImage *backButtonImage;
 
-/** 全屏右滑返回手势是否可用 */
+/** 全屏右滑返回手势是否可用, 默认可用 */
 @property (nonatomic, assign) BOOL jp_fullScreenPopGestureEnabled;
 
 /** 栈里传进被包装的控制器数组 */

@@ -30,7 +30,6 @@
     aVC.title = @"Two";
     
     JPNavigationController *nav = [[JPNavigationController alloc]initWithRootViewController:vc];
-    nav.jp_fullScreenPopGestureEnabled = YES;
     
     UITabBarController *tabBar = [[UITabBarController alloc]init];
     tabBar.viewControllers  = @[nav, aVC];

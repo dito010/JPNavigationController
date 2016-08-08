@@ -343,6 +343,7 @@ static NSValue *jp_tabBarRectValue;
     
     // 默认全屏pop
     self.jp_interactivePopMaxAllowedInitialDistanceToLeftEdge = [UIScreen mainScreen].bounds.size.width;
+    self.jp_fullScreenPopGestureEnabled = YES;
     
     SEL selector = @selector(closePopForTemporaryNote:);
     [[NSNotificationCenter defaultCenter]addObserver:self selector:selector name:@"jp_closePopForTemporaryNote" object:nil];
