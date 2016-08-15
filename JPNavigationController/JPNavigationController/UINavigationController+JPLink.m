@@ -20,7 +20,7 @@
 }
 
 -(void)setJp_linkContainerView:(JPLinkContainerView *)jp_linkContainerView{
-    objc_setAssociatedObject(self, @selector(jp_linkContainerView), jp_linkContainerView, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @selector(jp_linkContainerView), jp_linkContainerView, OBJC_ASSOCIATION_ASSIGN);
 }
 
 -(JPLinkContainerView *)jp_linkContainerView{

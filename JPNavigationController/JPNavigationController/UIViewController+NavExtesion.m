@@ -20,7 +20,7 @@
 }
 
 -(void)setJp_navigationController:(JPNavigationController *)jp_navigationController{
-    objc_setAssociatedObject(self, @selector(jp_navigationController), jp_navigationController, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @selector(jp_navigationController), jp_navigationController, OBJC_ASSOCIATION_ASSIGN);
 }
 
 -(JPNavigationController *)jp_navigationController{
