@@ -27,4 +27,12 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
+-(void)setJp_warpViewController:(JPWarpViewController *)jp_warpViewController{
+    objc_setAssociatedObject(self, @selector(jp_warpViewController), jp_warpViewController, OBJC_ASSOCIATION_ASSIGN);
+}
+
+-(JPWarpViewController *)jp_warpViewController{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
 @end

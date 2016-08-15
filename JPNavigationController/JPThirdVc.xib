@@ -41,6 +41,15 @@
                     <color key="textColor" red="0.98431372549999996" green="0.0" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-nU-dlb">
+                    <rect key="frame" x="128" y="471" width="119" height="30"/>
+                    <state key="normal" title="POPToSecondVC">
+                        <color key="titleColor" red="0.98039215690000003" green="0.41960784309999999" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="popto:" destination="-1" eventType="touchUpInside" id="6eZ-fi-r58"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class JPSecondVC;
+
 @interface JPThirdVc : UIViewController
+
+/** 上一个控制器 */
+@property(nonatomic, weak)JPSecondVC *second;
 
 @end

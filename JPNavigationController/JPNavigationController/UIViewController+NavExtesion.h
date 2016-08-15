@@ -17,4 +17,7 @@
 /** 每个VC外包的导航控制器 */
 @property (nonatomic) JPNavigationController *jp_navigationController;
 
+/** 用户传进来的VC外包的UIViewController */
+@property(nonatomic)JPWarpViewController *jp_warpViewController;
+
 @end

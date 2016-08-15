@@ -100,7 +100,9 @@
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:backImage style:UIBarButtonItemStylePlain target:self action:@selector(didTapBackButton)];
     
     // 注意, 这里压入的是一个包装过后的控制器JPWarpViewController
-    [self.navigationController pushViewController:[[JPWarpViewController new] warpViewController:viewController] animated:animated];
+    JPWarpViewController *warpViewController = [[JPWarpViewController new] warpViewController:viewController];
+    viewController.jp_warpViewController = warpViewController;
+    [self.navigationController pushViewController:warpViewController animated:animated];
 }
 
 /** 点击返回按钮 */
@@ -120,10 +122,7 @@
 -(NSArray<UIViewController *> *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated{
    
     // 弹出应该找到包裹viewController的那个JPWarpViewController,pop该控制器
-    JPNavigationController *nav = viewController.jp_navigationController;
-    NSInteger index = [nav.jp_viewControllers indexOfObject:viewController];
-    
-    return [self.navigationController popToViewController:nav.jp_viewControllers[index] animated:animated];
+    return [self.navigationController popToViewController:viewController.jp_warpViewController animated:animated];
 }
 
 -(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion{

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "JPNavigationController.h"
+#import "JPFourthViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,13 +27,14 @@
     ViewController *vc = [sb instantiateInitialViewController];
     vc.title = @"One";
     
-    UIViewController *aVC = [[UIViewController alloc]init];
-    aVC.title = @"Two";
+    JPFourthViewController *four = [JPFourthViewController new];
+    four.title = @"Two";
     
-    JPNavigationController *nav = [[JPNavigationController alloc]initWithRootViewController:vc];
+    JPNavigationController *nav1 = [[JPNavigationController alloc]initWithRootViewController:vc];
+    JPNavigationController *nav2 = [[JPNavigationController alloc]initWithRootViewController:four];
     
     UITabBarController *tabBar = [[UITabBarController alloc]init];
-    tabBar.viewControllers  = @[nav, aVC];
+    tabBar.viewControllers  = @[nav1, nav2];
     
     self.window.rootViewController = tabBar;
     

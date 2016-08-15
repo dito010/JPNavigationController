@@ -9,6 +9,7 @@
 #import "JPThirdVc.h"
 #import "UIImage+Image.h"
 #import "JPNavigationController/JPNavigationControllerKit.h"
+#import "JPSecondVC.h"
 
 @interface JPThirdVc()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *popZoneCons;
@@ -61,6 +62,10 @@ const CGFloat thi_linkSubviewH = 44;
     }
     
     NSLog(@"点击了%@", title);
+}
+
+- (IBAction)popto:(id)sender {
+    [self.navigationController popToViewController:self.second animated:YES];
 }
 
 @end
