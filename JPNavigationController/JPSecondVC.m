@@ -89,7 +89,6 @@ static NSString *sec_reuseID = @"reuse";
     JPThirdVc *vc = [[JPThirdVc alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     vc.navigationController.jp_linkViewHeight = 44.0f;
-    vc.second = self;
 }
 
 @end

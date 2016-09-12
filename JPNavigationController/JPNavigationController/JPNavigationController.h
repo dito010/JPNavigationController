@@ -11,7 +11,7 @@
 @interface JPWarpViewController : UIViewController
 
 /** 传进来的被包装的控制器 */
-@property(nonatomic, strong)UIViewController *rootViewController;
+@property(nonatomic, strong)UIViewController *jp_warpedViewController;
 
 /** 将传进来的控制器用导航控制器 ----> 解决懒加载问题 --> 将类工厂方法改成对象方法*/
 -(JPWarpViewController *)warpViewController:(UIViewController *)viewController;
@@ -41,5 +41,8 @@
 
 /** 暂时关闭pop手势 */
 @property(nonatomic)BOOL jp_closePopForTemporary;
+
+/** 根导航控制器 */
+@property(nonatomic, strong)JPNavigationController *jp_rootNavigationController;
 
 @end

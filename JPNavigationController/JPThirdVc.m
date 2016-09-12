@@ -11,7 +11,10 @@
 #import "JPNavigationController/JPNavigationControllerKit.h"
 #import "JPSecondVC.h"
 
+@class JPSecondVC;
+
 @interface JPThirdVc()
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *popZoneCons;
 
 @end
@@ -65,7 +68,18 @@ const CGFloat thi_linkSubviewH = 44;
 }
 
 - (IBAction)popto:(id)sender {
-    [self.navigationController popToViewController:self.second animated:YES];
+    JPSecondVC *second = nil;
+    NSArray *viewControllers = self.navigationController.jp_rootNavigationController.viewControllers;
+    for (JPWarpViewController *controller in viewControllers) {
+        if ([controller.jp_warpedViewController isKindOfClass:[JPSecondVC class]]) {
+            second = (JPSecondVC *)controller.jp_warpedViewController;
+            break;
+        }
+    }
+    if (second) {
+        [self.navigationController popToViewController:second animated:YES];
+    }
+    
 }
 
 @end

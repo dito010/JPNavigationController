@@ -64,6 +64,9 @@
         }
     }
     
+    // 保存根控制器
+    self.jp_rootNavigationController = (JPNavigationController *)self.navigationController;
+    
     SEL popNoteSel = @selector(setJp_interactivePopMaxAllowedInitialDistanceToLeftEdgeNote:);
     [[NSNotificationCenter defaultCenter]addObserver:self selector:popNoteSel name:@"jp_interactivePopMaxNote" object:nil];
 }
@@ -155,6 +158,8 @@ static NSValue *jp_tabBarRectValue;
     warpNav.viewControllers = @[viewController];
     
     [self addChildViewController:warpNav];
+    
+    self.jp_warpedViewController = viewController;
     
     self.warpNav = warpNav;
     
@@ -421,6 +426,14 @@ static NSValue *jp_tabBarRectValue;
 
 -(BOOL)jp_closePopForTemporary{
     return 0;
+}
+
+-(void)setJp_rootNavigationController:(JPNavigationController *)jp_rootNavigationController{
+    objc_setAssociatedObject(self, @selector(jp_rootNavigationController), jp_rootNavigationController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(JPNavigationController *)jp_rootNavigationController{
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 @end
