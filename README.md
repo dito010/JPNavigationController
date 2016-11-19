@@ -4,7 +4,7 @@
 <img src="Images/logo.png" title="JPNavigationController logo" float=left>
 </p>
 
-This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar support. 
+This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for single support. 
 
 ## Features
 
