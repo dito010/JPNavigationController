@@ -9,7 +9,6 @@
 #import "JPThirdVc.h"
 #import "JPLinkSubview.h"
 #import "JPNavigationController/JPNavigationControllerKit.h"
-#import "UINavigationController+JPFullScreenPopGesture.h"
 
 @interface JPSecondVC()<JPLinkSubviewDelegate, JPNavigationControllerDelegate>
 

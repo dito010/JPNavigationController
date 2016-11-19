@@ -79,7 +79,7 @@ const CGFloat partPopGesTipLeftCons = 20;
 
 - (IBAction)popto:(id)sender {
     
-    // Pop to a target view controller.
+    // Pop to a given view controller.
     // pop到指定的控制器.
     
     // Plan A: find the target view controller by youself, then pop it.
