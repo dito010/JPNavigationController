@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF55A0B01DDF71170002CDF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0AF1DDF71170002CDF7 /* main.m */; };
+		CF55A0B31DDF71170002CDF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0B21DDF71170002CDF7 /* AppDelegate.m */; };
+		CF55A0BB1DDF71170002CDF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0BA1DDF71170002CDF7 /* Assets.xcassets */; };
+		CF55A0E41DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0C71DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m */; };
+		CF55A0E51DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0C91DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m */; };
+		CF55A0E61DDF71AC0002CDF7 /* JPImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0CA1DDF71AC0002CDF7 /* JPImage.bundle */; };
+		CF55A0E71DDF71AC0002CDF7 /* JPLinkContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0CC1DDF71AC0002CDF7 /* JPLinkContainerView.m */; };
+		CF55A0E81DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0CE1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m */; };
+		CF55A0E91DDF71AC0002CDF7 /* JPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D01DDF71AC0002CDF7 /* JPNavigationBar.m */; };
+		CF55A0EA1DDF71AC0002CDF7 /* JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D21DDF71AC0002CDF7 /* JPNavigationController.m */; };
+		CF55A0EB1DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */; };
+		CF55A0EC1DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D71DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m */; };
+		CF55A0ED1DDF71AC0002CDF7 /* JPSnapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */; };
+		CF55A0EE1DDF71AC0002CDF7 /* JPWarpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DB1DDF71AC0002CDF7 /* JPWarpNavigationController.m */; };
+		CF55A0EF1DDF71AC0002CDF7 /* JPWarpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */; };
+		CF55A0F01DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */; };
+		CF55A0F11DDF71AC0002CDF7 /* UINavigationController+JPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */; };
+		CF55A0F21DDF71AC0002CDF7 /* UIViewController+NavExtesion.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0E31DDF71AC0002CDF7 /* UIViewController+NavExtesion.m */; };
+		CF55A0F41DDF71F40002CDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0F31DDF71F40002CDF7 /* Main.storyboard */; };
+		CF55A0F71DDF721A0002CDF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0F61DDF721A0002CDF7 /* ViewController.m */; };
+		CF55A0FD1DDF72370002CDF7 /* JPLinkSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0F91DDF72370002CDF7 /* JPLinkSubview.m */; };
+		CF55A0FE1DDF72370002CDF7 /* JPLinkSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0FA1DDF72370002CDF7 /* JPLinkSubview.xib */; };
+		CF55A0FF1DDF72370002CDF7 /* JPSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0FC1DDF72370002CDF7 /* JPSecondVC.m */; };
+		CF55A1031DDF72480002CDF7 /* JPThirdVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A1011DDF72480002CDF7 /* JPThirdVc.m */; };
+		CF55A1041DDF72480002CDF7 /* JPThirdVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF55A1021DDF72480002CDF7 /* JPThirdVc.xib */; };
+		CF55A10B1DDF72BD0002CDF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF55A10A1DDF72BD0002CDF7 /* LaunchScreen.storyboard */; };
+		CF55A10F1DDF744E0002CDF7 /* JPFourthVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A10D1DDF744E0002CDF7 /* JPFourthVc.m */; };
+		CF55A1101DDF744E0002CDF7 /* JPFourthVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF55A10E1DDF744E0002CDF7 /* JPFourthVc.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CF55A0AB1DDF71170002CDF7 /* JPNavigationControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPNavigationControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF55A0AF1DDF71170002CDF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF55A0B11DDF71170002CDF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CF55A0B21DDF71170002CDF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CF55A0BA1DDF71170002CDF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF55A0BF1DDF71170002CDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF55A0C61DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAnimatedTransitioningBase.h; sourceTree = "<group>"; };
+		CF55A0C71DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAnimatedTransitioningBase.m; sourceTree = "<group>"; };
+		CF55A0C81DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFullScreenPopGestureRecognizerDelegate.h; sourceTree = "<group>"; };
+		CF55A0C91DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFullScreenPopGestureRecognizerDelegate.m; sourceTree = "<group>"; };
+		CF55A0CA1DDF71AC0002CDF7 /* JPImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPImage.bundle; sourceTree = "<group>"; };
+		CF55A0CB1DDF71AC0002CDF7 /* JPLinkContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLinkContainerView.h; sourceTree = "<group>"; };
+		CF55A0CC1DDF71AC0002CDF7 /* JPLinkContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLinkContainerView.m; sourceTree = "<group>"; };
+		CF55A0CD1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPManageSinglePopVCTool.h; sourceTree = "<group>"; };
+		CF55A0CE1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPManageSinglePopVCTool.m; sourceTree = "<group>"; };
+		CF55A0CF1DDF71AC0002CDF7 /* JPNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationBar.h; sourceTree = "<group>"; };
+		CF55A0D01DDF71AC0002CDF7 /* JPNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationBar.m; sourceTree = "<group>"; };
+		CF55A0D11DDF71AC0002CDF7 /* JPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationController.h; sourceTree = "<group>"; };
+		CF55A0D21DDF71AC0002CDF7 /* JPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationController.m; sourceTree = "<group>"; };
+		CF55A0D31DDF71AC0002CDF7 /* JPNavigationControllerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationControllerKit.h; sourceTree = "<group>"; };
+		CF55A0D41DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationInteractiveTransition.h; sourceTree = "<group>"; };
+		CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationInteractiveTransition.m; sourceTree = "<group>"; };
+		CF55A0D61DDF71AC0002CDF7 /* JPPushnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPushnimatedTransitioning.h; sourceTree = "<group>"; };
+		CF55A0D71DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPushnimatedTransitioning.m; sourceTree = "<group>"; };
+		CF55A0D81DDF71AC0002CDF7 /* JPSnapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSnapTool.h; sourceTree = "<group>"; };
+		CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSnapTool.m; sourceTree = "<group>"; };
+		CF55A0DA1DDF71AC0002CDF7 /* JPWarpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWarpNavigationController.h; sourceTree = "<group>"; };
+		CF55A0DB1DDF71AC0002CDF7 /* JPWarpNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPWarpNavigationController.m; sourceTree = "<group>"; };
+		CF55A0DC1DDF71AC0002CDF7 /* JPWarpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWarpViewController.h; sourceTree = "<group>"; };
+		CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPWarpViewController.m; sourceTree = "<group>"; };
+		CF55A0DE1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JPFullScreenPopGesture.h"; sourceTree = "<group>"; };
+		CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPFullScreenPopGesture.m"; sourceTree = "<group>"; };
+		CF55A0E01DDF71AC0002CDF7 /* UINavigationController+JPLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JPLink.h"; sourceTree = "<group>"; };
+		CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPLink.m"; sourceTree = "<group>"; };
+		CF55A0E21DDF71AC0002CDF7 /* UIViewController+NavExtesion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavExtesion.h"; sourceTree = "<group>"; };
+		CF55A0E31DDF71AC0002CDF7 /* UIViewController+NavExtesion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavExtesion.m"; sourceTree = "<group>"; };
+		CF55A0F31DDF71F40002CDF7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CF55A0F51DDF721A0002CDF7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CF55A0F61DDF721A0002CDF7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CF55A0F81DDF72370002CDF7 /* JPLinkSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLinkSubview.h; sourceTree = "<group>"; };
+		CF55A0F91DDF72370002CDF7 /* JPLinkSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLinkSubview.m; sourceTree = "<group>"; };
+		CF55A0FA1DDF72370002CDF7 /* JPLinkSubview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPLinkSubview.xib; sourceTree = "<group>"; };
+		CF55A0FB1DDF72370002CDF7 /* JPSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSecondVC.h; sourceTree = "<group>"; };
+		CF55A0FC1DDF72370002CDF7 /* JPSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSecondVC.m; sourceTree = "<group>"; };
+		CF55A1001DDF72480002CDF7 /* JPThirdVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPThirdVc.h; sourceTree = "<group>"; };
+		CF55A1011DDF72480002CDF7 /* JPThirdVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPThirdVc.m; sourceTree = "<group>"; };
+		CF55A1021DDF72480002CDF7 /* JPThirdVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPThirdVc.xib; sourceTree = "<group>"; };
+		CF55A10A1DDF72BD0002CDF7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF55A10C1DDF744E0002CDF7 /* JPFourthVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFourthVc.h; sourceTree = "<group>"; };
+		CF55A10D1DDF744E0002CDF7 /* JPFourthVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFourthVc.m; sourceTree = "<group>"; };
+		CF55A10E1DDF744E0002CDF7 /* JPFourthVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPFourthVc.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF55A0A81DDF71170002CDF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF55A0A21DDF71170002CDF7 = {
+			isa = PBXGroup;
+			children = (
+				CF55A0AD1DDF71170002CDF7 /* JPNavigationControllerDemo */,
+				CF55A0AC1DDF71170002CDF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF55A0AC1DDF71170002CDF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF55A0AB1DDF71170002CDF7 /* JPNavigationControllerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF55A0AD1DDF71170002CDF7 /* JPNavigationControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CF55A0C51DDF71AC0002CDF7 /* JPNavigationController */,
+				CF55A0B11DDF71170002CDF7 /* AppDelegate.h */,
+				CF55A0B21DDF71170002CDF7 /* AppDelegate.m */,
+				CF55A0F31DDF71F40002CDF7 /* Main.storyboard */,
+				CF55A0F51DDF721A0002CDF7 /* ViewController.h */,
+				CF55A0F61DDF721A0002CDF7 /* ViewController.m */,
+				CF55A0F81DDF72370002CDF7 /* JPLinkSubview.h */,
+				CF55A0F91DDF72370002CDF7 /* JPLinkSubview.m */,
+				CF55A0FA1DDF72370002CDF7 /* JPLinkSubview.xib */,
+				CF55A0FB1DDF72370002CDF7 /* JPSecondVC.h */,
+				CF55A0FC1DDF72370002CDF7 /* JPSecondVC.m */,
+				CF55A1001DDF72480002CDF7 /* JPThirdVc.h */,
+				CF55A1011DDF72480002CDF7 /* JPThirdVc.m */,
+				CF55A1021DDF72480002CDF7 /* JPThirdVc.xib */,
+				CF55A10C1DDF744E0002CDF7 /* JPFourthVc.h */,
+				CF55A10D1DDF744E0002CDF7 /* JPFourthVc.m */,
+				CF55A10E1DDF744E0002CDF7 /* JPFourthVc.xib */,
+				CF55A10A1DDF72BD0002CDF7 /* LaunchScreen.storyboard */,
+				CF55A0BA1DDF71170002CDF7 /* Assets.xcassets */,
+				CF55A0BF1DDF71170002CDF7 /* Info.plist */,
+				CF55A0AE1DDF71170002CDF7 /* Supporting Files */,
+			);
+			path = JPNavigationControllerDemo;
+			sourceTree = "<group>";
+		};
+		CF55A0AE1DDF71170002CDF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF55A0AF1DDF71170002CDF7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF55A0C51DDF71AC0002CDF7 /* JPNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				CF55A0C61DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.h */,
+				CF55A0C71DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m */,
+				CF55A0C81DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.h */,
+				CF55A0C91DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m */,
+				CF55A0CA1DDF71AC0002CDF7 /* JPImage.bundle */,
+				CF55A0CB1DDF71AC0002CDF7 /* JPLinkContainerView.h */,
+				CF55A0CC1DDF71AC0002CDF7 /* JPLinkContainerView.m */,
+				CF55A0CD1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.h */,
+				CF55A0CE1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m */,
+				CF55A0CF1DDF71AC0002CDF7 /* JPNavigationBar.h */,
+				CF55A0D01DDF71AC0002CDF7 /* JPNavigationBar.m */,
+				CF55A0D11DDF71AC0002CDF7 /* JPNavigationController.h */,
+				CF55A0D21DDF71AC0002CDF7 /* JPNavigationController.m */,
+				CF55A0D31DDF71AC0002CDF7 /* JPNavigationControllerKit.h */,
+				CF55A0D41DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.h */,
+				CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */,
+				CF55A0D61DDF71AC0002CDF7 /* JPPushnimatedTransitioning.h */,
+				CF55A0D71DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m */,
+				CF55A0D81DDF71AC0002CDF7 /* JPSnapTool.h */,
+				CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */,
+				CF55A0DA1DDF71AC0002CDF7 /* JPWarpNavigationController.h */,
+				CF55A0DB1DDF71AC0002CDF7 /* JPWarpNavigationController.m */,
+				CF55A0DC1DDF71AC0002CDF7 /* JPWarpViewController.h */,
+				CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */,
+				CF55A0DE1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.h */,
+				CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */,
+				CF55A0E01DDF71AC0002CDF7 /* UINavigationController+JPLink.h */,
+				CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */,
+				CF55A0E21DDF71AC0002CDF7 /* UIViewController+NavExtesion.h */,
+				CF55A0E31DDF71AC0002CDF7 /* UIViewController+NavExtesion.m */,
+			);
+			path = JPNavigationController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF55A0AA1DDF71170002CDF7 /* JPNavigationControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF55A0C21DDF71170002CDF7 /* Build configuration list for PBXNativeTarget "JPNavigationControllerDemo" */;
+			buildPhases = (
+				CF55A0A71DDF71170002CDF7 /* Sources */,
+				CF55A0A81DDF71170002CDF7 /* Frameworks */,
+				CF55A0A91DDF71170002CDF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JPNavigationControllerDemo;
+			productName = JPNavigationControllerDemo;
+			productReference = CF55A0AB1DDF71170002CDF7 /* JPNavigationControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF55A0A31DDF71170002CDF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = newpan;
+				TargetAttributes = {
+					CF55A0AA1DDF71170002CDF7 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TBX22VE2Q6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CF55A0A61DDF71170002CDF7 /* Build configuration list for PBXProject "JPNavigationControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF55A0A21DDF71170002CDF7;
+			productRefGroup = CF55A0AC1DDF71170002CDF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF55A0AA1DDF71170002CDF7 /* JPNavigationControllerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF55A0A91DDF71170002CDF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF55A0FE1DDF72370002CDF7 /* JPLinkSubview.xib in Resources */,
+				CF55A1041DDF72480002CDF7 /* JPThirdVc.xib in Resources */,
+				CF55A1101DDF744E0002CDF7 /* JPFourthVc.xib in Resources */,
+				CF55A0BB1DDF71170002CDF7 /* Assets.xcassets in Resources */,
+				CF55A0E61DDF71AC0002CDF7 /* JPImage.bundle in Resources */,
+				CF55A10B1DDF72BD0002CDF7 /* LaunchScreen.storyboard in Resources */,
+				CF55A0F41DDF71F40002CDF7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF55A0A71DDF71170002CDF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF55A0F71DDF721A0002CDF7 /* ViewController.m in Sources */,
+				CF55A0E41DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m in Sources */,
+				CF55A0EA1DDF71AC0002CDF7 /* JPNavigationController.m in Sources */,
+				CF55A0EB1DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m in Sources */,
+				CF55A0E71DDF71AC0002CDF7 /* JPLinkContainerView.m in Sources */,
+				CF55A0ED1DDF71AC0002CDF7 /* JPSnapTool.m in Sources */,
+				CF55A0EE1DDF71AC0002CDF7 /* JPWarpNavigationController.m in Sources */,
+				CF55A0EC1DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m in Sources */,
+				CF55A1031DDF72480002CDF7 /* JPThirdVc.m in Sources */,
+				CF55A0E91DDF71AC0002CDF7 /* JPNavigationBar.m in Sources */,
+				CF55A0F21DDF71AC0002CDF7 /* UIViewController+NavExtesion.m in Sources */,
+				CF55A0B31DDF71170002CDF7 /* AppDelegate.m in Sources */,
+				CF55A0E81DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m in Sources */,
+				CF55A0B01DDF71170002CDF7 /* main.m in Sources */,
+				CF55A10F1DDF744E0002CDF7 /* JPFourthVc.m in Sources */,
+				CF55A0EF1DDF71AC0002CDF7 /* JPWarpViewController.m in Sources */,
+				CF55A0FF1DDF72370002CDF7 /* JPSecondVC.m in Sources */,
+				CF55A0F01DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m in Sources */,
+				CF55A0E51DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */,
+				CF55A0F11DDF71AC0002CDF7 /* UINavigationController+JPLink.m in Sources */,
+				CF55A0FD1DDF72370002CDF7 /* JPLinkSubview.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CF55A0C01DDF71170002CDF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF55A0C11DDF71170002CDF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF55A0C31DDF71170002CDF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TBX22VE2Q6;
+				INFOPLIST_FILE = JPNavigationControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.newpan.www.JPNavigationControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CF55A0C41DDF71170002CDF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TBX22VE2Q6;
+				INFOPLIST_FILE = JPNavigationControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.newpan.www.JPNavigationControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF55A0A61DDF71170002CDF7 /* Build configuration list for PBXProject "JPNavigationControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF55A0C01DDF71170002CDF7 /* Debug */,
+				CF55A0C11DDF71170002CDF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF55A0C21DDF71170002CDF7 /* Build configuration list for PBXNativeTarget "JPNavigationControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF55A0C31DDF71170002CDF7 /* Debug */,
+				CF55A0C41DDF71170002CDF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF55A0A31DDF71170002CDF7 /* Project object */;
+}
