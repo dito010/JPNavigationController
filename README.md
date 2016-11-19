@@ -157,7 +157,7 @@ self.navigationController.jp_closePopForAllViewController = YES;
 ```objective-c
 Objective-C:
 
-self.navigationController.jjp_closePopForAllViewController = YES;
+self.navigationController.jp_closePopForAllViewController = YES;
 ```
 
 
@@ -259,13 +259,13 @@ Objective-C:
 JPSecondVC *second = nil;
 NSArray *viewControllers = self.navigationController.jp_rootNavigationController.jp_viewControllers;
 for (UIViewController *c in viewControllers) {
-if ([c isKindOfClass:[JPSecondVC class]]) {
-second = (JPSecondVC *)c;
-}
+    if ([c isKindOfClass:[JPSecondVC class]]) {
+        second = (JPSecondVC *)c;
+    }
 }
 
 if (second) {
-[self.navigationController popToViewController:second animated:YES];
+    [self.navigationController popToViewController:second animated:YES];
 }
 
 
@@ -297,7 +297,7 @@ self.navigationController.jp_delegate = self;
 
 // 实现协议方法
 -(void)jp_navigationControllerDidPushLeft{
-[self.navigationController pushViewController:YourVc animated:YES];
+    [self.navigationController pushViewController:YourVc animated:YES];
 }
 ```
 
@@ -341,7 +341,7 @@ self.navigationController.jp_closePopForAllViewController = YES;
 ```objective-c
 Objective-C:
 
-self.navigationController.jjp_closePopForAllViewController = YES;
+self.navigationController.jp_closePopForAllViewController = YES;
 ```
 
 
@@ -350,7 +350,7 @@ self.navigationController.jjp_closePopForAllViewController = YES;
 
 两种选择把框架集成到你的项目:
 - 使用 CocoaPods
-- 下载我的demo, 把'JPNavigation'文件夹拽到你的项目中
+- 下载我的demo, 把'JPNavigationController'文件夹拽到你的项目中
 
 ### 使用 CocoaPods 安装
 
