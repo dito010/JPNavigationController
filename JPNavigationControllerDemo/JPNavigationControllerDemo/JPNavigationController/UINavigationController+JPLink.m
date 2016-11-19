@@ -6,7 +6,7 @@
 //
 
 #import "UINavigationController+JPLink.h"
-#import <objc/runtime.h>
+#import "objc/runtime.h"
 
 @implementation UINavigationController (JPLink)
 

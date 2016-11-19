@@ -6,7 +6,7 @@
 //
 
 #import "UINavigationController+JPFullScreenPopGesture.h"
-#import <objc/runtime.h>
+#import "objc/runtime.h"
 
 @implementation UINavigationController (JPFullScreenPopGesture)
 

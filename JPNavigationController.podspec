@@ -26,7 +26,7 @@ s.description  =  'FullScreen pop gesture support'\
 
   s.source       = { :git => 'https://github.com/Chris-Pan/JPNavigationController.git', :tag => s.version }
   s.source_files  = 'JPNavigationController/**/*.{h,m}'
-  s.frameworks = 'Foundation', 'UIKit', 'objc/runtime.h'
+  s.frameworks = 'Foundation', 'UIKit'
   s.requires_arc = true
 
 end
