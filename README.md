@@ -6,6 +6,11 @@
 
 This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for each single support. 
 
+<p align="center" >
+<img src="Images/JPNavigationController.gif" title="JPNavigationController Demo" float=left>
+</p>
+
+
 ## Features
 
 - [x] FullScreen pop gesture support
