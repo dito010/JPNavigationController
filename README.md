@@ -181,7 +181,7 @@ There are two ways to use JPNavigationController in your project:
 ```
 platform :ios, '8.0'
 target “YourProjectName” do
-pod 'JPNavigationController', '~> 1.0.4'
+pod 'JPNavigationController', '~> 1.0.5'
 end
 ```
 
@@ -365,7 +365,7 @@ self.navigationController.jp_closePopForAllViewController = YES;
 ```
 platform :ios, '8.0'
 target “YourProjectName” do
-pod 'JPNavigationController', '~> 1.0.4'
+pod 'JPNavigationController', '~> 1.0.5'
 end
 ```
 
