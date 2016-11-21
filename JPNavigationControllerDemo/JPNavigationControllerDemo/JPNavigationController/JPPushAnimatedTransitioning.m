@@ -1,20 +1,20 @@
 //
-//  JPPushnimatedTransitioning.m
-//  CustomPopAnimation
+//  JPPushAnimatedTransitioning.m
+//  JPNavigationControllerDemo
 //
 //  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
 //
 
-#import "JPPushnimatedTransitioning.h"
+#import "JPPushAnimatedTransitioning.h"
 #import "JPSnapTool.h"
 
 // Interative transition factor, bottom layer move place percent when user slip screen.
 // 交互错位因子值, 用户push时, 底部图层移动距离相对于用户滑动距离的值.
 const CGFloat moveFactor = 0.2;
-@implementation JPPushnimatedTransitioning
+@implementation JPPushAnimatedTransitioning
 
 - (void)animateTransitionEvent {
-
+    
     // Mix shadow for toViewController' view.
     CGFloat scale = [UIScreen mainScreen].scale/2.0;
     [self.containerView insertSubview:self.toViewController.view aboveSubview:self.fromViewController.view];
@@ -56,8 +56,5 @@ const CGFloat moveFactor = 0.2;
         [self completeTransition];
     }];
 }
-
-
-
 
 @end

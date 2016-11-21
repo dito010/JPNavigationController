@@ -6,7 +6,7 @@
 //
 
 #import "JPNavigationInteractiveTransition.h"
-#import "JPPushnimatedTransitioning.h"
+#import "JPPushAnimatedTransitioning.h"
 #import "JPNavigationController.h"
 
 @interface JPNavigationInteractiveTransition()
@@ -45,7 +45,7 @@
  * \~chinese
  * 动画提供者.
  */
-@property(nonatomic, strong)JPPushnimatedTransitioning *transitioning;
+@property(nonatomic, strong)JPPushAnimatedTransitioning *transitioning;
 
 /*!
  * \~english
@@ -118,9 +118,9 @@ const CGFloat JPPushBorderlineDelta = 0.4;
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         if (self.isGesturePush) {
-            self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
-            self.interactivePopTransition.completionCurve = UIViewAnimationCurveEaseOut;
             if ([self.delegate respondsToSelector:@selector(didPushLeft:)]) {
+                self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
+                self.interactivePopTransition.completionCurve = UIViewAnimationCurveEaseOut;
                 [self.delegate didPushLeft:self];
                 [self.interactivePopTransition updateInteractiveTransition:0];
             }
@@ -170,7 +170,7 @@ const CGFloat JPPushBorderlineDelta = 0.4;
     // If the animationController is custom push instance, return interactivePopTransition to manage transition progress.
     // 判断动画对象animationController是我们自定义的Push动画对象，那么就返回interactivePopTransition来监控动画完成度。
 
-    if (self.isGesturePush && [animationController isKindOfClass:[JPPushnimatedTransitioning class]]) {
+    if (self.isGesturePush && [animationController isKindOfClass:[JPPushAnimatedTransitioning class]]) {
         return self.interactivePopTransition;
     }
     
@@ -181,9 +181,9 @@ const CGFloat JPPushBorderlineDelta = 0.4;
 # pragma mark --------------------------------------
 # pragma mark Private
 
--(JPPushnimatedTransitioning *)transitioning{
+-(JPPushAnimatedTransitioning *)transitioning{
     if (!_transitioning) {
-        _transitioning = [JPPushnimatedTransitioning new];
+        _transitioning = [JPPushAnimatedTransitioning new];
     }
     return _transitioning;
 }

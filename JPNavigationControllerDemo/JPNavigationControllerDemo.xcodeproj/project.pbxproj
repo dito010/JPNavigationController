@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF2697251DE3588C00953D37 /* JPPushAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */; };
 		CF55A0B01DDF71170002CDF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0AF1DDF71170002CDF7 /* main.m */; };
 		CF55A0B31DDF71170002CDF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0B21DDF71170002CDF7 /* AppDelegate.m */; };
 		CF55A0BB1DDF71170002CDF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0BA1DDF71170002CDF7 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		CF55A0E91DDF71AC0002CDF7 /* JPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D01DDF71AC0002CDF7 /* JPNavigationBar.m */; };
 		CF55A0EA1DDF71AC0002CDF7 /* JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D21DDF71AC0002CDF7 /* JPNavigationController.m */; };
 		CF55A0EB1DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */; };
-		CF55A0EC1DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D71DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m */; };
 		CF55A0ED1DDF71AC0002CDF7 /* JPSnapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */; };
 		CF55A0EE1DDF71AC0002CDF7 /* JPWarpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DB1DDF71AC0002CDF7 /* JPWarpNavigationController.m */; };
 		CF55A0EF1DDF71AC0002CDF7 /* JPWarpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */; };
@@ -38,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF2697231DE3588C00953D37 /* JPPushAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPushAnimatedTransitioning.h; sourceTree = "<group>"; };
+		CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPushAnimatedTransitioning.m; sourceTree = "<group>"; };
 		CF55A0AB1DDF71170002CDF7 /* JPNavigationControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPNavigationControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF55A0AF1DDF71170002CDF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF55A0B11DDF71170002CDF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,8 +62,6 @@
 		CF55A0D31DDF71AC0002CDF7 /* JPNavigationControllerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationControllerKit.h; sourceTree = "<group>"; };
 		CF55A0D41DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationInteractiveTransition.h; sourceTree = "<group>"; };
 		CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationInteractiveTransition.m; sourceTree = "<group>"; };
-		CF55A0D61DDF71AC0002CDF7 /* JPPushnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPushnimatedTransitioning.h; sourceTree = "<group>"; };
-		CF55A0D71DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPushnimatedTransitioning.m; sourceTree = "<group>"; };
 		CF55A0D81DDF71AC0002CDF7 /* JPSnapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSnapTool.h; sourceTree = "<group>"; };
 		CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSnapTool.m; sourceTree = "<group>"; };
 		CF55A0DA1DDF71AC0002CDF7 /* JPWarpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWarpNavigationController.h; sourceTree = "<group>"; };
@@ -173,8 +173,8 @@
 				CF55A0D31DDF71AC0002CDF7 /* JPNavigationControllerKit.h */,
 				CF55A0D41DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.h */,
 				CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */,
-				CF55A0D61DDF71AC0002CDF7 /* JPPushnimatedTransitioning.h */,
-				CF55A0D71DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m */,
+				CF2697231DE3588C00953D37 /* JPPushAnimatedTransitioning.h */,
+				CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */,
 				CF55A0D81DDF71AC0002CDF7 /* JPSnapTool.h */,
 				CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */,
 				CF55A0DA1DDF71AC0002CDF7 /* JPWarpNavigationController.h */,
@@ -274,7 +274,6 @@
 				CF55A0E71DDF71AC0002CDF7 /* JPLinkContainerView.m in Sources */,
 				CF55A0ED1DDF71AC0002CDF7 /* JPSnapTool.m in Sources */,
 				CF55A0EE1DDF71AC0002CDF7 /* JPWarpNavigationController.m in Sources */,
-				CF55A0EC1DDF71AC0002CDF7 /* JPPushnimatedTransitioning.m in Sources */,
 				CF55A1031DDF72480002CDF7 /* JPThirdVc.m in Sources */,
 				CF55A0E91DDF71AC0002CDF7 /* JPNavigationBar.m in Sources */,
 				CF55A0F21DDF71AC0002CDF7 /* UIViewController+NavExtesion.m in Sources */,
@@ -287,6 +286,7 @@
 				CF55A0F01DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m in Sources */,
 				CF55A0E51DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */,
 				CF55A0F11DDF71AC0002CDF7 /* UINavigationController+JPLink.m in Sources */,
+				CF2697251DE3588C00953D37 /* JPPushAnimatedTransitioning.m in Sources */,
 				CF55A0FD1DDF72370002CDF7 /* JPLinkSubview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
