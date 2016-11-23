@@ -19,14 +19,14 @@
 }
 
 +(UIImage *)mixShadowWithView:(UIView *)view{
-    CGFloat scale = [UIScreen mainScreen].scale/2;
+//    CGFloat scale = [UIScreen mainScreen].scale/2;
     UIImage *aImage = [self snapShotWithView:view];
     
     UIImage *shadow = [UIImage imageNamed:kShadowImagePath];
-    CGRect snapRect = CGRectMake(0, 0, shadow.size.width, shadow.size.height);
-    CGRect imageRect = CGRectMake(shadowWidth*scale, 0, JPScreenWidth, JPScreenHeight);
+    CGRect snapRect = CGRectMake(0, 0, shadow.size.width+shadowWidth, JPScreenHeight);
+    CGRect imageRect = CGRectMake(shadowWidth, 0, JPScreenWidth, JPScreenHeight);
     
-    UIGraphicsBeginImageContextWithOptions(shadow.size, NO, aImage.scale);
+    UIGraphicsBeginImageContextWithOptions(snapRect.size, NO, aImage.scale);
     [shadow drawInRect:snapRect];
     [aImage drawInRect:imageRect];
     UIImage *snapImage = UIGraphicsGetImageFromCurrentImageContext();

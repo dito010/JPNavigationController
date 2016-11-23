@@ -16,7 +16,6 @@ const CGFloat moveFactor = 0.2;
 - (void)animateTransitionEvent {
     
     // Mix shadow for toViewController' view.
-    CGFloat scale = [UIScreen mainScreen].scale/2.0;
     [self.containerView insertSubview:self.toViewController.view aboveSubview:self.fromViewController.view];
     UIImage *snapImage = [JPSnapTool mixShadowWithView:self.toViewController.view];
     
@@ -43,16 +42,16 @@ const CGFloat moveFactor = 0.2;
     [UIView animateWithDuration:self.transitionDuration animations:^{
         
         // Interative transition animation.
-        ivForToView.frame = CGRectMake(-shadowWidth*scale, 0, snapImage.size.width, JPScreenHeight);
+        ivForToView.frame = CGRectMake(-shadowWidth, 0, snapImage.size.width, JPScreenHeight);
         ivForSnap.frame = CGRectMake(-moveFactor*JPScreenWidth, 0, JPScreenWidth, JPScreenHeight);
         
     }completion:^(BOOL finished) {
         
+        self.fromViewController.view.hidden = NO;
         self.toViewController.view.frame = CGRectMake(0, 0, JPScreenWidth, JPScreenHeight);
         [self.containerView insertSubview:self.toViewController.view belowSubview:ivForToView];
         [ivForToView removeFromSuperview];
         [ivForSnap removeFromSuperview];
-        self.fromViewController.view.hidden = NO;
         [self completeTransition];
     }];
 }
