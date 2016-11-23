@@ -32,6 +32,7 @@ This library provides an fullScreen pop and push gesture for UINavigationControl
 
 - Read the [[iOS]UINavigationController全屏pop之为每个控制器自定义UINavigationBar](http://www.jianshu.com/p/88bc827f0692)
 - Read the [[iOS]UINavigationController全屏pop之为每个控制器添加底部联动视图](http://www.jianshu.com/p/3ed21414551a)
+- Read the [[iOS]UINavigationController全屏pop之为控制器添加左滑push](http://www.jianshu.com/p/ff68b5e646fc)
 - Try the example by downloading the project from Github
 
 
@@ -216,6 +217,7 @@ All source code is licensed under the [MIT License](https://github.com/Chris-Pan
 
 - 阅读我的简书文章 [[iOS]UINavigationController全屏pop之为每个控制器自定义UINavigationBar](http://www.jianshu.com/p/88bc827f0692)
 - 阅读我的简书文章 [[iOS]UINavigationController全屏pop之为每个控制器添加底部联动视图](http://www.jianshu.com/p/3ed21414551a)
+- 阅读我的简书文章 [[iOS]UINavigationController全屏pop之为控制器添加左滑push](http://www.jianshu.com/p/ff68b5e646fc)
 - 下载我Github上的demo
 
 
