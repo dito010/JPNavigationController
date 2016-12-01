@@ -14,7 +14,7 @@
 
 #define  JPScreenWidth   [UIScreen mainScreen].bounds.size.width
 #define  JPScreenHeight  [UIScreen mainScreen].bounds.size.height
-#define shadowWidth 24
+#define shadowWidth 13
 @interface JPSnapTool : NSObject
 
 /*!
