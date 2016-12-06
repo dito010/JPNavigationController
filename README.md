@@ -3,7 +3,7 @@
 <p align="center" >
 <img src="Images/logo.png" title="JPNavigationController logo" float=left>
 </p>
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/pod-1.1.2-brightgreen.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/platform-iOS-ff69b4.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/about%20me-NewPan-blue.svg)](http://www.jianshu.com/users/e2f2d779c022/latest_articles)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/pod-1.2.0-brightgreen.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/platform-iOS-ff69b4.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/about%20me-NewPan-blue.svg)](http://www.jianshu.com/users/e2f2d779c022/latest_articles)
 
 This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for each single support. 
 
@@ -129,14 +129,10 @@ self.navigationController.jp_delegate = self;
 ```objective-c
 Objective-C:
 
-// You must set jp_linkViewHeight in last viewController.
-// You must call pushViewController:animated: first before set jp_linkViewHeight.
-[self.navigationController pushViewController:YourVc animated:YES];
-YourVc.navigationController.jp_linkViewHeight = 44.0f;
-
 // Return the link view in the be pushed viewController.
 -(void)viewDidLoad{
     [super viewDidLoad];
+    YourVc.navigationController.jp_linkViewHeight = 44.0f;
     self.navigationController.jp_linkView = YourLinkView;
 }
 ```
@@ -183,7 +179,7 @@ There are two ways to use JPNavigationController in your project:
 ```
 platform :ios, '8.0'
 target “YourProjectName” do
-pod 'JPNavigationController', '~> 1.1.2'
+pod 'JPNavigationController', '~> 1.2.0'
 end
 ```
 
@@ -314,14 +310,10 @@ self.navigationController.jp_delegate = self;
 ```objective-c
 Objective-C:
 
-// 你需要在push之前就把 jp_linkViewHeight 的值传给框架.
-// 注意： 这两行代码有逻辑关系，必须先push过去，navigationController才会alloc，分配内存地址，才有值.
-[self.navigationController pushViewController:YourVc animated:YES];
-YourVc.navigationController.jp_linkViewHeight = 44.0f;
-
 // 你只需要在 viewDidLoad: 方法里把你的联动视图传给框架, 框架会制动帮你显示.
 -(void)viewDidLoad{
     [super viewDidLoad];
+    YourVc.navigationController.jp_linkViewHeight = 44.0f;
     self.navigationController.jp_linkView = YourLinkView;
 }
 ```
@@ -368,7 +360,7 @@ self.navigationController.jp_closePopForAllViewController = YES;
 ```
 platform :ios, '8.0'
 target “YourProjectName” do
-pod 'JPNavigationController', '~> 1.1.2'
+pod 'JPNavigationController', '~> 1.2.0'
 end
 ```
 
