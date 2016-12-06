@@ -43,4 +43,17 @@
  */
 +(UIImage *)mixShadowWithView:(UIView *)view;
 
+/*!
+ * \~english
+ * Generate an image with the given color.
+ * @param color    The given color.
+ * @return         The image with the given color.
+ *
+ * \~chinese
+ * 根据传入的颜色色值生成一张图片.
+ * @param color    The given color.
+ * @return         The image with the given color.
+ */
++(UIImage *)imageWithColor:(UIColor *)color;
+
 @end

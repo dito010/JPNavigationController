@@ -9,11 +9,16 @@
 #import "JPThirdVc.h"
 #import "JPLinkSubview.h"
 #import "JPNavigationController/JPNavigationControllerKit.h"
+#import <AFNetworking.h>
+#import "JPSnapTool.h"
 
 @interface JPSecondVC()<JPLinkSubviewDelegate, JPNavigationControllerDelegate>
 
 /** linkSubview */
 @property(nonatomic, strong)JPLinkSubview *linkSubview;
+
+/** dataListArr */
+@property(nonatomic, strong)NSArray *listArr;
 
 @end
 
@@ -26,7 +31,7 @@ static NSString *sec_reuseID = @"reuse";
     if (!_linkSubview) {
         _linkSubview = [JPLinkSubview viewForXib];
         _linkSubview.frame = CGRectMake(0, 0, JPScreenW, sec_linkSubviewH);
-        _linkSubview.jp_delegate = self;
+        _linkSubview.jp_pushDelegate = self;
     }
     return _linkSubview;
 }
@@ -38,10 +43,12 @@ static NSString *sec_reuseID = @"reuse";
     
     // Hide left return button.
     // 隐藏返回按钮.
-    //    self.navigationItem.leftBarButtonItem = [UIBarButtonItem new];
+    // self.navigationItem.leftBarButtonItem = [UIBarButtonItem new];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:sec_reuseID];
     
+    // Set link view height.
+    self.navigationController.jp_linkViewHeight = 80.0f;
     
     // You just need pass your link view to this property, framework will display your link view automatically.
     // 你只需要在viewDidLoad:方法里把你的联动视图传给框架, 框架会制动帮你显示.
@@ -50,7 +57,37 @@ static NSString *sec_reuseID = @"reuse";
     
     // Become the delegate of JPNavigationControllerDelegate protocol and, implemented protocol method, then you own left-slip to push function.
     // 成为JPNavigationControllerDelegate协议的代理, 实现协议方法即可拥有左滑push功能.
-    self.navigationController.jp_delegate = self;
+    self.navigationController.jp_pushDelegate = self;
+    
+    [self loadData];
+    [self.navigationController.navigationBar setBackgroundImage:[JPSnapTool imageWithColor:self.view.tintColor] forBarMetrics:UIBarMetricsDefault];
+}
+
+
+#pragma mark --------------------------------------------------
+#pragma mark Data
+
+-(void)loadData{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"category";
+    params[@"c"] = @"subscribe";
+    
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *listArr = responseObject[@"list"];
+        NSMutableArray *arrM = [NSMutableArray array];
+        for (NSDictionary *dict in listArr) {
+            NSString *name = dict[@"name"];
+            [arrM addObject:name];
+        }
+        self.listArr = [arrM copy];
+        [self.tableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
 
 
@@ -63,11 +100,7 @@ static NSString *sec_reuseID = @"reuse";
 
 -(void)click{
     JPThirdVc *vc = [[JPThirdVc alloc]init];
-    
-    // You must call pushViewController:animated: first before set jp_linkViewHeight.
-    // 注意： 这两行代码有逻辑关系，必须先push过去，navigationController才会alloc，分配内存地址，才有值.
     [self.navigationController pushViewController:vc animated:YES];
-    vc.navigationController.jp_linkViewHeight = 44.0f;
 }
 
 
@@ -103,7 +136,7 @@ static NSString *sec_reuseID = @"reuse";
 # pragma mark TableView Events
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 9;
+    return self.listArr.count+2;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -116,15 +149,19 @@ static NSString *sec_reuseID = @"reuse";
     // 注意 : 如果识别到你当前控制器为UITableViewController的时候, 如果有联动底部视图, 就会自动为你添加jp_linkViewHeight高度的底部额外滚动区域. 但是, 如果你的控制器是UIViewController上添加了UITableView, 那我不会自动为你添加底部额外滚动区域, 需要你自己为UITableView添加contentInset
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:sec_reuseID forIndexPath:indexPath];
-    cell.textLabel.text = @"left-slip push to next view controller 👈 👈 ";
+    if (indexPath.row<self.listArr.count) {
+        cell.textLabel.text = [NSString stringWithFormat:@"数据来自百思推荐页 %@", self.listArr[indexPath.row]];
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
     cell.textLabel.font = [UIFont systemFontOfSize:16];
     
-    if (indexPath.row == 7) {
+    if (indexPath.row == self.listArr.count) {
         cell.textLabel.text = @"底部联动视图可跟随全屏手势滑动";
         cell.backgroundColor = [UIColor greenColor];
         cell.textLabel.textColor = [UIColor orangeColor];
     }
-    if (indexPath.row == 8) {
+    if (indexPath.row == self.listArr.count+1) {
         cell.textLabel.text = @"有联动底部视图, 已自动添加底部额外滚动区域";
         cell.backgroundColor = [UIColor blackColor];
         cell.textLabel.textColor = [UIColor whiteColor];

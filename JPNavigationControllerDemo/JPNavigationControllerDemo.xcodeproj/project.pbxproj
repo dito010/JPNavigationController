@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F5187001DF55B6C005FD35D /* UIViewController+JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5186FF1DF55B6C005FD35D /* UIViewController+JPNavigationController.m */; };
+		C430A6C2A14F90F88DE2FD8D /* libPods-JPNavigationControllerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E39489FDC98927C7F1B79F /* libPods-JPNavigationControllerDemo.a */; };
 		CF2697251DE3588C00953D37 /* JPPushAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */; };
 		CF55A0B01DDF71170002CDF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0AF1DDF71170002CDF7 /* main.m */; };
 		CF55A0B31DDF71170002CDF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0B21DDF71170002CDF7 /* AppDelegate.m */; };
@@ -24,7 +26,6 @@
 		CF55A0EF1DDF71AC0002CDF7 /* JPWarpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */; };
 		CF55A0F01DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */; };
 		CF55A0F11DDF71AC0002CDF7 /* UINavigationController+JPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */; };
-		CF55A0F21DDF71AC0002CDF7 /* UIViewController+NavExtesion.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0E31DDF71AC0002CDF7 /* UIViewController+NavExtesion.m */; };
 		CF55A0F41DDF71F40002CDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0F31DDF71F40002CDF7 /* Main.storyboard */; };
 		CF55A0F71DDF721A0002CDF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0F61DDF721A0002CDF7 /* ViewController.m */; };
 		CF55A0FD1DDF72370002CDF7 /* JPLinkSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0F91DDF72370002CDF7 /* JPLinkSubview.m */; };
@@ -38,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04E39489FDC98927C7F1B79F /* libPods-JPNavigationControllerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JPNavigationControllerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5186FE1DF55B6C005FD35D /* UIViewController+JPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JPNavigationController.h"; sourceTree = "<group>"; };
+		5F5186FF1DF55B6C005FD35D /* UIViewController+JPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JPNavigationController.m"; sourceTree = "<group>"; };
 		CF2697231DE3588C00953D37 /* JPPushAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPushAnimatedTransitioning.h; sourceTree = "<group>"; };
 		CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPushAnimatedTransitioning.m; sourceTree = "<group>"; };
 		CF55A0AB1DDF71170002CDF7 /* JPNavigationControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPNavigationControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +76,6 @@
 		CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPFullScreenPopGesture.m"; sourceTree = "<group>"; };
 		CF55A0E01DDF71AC0002CDF7 /* UINavigationController+JPLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JPLink.h"; sourceTree = "<group>"; };
 		CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPLink.m"; sourceTree = "<group>"; };
-		CF55A0E21DDF71AC0002CDF7 /* UIViewController+NavExtesion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavExtesion.h"; sourceTree = "<group>"; };
-		CF55A0E31DDF71AC0002CDF7 /* UIViewController+NavExtesion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavExtesion.m"; sourceTree = "<group>"; };
 		CF55A0F31DDF71F40002CDF7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CF55A0F51DDF721A0002CDF7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CF55A0F61DDF721A0002CDF7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 		CF55A10C1DDF744E0002CDF7 /* JPFourthVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFourthVc.h; sourceTree = "<group>"; };
 		CF55A10D1DDF744E0002CDF7 /* JPFourthVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFourthVc.m; sourceTree = "<group>"; };
 		CF55A10E1DDF744E0002CDF7 /* JPFourthVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPFourthVc.xib; sourceTree = "<group>"; };
+		E39D2C0F668AACD8DAA9164E /* Pods-JPNavigationControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPNavigationControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JPNavigationControllerDemo/Pods-JPNavigationControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		FC1E5EB955079129D4F9AE82 /* Pods-JPNavigationControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPNavigationControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPNavigationControllerDemo/Pods-JPNavigationControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,17 +100,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C430A6C2A14F90F88DE2FD8D /* libPods-JPNavigationControllerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5315A53634E41D8BED554680 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E39D2C0F668AACD8DAA9164E /* Pods-JPNavigationControllerDemo.debug.xcconfig */,
+				FC1E5EB955079129D4F9AE82 /* Pods-JPNavigationControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF55A0A21DDF71170002CDF7 = {
 			isa = PBXGroup;
 			children = (
 				CF55A0AD1DDF71170002CDF7 /* JPNavigationControllerDemo */,
 				CF55A0AC1DDF71170002CDF7 /* Products */,
+				5315A53634E41D8BED554680 /* Pods */,
+				EA51D6E6746475BD3A6F7B8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,10 +201,18 @@
 				CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */,
 				CF55A0E01DDF71AC0002CDF7 /* UINavigationController+JPLink.h */,
 				CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */,
-				CF55A0E21DDF71AC0002CDF7 /* UIViewController+NavExtesion.h */,
-				CF55A0E31DDF71AC0002CDF7 /* UIViewController+NavExtesion.m */,
+				5F5186FE1DF55B6C005FD35D /* UIViewController+JPNavigationController.h */,
+				5F5186FF1DF55B6C005FD35D /* UIViewController+JPNavigationController.m */,
 			);
 			path = JPNavigationController;
+			sourceTree = "<group>";
+		};
+		EA51D6E6746475BD3A6F7B8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04E39489FDC98927C7F1B79F /* libPods-JPNavigationControllerDemo.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF55A0C21DDF71170002CDF7 /* Build configuration list for PBXNativeTarget "JPNavigationControllerDemo" */;
 			buildPhases = (
+				72748F15D5F6E3D823FF2798 /* [CP] Check Pods Manifest.lock */,
 				CF55A0A71DDF71170002CDF7 /* Sources */,
 				CF55A0A81DDF71170002CDF7 /* Frameworks */,
 				CF55A0A91DDF71170002CDF7 /* Resources */,
+				DCBF33C8B400FF8C7D5A0773 /* [CP] Embed Pods Frameworks */,
+				F8DC3A2DBCC5B325CBC6C16F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +289,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72748F15D5F6E3D823FF2798 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCBF33C8B400FF8C7D5A0773 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JPNavigationControllerDemo/Pods-JPNavigationControllerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8DC3A2DBCC5B325CBC6C16F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JPNavigationControllerDemo/Pods-JPNavigationControllerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF55A0A71DDF71170002CDF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,7 +351,6 @@
 				CF55A0EE1DDF71AC0002CDF7 /* JPWarpNavigationController.m in Sources */,
 				CF55A1031DDF72480002CDF7 /* JPThirdVc.m in Sources */,
 				CF55A0E91DDF71AC0002CDF7 /* JPNavigationBar.m in Sources */,
-				CF55A0F21DDF71AC0002CDF7 /* UIViewController+NavExtesion.m in Sources */,
 				CF55A0B31DDF71170002CDF7 /* AppDelegate.m in Sources */,
 				CF55A0E81DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m in Sources */,
 				CF55A0B01DDF71170002CDF7 /* main.m in Sources */,
@@ -286,6 +360,7 @@
 				CF55A0F01DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m in Sources */,
 				CF55A0E51DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */,
 				CF55A0F11DDF71AC0002CDF7 /* UINavigationController+JPLink.m in Sources */,
+				5F5187001DF55B6C005FD35D /* UIViewController+JPNavigationController.m in Sources */,
 				CF2697251DE3588C00953D37 /* JPPushAnimatedTransitioning.m in Sources */,
 				CF55A0FD1DDF72370002CDF7 /* JPLinkSubview.m in Sources */,
 			);
@@ -386,6 +461,7 @@
 		};
 		CF55A0C31DDF71170002CDF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E39D2C0F668AACD8DAA9164E /* Pods-JPNavigationControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 95B6T5443Y;
@@ -399,6 +475,7 @@
 		};
 		CF55A0C41DDF71170002CDF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC1E5EB955079129D4F9AE82 /* Pods-JPNavigationControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 95B6T5443Y;

@@ -17,18 +17,26 @@ const CGFloat moveFactor = 0.2;
     
     // Mix shadow for toViewController' view.
     [self.containerView insertSubview:self.toViewController.view aboveSubview:self.fromViewController.view];
-    UIImage *snapImage = [JPSnapTool mixShadowWithView:self.toViewController.view];
+     UIImage *snapImage = [JPSnapTool mixShadowWithView:self.toViewController.view];
     
-    // Alloc toView's ImageView
+    // Alloc toView's ImageView.
     UIImageView *ivForToView = [[UIImageView alloc]initWithImage:snapImage];
     [self.toViewController.view removeFromSuperview];
     ivForToView.frame = CGRectMake(JPScreenWidth, 0, snapImage.size.width, JPScreenHeight);
     [self.containerView insertSubview:ivForToView aboveSubview:self.fromViewController.view];
     
-    //  Alloc fromView's ImageView
+    // Alloc fromView's ImageView.
     UIImageView *ivForSnap = [[UIImageView alloc]initWithImage:self.snapImage];
     ivForSnap.frame = CGRectMake(0, 0, JPScreenWidth, JPScreenHeight);
     [self.containerView insertSubview:ivForSnap belowSubview:ivForToView];
+    
+    // A gray color shadow view for formView.
+    UIColor *grayColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    UIImage *grayImage = [JPSnapTool imageWithColor:grayColor];
+    UIImageView *grayImageView = [[UIImageView alloc]initWithFrame:ivForSnap.bounds];
+    grayImageView.image = grayImage;
+    [ivForSnap addSubview:grayImageView];
+    grayImageView.alpha = 0;
     
     // Hide tabBar if need.
     UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -44,6 +52,7 @@ const CGFloat moveFactor = 0.2;
         // Interative transition animation.
         ivForToView.frame = CGRectMake(-shadowWidth, 0, snapImage.size.width, JPScreenHeight);
         ivForSnap.frame = CGRectMake(-moveFactor*JPScreenWidth, 0, JPScreenWidth, JPScreenHeight);
+        grayImageView.alpha = 0.1;
         
     }completion:^(BOOL finished) {
         

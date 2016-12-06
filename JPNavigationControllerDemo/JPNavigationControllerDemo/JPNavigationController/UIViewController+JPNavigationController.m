@@ -1,14 +1,13 @@
 //
-//  UIViewController+NavExtesion.m
-//  JPNavigationController
+//  UIViewController+JPNavigationController.m
 //
 //  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
 //
 
-#import "UIViewController+NavExtesion.h"
+#import "UIViewController+JPNavigationController.h"
 #import "objc/runtime.h"
 
-@implementation UIViewController (NavExtesion)
+@implementation UIViewController (JPNavigationController)
 
 -(void)setJp_navigationController:(JPNavigationController *)jp_navigationController{
     objc_setAssociatedObject(self, @selector(jp_navigationController), jp_navigationController, OBJC_ASSOCIATION_ASSIGN);

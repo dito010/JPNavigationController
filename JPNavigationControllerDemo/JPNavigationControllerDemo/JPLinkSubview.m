@@ -14,15 +14,15 @@
 }
 
 - (IBAction)collectionBtnClick:(UIButton *)sender {
-    if ([self.jp_delegate respondsToSelector:@selector(linkSubview:didClickClosePop:)]) {
-        [self.jp_delegate linkSubview:self didClickClosePop:sender];
+    if ([self.jp_pushDelegate respondsToSelector:@selector(linkSubview:didClickClosePop:)]) {
+        [self.jp_pushDelegate linkSubview:self didClickClosePop:sender];
     }
     NSLog(@"click %@", sender.titleLabel.text);
 }
 
 - (IBAction)buyBtnClick:(UIButton *)sender {
-    if ([self.jp_delegate respondsToSelector:@selector(linkSubview:didClickCloseAllPop:)]) {
-        [self.jp_delegate linkSubview:self didClickCloseAllPop:sender];
+    if ([self.jp_pushDelegate respondsToSelector:@selector(linkSubview:didClickCloseAllPop:)]) {
+        [self.jp_pushDelegate linkSubview:self didClickCloseAllPop:sender];
     }
     NSLog(@"click %@", sender.titleLabel.text);
 }

@@ -14,6 +14,19 @@
 
 #import <UIKit/UIKit.h>
 
+
+// a note for navigation controller left slip.
+static NSString * kJp_navigationDidSrolledLeft = @"Jp_navigationDidSrolledLeft";
+// a note for navigation controller right slip.
+static NSString * kJp_navigationDidSrolledRight = @"Jp_navigationDidSrolledRight";
+
+@protocol JPFullScreenPopGestureRecognizerDelegate_Delegate <NSObject>
+
+@optional
+-(BOOL)navigationControllerLeftSlipShouldBegain;
+
+@end
+
 @interface JPFullScreenPopGestureRecognizerDelegate : NSObject<UIGestureRecognizerDelegate>
 
 /*!
@@ -44,5 +57,14 @@
  * @see JPNavigationController.
  */
 @property(nonatomic, strong)id target;
+
+/*!
+ * \~english
+ * Delegate.
+ *
+ * \~chinese
+ * Delegate.
+ */
+@property(nonatomic, weak)id<JPFullScreenPopGestureRecognizerDelegate_Delegate> delegate;
 
 @end

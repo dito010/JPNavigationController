@@ -9,7 +9,7 @@
 #import "JPNavigationController/JPNavigationControllerKit.h"
 #import "JPSecondVC.h"
 #import "JPWarpViewController.h"
-#import "UINavigationController+JPFullScreenPopGesture.h"
+#import "JPSnapTool.h"
 
 @class JPSecondVC;
 
@@ -32,7 +32,7 @@ const CGFloat partPopGesTipLeftCons = 20;
     NSLog(@"Loaded thrid View controller, 加载了第三个控制器");
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setBackgroundImage:[self imageWithColor:[UIColor redColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[JPSnapTool imageWithColor:[UIColor redColor]] forBarMetrics:UIBarMetricsDefault];
     
     UIButton *signBtn = [UIButton new];
     signBtn.frame = CGRectMake(0, 0, JPScreenW, thi_linkSubviewH);
@@ -42,6 +42,9 @@ const CGFloat partPopGesTipLeftCons = 20;
     [signBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [signBtn addTarget:self action:@selector(signBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationController.jp_linkView = signBtn;
+    
+    // Set link view height.
+    self.navigationController.jp_linkViewHeight = 44.0f;
 }
 
 // 设置pop手势范围
@@ -100,19 +103,5 @@ const CGFloat partPopGesTipLeftCons = 20;
     [self.navigationController jp_popToViewControllerClassIs:[JPSecondVC class] animated:YES];
 }
 
-
-# pragma mark --------------------------------------
-# pragma mark Private
-
--(UIImage *)imageWithColor:(UIColor *)color{
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return theImage;
-}
 
 @end

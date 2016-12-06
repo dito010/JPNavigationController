@@ -8,6 +8,7 @@
 #import "JPNavigationInteractiveTransition.h"
 #import "JPPushAnimatedTransitioning.h"
 #import "JPNavigationController.h"
+#import "JPFullScreenPopGestureRecognizerDelegate.h"
 
 @interface JPNavigationInteractiveTransition()
 
@@ -60,15 +61,15 @@
 
 // The borderline value devcide is need push or not when pan gesture end.
 // 停止手势时判断是否需要push的临界值.
-const CGFloat JPPushBorderlineDelta = 0.4;
+const CGFloat JPPushBorderlineDelta = 0.5;
 @implementation JPNavigationInteractiveTransition
 
 - (instancetype)initWithViewController:(UINavigationController *)nav{
     self = [super init];
     if (self) {
         self.nav = (JPNavigationController *)nav;
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledRight:) name:@"NavigationDidSrolledRight" object:nil];
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledLeft:) name:@"NavigationDidSrolledLeft" object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledRight:) name:kJp_navigationDidSrolledRight object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledLeft:) name:kJp_navigationDidSrolledLeft object:nil];
     }
     return self;
 }

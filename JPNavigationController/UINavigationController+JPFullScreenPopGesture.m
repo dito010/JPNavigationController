@@ -11,6 +11,7 @@
 @implementation UINavigationController (JPFullScreenPopGesture)
 
 -(void)setJp_interactivePopMaxAllowedInitialDistanceToLeftEdge:(CGFloat)jp_interactivePopMaxAllowedInitialDistanceToLeftEdge{
+    
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     jp_interactivePopMaxAllowedInitialDistanceToLeftEdge = MIN(jp_interactivePopMaxAllowedInitialDistanceToLeftEdge, screenSize.width);
     jp_interactivePopMaxAllowedInitialDistanceToLeftEdge = MAX(0, jp_interactivePopMaxAllowedInitialDistanceToLeftEdge);
@@ -23,7 +24,7 @@
                                @"navigation" : self,
                                @"tempValue" : @(jp_interactivePopMaxAllowedInitialDistanceToLeftEdge)
                                };
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"jp_interactivePopMaxNote" object:dict];
+        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_interactivePopMaxNote object:dict];
     }
 }
 
@@ -43,7 +44,7 @@
                                @"rootNavigationForCurVC" : nav,
                                @"tempValue" : @(jp_closePopForCurrentViewController)
                                };
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"jp_closePopForCurrentViewController" object:dict];
+        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_closePopForCurrentViewControllerNote object:dict];
     }
 }
 
@@ -58,7 +59,7 @@
                                @"rootNavigationForAllVC" : nav,
                                @"tempValue" : @(jp_closePopForAllViewController)
                                };
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"jp_closePopForAllViewController" object:dict];
+        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_closePopForAllViewControllersNote object:dict];
     }
 }
 
@@ -74,11 +75,11 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
--(void)setJp_delegate:(id<JPNavigationControllerDelegate>)jp_delegate{
-    objc_setAssociatedObject(self, @selector(jp_delegate), jp_delegate, OBJC_ASSOCIATION_ASSIGN);
+-(void)setJp_pushDelegate:(id<JPNavigationControllerDelegate>)jp_pushDelegate{
+    objc_setAssociatedObject(self, @selector(jp_pushDelegate), jp_pushDelegate, OBJC_ASSOCIATION_ASSIGN);
 }
 
--(id<JPNavigationControllerDelegate>)jp_delegate{
+-(id<JPNavigationControllerDelegate>)jp_pushDelegate{
     return objc_getAssociatedObject(self, _cmd);
 }
 

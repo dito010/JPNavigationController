@@ -10,7 +10,7 @@
 #import "UINavigationController+JPLink.h"
 #import "JPNavigationBar.h"
 #import "JPNavigationController.h"
-#import "UIViewController+NavExtesion.h"
+#import "UIViewController+JPNavigationController.h"
 #import "UINavigationController+JPFullScreenPopGesture.h"
 #import "JPManageSinglePopVCTool.h"
 
@@ -53,13 +53,27 @@
     [self setValue:navBar forKey:@"navigationBar"];
     
     
+    // Save root navigation Controller.
+    // 保存根导航控制器
+    
+    self.jp_rootNavigationController = (JPNavigationController *)self.navigationController;
+    
+    
+    // Monitor the notification of the range change about interactive pop allowed.
+    // 监听最大pop手势范围改变通知
+    
+    SEL popNoteSel = @selector(setJp_interactivePopMaxAllowedInitialDistanceToLeftEdgeNote:);
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:popNoteSel name:kJp_interactivePopMaxNote object:nil];
+}
+
+-(void)addLinkView{
     // If jp_linkViewHeight>0, we think this instance have a link view in bottom.
     // If this instance have link view in bottom, this framework will check the viewController passed in by use is a class of UITableViewController or not, if yes, framework will add a contentInset for this viewController.
     // 如果jp_linkViewHeight大于0, 视为有底部联动视图.
     // 有了联动底部视图以后，如果传进来的控制器是一个UITableViewController,我们要为这个UITableViewController底部添加一个额外的滚动区域，防止联动底部视图挡住UITableViewController的内容
     
     UIViewController *childViewController = self.viewControllers.firstObject;
-    if (self.jp_linkViewHeight > 0) {
+    if (self.jp_linkViewHeight > 0 && self.jp_linkView) {
         
         // Call user's viewDidLoad: method before JPWarpNavigationController's viewDidLoad:.
         // 先调用用户的控制器的viewDidLoad:方法, 再调用JPWarpNavigationController的viewDidLoad:方法
@@ -74,23 +88,10 @@
             // NSLog(@"avc%@", NSStringFromUIEdgeInsets(aVc.tableView.contentInset));
         }
     }
-    
-    
-    // Save root navigation Controller.
-    // 保存根导航控制器
-    
-    self.jp_rootNavigationController = (JPNavigationController *)self.navigationController;
-    
-    
-    // Monitor the notification of the range change about interactive pop allowed.
-    // 监听最大pop手势范围改变通知
-    
-    SEL popNoteSel = @selector(setJp_interactivePopMaxAllowedInitialDistanceToLeftEdgeNote:);
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:popNoteSel name:@"jp_interactivePopMaxNote" object:nil];
 }
 
 -(void)dealloc{
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"jp_interactivePopMaxNote" object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:kJp_interactivePopMaxNote object:nil];
     self.linkView = nil;
     self.jp_rootNavigationController = nil;
 }

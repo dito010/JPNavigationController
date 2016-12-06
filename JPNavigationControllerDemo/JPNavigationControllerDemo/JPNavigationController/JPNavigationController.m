@@ -6,17 +6,18 @@
 //
 
 #import "JPNavigationController.h"
-#import "UIViewController+NavExtesion.h"
+#import "UIViewController+JPNavigationController.h"
 #import "JPWarpViewController.h"
 #import "JPFullScreenPopGestureRecognizerDelegate.h"
 #import "UINavigationController+JPFullScreenPopGesture.h"
 #import "JPNavigationInteractiveTransition.h"
 #import "JPWarpNavigationController.h"
 #import "JPManageSinglePopVCTool.h"
+#import "JPSnapTool.h"
 
 #import <objc/runtime.h>
 
-@interface JPNavigationController()<JPNavigationInteractiveTransitionDelegate>
+@interface JPNavigationController()<JPNavigationInteractiveTransitionDelegate, JPFullScreenPopGestureRecognizerDelegate_Delegate>
 
 /*!
  * \~english
@@ -108,12 +109,32 @@
     // Add observe for close single view controller notification and close all view controllers notificatoin.
     // 添加监听关闭所有控制器pop手势和关闭单个页面pop手势通知.
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForAllViewControllerNote:) name:@"jp_closePopForAllViewController" object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForCurViewControllerNote:) name:@"jp_closePopForCurrentViewController" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForAllViewControllerNote:) name:kJp_closePopForAllViewControllersNote object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForCurViewControllerNote:) name:kJp_closePopForCurrentViewControllerNote object:nil];
 }
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+
+#pragma mark --------------------------------------------------
+#pragma mark JPFullScreenPopGestureRecognizerDelegate_Delegate
+
+-(BOOL)navigationControllerLeftSlipShouldBegain{
+    
+    // Find the displaying warp navigation controller first now when left-slip, check this navigation is overrided protocol method or not after, if yes, then return Yes For UIPanGestureDelegate.
+    // 左滑push的时候, 先去找到当前在窗口的用于包装的导航控制器, 再检查这个控制器有没有遵守左滑push协议, 看这个界面有没有实现左滑调起push的代理方法, 如果实现了, 就告诉pan手势代理.可以执行pop.
+    
+    NSArray *childs = self.childViewControllers;
+    JPWarpViewController *warp = (JPWarpViewController *)childs.lastObject;
+    JPWarpNavigationController *nav = (JPWarpNavigationController *)warp.childViewControllers.firstObject;
+    if (nav) {
+        if ([nav.jp_pushDelegate respondsToSelector:@selector(jp_navigationControllerDidPushLeft)]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 
@@ -129,16 +150,15 @@
     JPWarpViewController *warp = (JPWarpViewController *)childs.lastObject;
     JPWarpNavigationController *nav = (JPWarpNavigationController *)warp.childViewControllers.firstObject;
     if (nav) {
-        if ([nav.jp_delegate respondsToSelector:@selector(jp_navigationControllerDidPushLeft)]) {
-            [nav.jp_delegate jp_navigationControllerDidPushLeft];
+        if ([nav.jp_pushDelegate respondsToSelector:@selector(jp_navigationControllerDidPushLeft)]) {
+            [nav.jp_pushDelegate jp_navigationControllerDidPushLeft];
         }
     }
 }
 
 
-# pragma mark --------------------------------------
-# pragma mark Private
-
+#pragma mark --------------------------------------------------
+#pragma mark Notification Observer
 -(void)closePopForAllViewControllerNote:(NSNotification *)note{
     
     // Every notification will call this method when alloc many instance of this class, so we need a flag to distinguish those notification, this flag is the root navigation controller. see jp_closePopForAllViewController.
@@ -196,6 +216,10 @@
     }
 }
 
+
+# pragma mark --------------------------------------
+# pragma mark Private
+
 -(UIPanGestureRecognizer *)jp_fullscreenPopGestureRecognizer{
     if (!_jp_fullscreenPopGestureRecognizer) {
         _jp_fullscreenPopGestureRecognizer = [UIPanGestureRecognizer new];
@@ -207,6 +231,7 @@
 - (JPFullScreenPopGestureRecognizerDelegate *)jp_popGestureRecognizerDelegate{
     if (!_jp_popGestureRecognizerDelegate) {
         _jp_popGestureRecognizerDelegate = [JPFullScreenPopGestureRecognizerDelegate new];
+        _jp_popGestureRecognizerDelegate.delegate = self;
         _jp_popGestureRecognizerDelegate.navigationController = self;
     }
     return _jp_popGestureRecognizerDelegate;

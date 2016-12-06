@@ -12,6 +12,7 @@
 
 -(void)setJp_linkViewHeight:(CGFloat)jp_linkViewHeight{
     objc_setAssociatedObject(self, @selector(jp_linkViewHeight), @(jp_linkViewHeight), OBJC_ASSOCIATION_ASSIGN);
+    [self handleAddLinkView];
 }
 
 -(CGFloat)jp_linkViewHeight{
@@ -19,20 +20,22 @@
 }
 
 -(void)setJp_linkView:(UIView *)jp_linkView{
-    
-    // Call user's viewDidLoad: method after JPWarpNavigationController's viewDidLoad:.
-    // 先调用JPWarpNavigationController的viewDidLoad:方法, 再调用用户的控制器的viewDidLoad:方法
-    
-    UIView *li = [self valueForKeyPath:@"_linkView"];
-    if (li) {
-        jp_linkView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.jp_linkViewHeight);
-        [li addSubview:jp_linkView];
-    }
-    objc_setAssociatedObject(self, @selector(jp_linkView), jp_linkView, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(jp_linkView), jp_linkView, OBJC_ASSOCIATION_ASSIGN);    
+    [self handleAddLinkView];
 }
 
 -(UIView *)jp_linkView{
     return objc_getAssociatedObject(self, _cmd);
+}
+
+-(void)handleAddLinkView{
+    SEL addLinkView = NSSelectorFromString(@"addLinkView");
+    if (addLinkView) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self performSelector:addLinkView];
+#pragma clang diagnostic pop
+    }
 }
 
 @end

@@ -23,7 +23,7 @@
 @interface JPLinkSubview : UIView
 
 /** delegate */
-@property(nonatomic, weak)id<JPLinkSubviewDelegate> jp_delegate;
+@property(nonatomic, weak)id<JPLinkSubviewDelegate> jp_pushDelegate;
 
 +(instancetype)viewForXib;
 

@@ -7,7 +7,7 @@
 
 #import "JPWarpViewController.h"
 #import "JPWarpNavigationController.h"
-#import "UIViewController+NavExtesion.h"
+#import "UIViewController+JPNavigationController.h"
 
 @interface JPWarpViewController()
 /*!

@@ -19,17 +19,9 @@
 /*!
  * \~english
  * Link view height on screen bottom.
- * Watch out: You should pass this value to framework after pushViewController:animated: if you need link view on bottom. example.
- * [self.navigationController pushViewController:YourOwnVC animated:YES];
- * YourOwnVC.navigationController.jp_linkViewHeight = YourHopeHeight;
- * You must call pushViewController:animated: first before set this value.
  *
  * \~chinese
  * 底部联动视图的高度.
- * 使用时注意 : 如果下个界面需要有联动底部视图, 需要在上个控制器pushViewController:animated:方法后面立即把值传给框架. 就像下面这样.
- * [self.navigationController pushViewController:YourOwnVC animated:YES];
- * YourOwnVC.navigationController.jp_linkViewHeight = YourHopeHeight;
- * 同时注意 : 这两行代码有逻辑关系，必须先调用push方法，navigationController才会alloc，分配内存地址，才有值.
  */
 @property(nonatomic)CGFloat jp_linkViewHeight;
 

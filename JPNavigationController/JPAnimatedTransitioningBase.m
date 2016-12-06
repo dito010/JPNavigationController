@@ -17,7 +17,6 @@
 
 @end
 
-
 @implementation JPAnimatedTransitioningBase
 
 - (instancetype)init {

@@ -38,7 +38,7 @@ static NSString *reuseID = @"reuse";
     
     // Become the delegate of JPNavigationControllerDelegate protocol and, implemented protocol method, then you own left-slip to push function.
     // 成为JPNavigationControllerDelegate协议的代理, 实现协议方法即可拥有左滑push功能.
-    self.navigationController.jp_delegate = self;
+    self.navigationController.jp_pushDelegate = self;
 }
 
 
@@ -46,7 +46,6 @@ static NSString *reuseID = @"reuse";
 # pragma JPNavigationControllerDelegate
 
 -(void)jp_navigationControllerDidPushLeft{
-    NSLog(@"left-slip, 左滑");
     [self push2NextVC];
 }
 
@@ -57,11 +56,7 @@ static NSString *reuseID = @"reuse";
 -(void)push2NextVC{
     JPSecondVC *secondVc = [[JPSecondVC alloc]init];
     secondVc.hidesBottomBarWhenPushed = YES;
-    
-    // You must call pushViewController:animated: first before set jp_linkViewHeight.
-    // 注意： 这两行代码有逻辑关系，必须先push过去，navigationController才会alloc，分配内存地址，才有值.
     [self.navigationController pushViewController:secondVc animated:YES];
-    secondVc.navigationController.jp_linkViewHeight = 80.0f;
 }
 
 
@@ -87,5 +82,9 @@ static NSString *reuseID = @"reuse";
     frame.origin.y = -speed * (scrollView.contentOffset.y + headerHeight ) - 100;
     self.girlImageView.frame = frame;
 }
+
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"左滑了");
+//}
 
 @end

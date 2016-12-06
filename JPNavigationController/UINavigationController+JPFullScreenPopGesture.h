@@ -15,6 +15,14 @@
 #import <UIKit/UIKit.h>
 #import "JPNavigationController.h"
 
+
+// a note for max pop gesture change.
+static NSString * kJp_interactivePopMaxNote = @"Jp_interactivePopMaxNote";
+// a note for close pop gesture for current view controller.
+static NSString * kJp_closePopForCurrentViewControllerNote = @"Jp_closePopForCurrentViewControllerNote";
+// a note for close pop gesture for all view controllers.
+static NSString * kJp_closePopForAllViewControllersNote = @"Jp_closePopForAllViewControllersNote";
+
 @interface UINavigationController (JPFullScreenPopGesture)
 
 /*!
@@ -62,7 +70,7 @@
  * \~chinese
  * 实现左滑left-slip push到下一个控制器的代理.
  */
-@property(nonatomic)id<JPNavigationControllerDelegate> jp_delegate;
+@property(nonatomic)id<JPNavigationControllerDelegate> jp_pushDelegate;
 
 /*!
  * \~english

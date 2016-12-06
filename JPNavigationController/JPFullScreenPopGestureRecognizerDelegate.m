@@ -6,7 +6,7 @@
 //
 
 #import "JPFullScreenPopGestureRecognizerDelegate.h"
-#import "UIViewController+NavExtesion.h"
+#import "UIViewController+JPNavigationController.h"
 #import "UINavigationController+JPFullScreenPopGesture.h"
 #import "JPSnapTool.h"
 #import "JPManageSinglePopVCTool.h"
@@ -20,20 +20,26 @@
     
     CGPoint translation = [gestureRecognizer velocityInView:gestureRecognizer.view];
     if (translation.x<0) {
-        UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
-        UIImage *snapImage = [JPSnapTool snapShotWithView:rootVc.view];
-        NSDictionary *dict = @{
-                               @"snapImage" : snapImage,
-                               @"navigationController" : self.navigationController
-                               };
-        // left-slip --> push.
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"NavigationDidSrolledLeft" object:dict userInfo:nil];
-        [gestureRecognizer removeTarget:_target action:action];
-        return YES;
+        if ([self.delegate respondsToSelector:@selector(navigationControllerLeftSlipShouldBegain)]) {
+            BOOL result = [self.delegate navigationControllerLeftSlipShouldBegain];
+            if (result) {
+                UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
+                UIImage *snapImage = [JPSnapTool snapShotWithView:rootVc.view];
+                NSDictionary *dict = @{
+                                       @"snapImage" : snapImage,
+                                       @"navigationController" : self.navigationController
+                                       };
+                // left-slip --> push.
+                [[NSNotificationCenter defaultCenter]postNotificationName:kJp_navigationDidSrolledLeft object:dict userInfo:nil];
+                [gestureRecognizer removeTarget:_target action:action];
+                return YES;
+            }
+            return NO;
+        }
     }
     else{
         // right-slip --> pop.
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"NavigationDidSrolledRight" object:self.navigationController userInfo:nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_navigationDidSrolledRight object:self.navigationController userInfo:nil];
         [gestureRecognizer addTarget:_target action:action];
     }
     

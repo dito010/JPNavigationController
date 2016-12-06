@@ -19,7 +19,6 @@
 }
 
 +(UIImage *)mixShadowWithView:(UIView *)view{
-//    CGFloat scale = [UIScreen mainScreen].scale/2;
     UIImage *aImage = [self snapShotWithView:view];
     
     UIImage *shadow = [UIImage imageNamed:kShadowImagePath];
@@ -32,6 +31,17 @@
     UIImage *snapImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return snapImage;
+}
+
++(UIImage *)imageWithColor:(UIColor *)color{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 @end
