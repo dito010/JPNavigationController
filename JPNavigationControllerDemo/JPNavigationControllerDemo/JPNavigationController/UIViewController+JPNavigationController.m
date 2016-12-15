@@ -10,7 +10,7 @@
 @implementation UIViewController (JPNavigationController)
 
 -(void)setJp_navigationController:(JPNavigationController *)jp_navigationController{
-    objc_setAssociatedObject(self, @selector(jp_navigationController), jp_navigationController, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(jp_navigationController), jp_navigationController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(JPNavigationController *)jp_navigationController{
@@ -18,7 +18,7 @@
 }
 
 -(void)setJp_warpViewController:(JPWarpViewController *)jp_warpViewController{
-    objc_setAssociatedObject(self, @selector(jp_warpViewController), jp_warpViewController, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(jp_warpViewController), jp_warpViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(JPWarpViewController *)jp_warpViewController{

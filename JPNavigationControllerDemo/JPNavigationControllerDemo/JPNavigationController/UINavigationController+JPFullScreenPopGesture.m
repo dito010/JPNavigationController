@@ -17,7 +17,7 @@
     jp_interactivePopMaxAllowedInitialDistanceToLeftEdge = MAX(0, jp_interactivePopMaxAllowedInitialDistanceToLeftEdge);
     SEL key = @selector(jp_interactivePopMaxAllowedInitialDistanceToLeftEdge);
     CGFloat distance = jp_interactivePopMaxAllowedInitialDistanceToLeftEdge;
-    objc_setAssociatedObject(self, key, @(MAX(0, distance)), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, key, @(MAX(0, distance)), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     UINavigationController *nav = self.navigationController;
     if (nav) {
         NSDictionary *dict = @{
@@ -76,7 +76,7 @@
 }
 
 -(void)setJp_pushDelegate:(id<JPNavigationControllerDelegate>)jp_pushDelegate{
-    objc_setAssociatedObject(self, @selector(jp_pushDelegate), jp_pushDelegate, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(jp_pushDelegate), jp_pushDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(id<JPNavigationControllerDelegate>)jp_pushDelegate{
