@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "JPNavigationController"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.summary      = "This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for each single support."
 
 s.description  =  'FullScreen pop gesture support'\
