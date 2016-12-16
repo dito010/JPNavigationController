@@ -68,7 +68,7 @@
 }
 
 -(void)setJp_rootNavigationController:(JPNavigationController *)jp_rootNavigationController{
-    objc_setAssociatedObject(self, @selector(jp_rootNavigationController), jp_rootNavigationController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(jp_rootNavigationController), jp_rootNavigationController, OBJC_ASSOCIATION_ASSIGN);
 }
 
 -(JPNavigationController *)jp_rootNavigationController{
@@ -76,7 +76,7 @@
 }
 
 -(void)setJp_pushDelegate:(id<JPNavigationControllerDelegate>)jp_pushDelegate{
-    objc_setAssociatedObject(self, @selector(jp_pushDelegate), jp_pushDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(jp_pushDelegate), jp_pushDelegate, OBJC_ASSOCIATION_ASSIGN);
 }
 
 -(id<JPNavigationControllerDelegate>)jp_pushDelegate{
