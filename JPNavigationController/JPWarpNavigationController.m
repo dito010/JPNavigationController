@@ -66,6 +66,16 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:popNoteSel name:kJp_interactivePopMaxNote object:nil];
 }
 
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:kJp_interactivePopMaxNote object:nil];
+    self.jp_rootNavigationController = nil;
+    
+    if (self.jp_linkView.superview) {
+        [self.jp_linkView removeFromSuperview];
+    }
+}
+
 -(void)addLinkView{
     // If jp_linkViewHeight>0, we think this instance have a link view in bottom.
     // If this instance have link view in bottom, this framework will check the viewController passed in by use is a class of UITableViewController or not, if yes, framework will add a contentInset for this viewController.
@@ -88,12 +98,6 @@
             // NSLog(@"avc%@", NSStringFromUIEdgeInsets(aVc.tableView.contentInset));
         }
     }
-}
-
--(void)dealloc{
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:kJp_interactivePopMaxNote object:nil];
-    self.linkView = nil;
-    self.jp_rootNavigationController = nil;
 }
 
 -(void)setJp_interactivePopMaxAllowedInitialDistanceToLeftEdgeNote:(NSNotification *)note{

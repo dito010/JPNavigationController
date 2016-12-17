@@ -11,7 +11,7 @@
 @implementation UINavigationController (JPLink)
 
 -(void)setJp_linkViewHeight:(CGFloat)jp_linkViewHeight{
-    objc_setAssociatedObject(self, @selector(jp_linkViewHeight), @(jp_linkViewHeight), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(jp_linkViewHeight), @(jp_linkViewHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self handleAddLinkView];
 }
 
