@@ -84,7 +84,8 @@ NSArray *viewControllers = self.navigationController.jp_rootNavigationController
 for (UIViewController *c in viewControllers) {
     if ([c isKindOfClass:[JPSecondVC class]]) {
         second = (JPSecondVC *)c;
-    }
+        break;
+    }
 }
 
 if (second) {
@@ -265,6 +266,7 @@ NSArray *viewControllers = self.navigationController.jp_rootNavigationController
 for (UIViewController *c in viewControllers) {
     if ([c isKindOfClass:[JPSecondVC class]]) {
         second = (JPSecondVC *)c;
+        break;
     }
 }
 
