@@ -24,6 +24,7 @@ static NSString * kJp_navigationDidSrolledRight = @"Jp_navigationDidSrolledRight
 
 @optional
 -(BOOL)navigationControllerLeftSlipShouldBegain;
+-(BOOL)navigationControllerRightSlipShouldBegain;
 
 @end
 

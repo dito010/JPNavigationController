@@ -137,6 +137,25 @@
     return NO;
 }
 
+-(BOOL)navigationControllerRightSlipShouldBegain{
+    
+    // Ask the is need pop.
+    // 右滑的时候检查用户是否允许pop继续
+    
+    NSArray *childs = self.childViewControllers;
+    JPWarpViewController *warp = (JPWarpViewController *)childs.lastObject;
+    JPWarpNavigationController *nav = (JPWarpNavigationController *)warp.childViewControllers.firstObject;
+    if (nav) {
+        if ([nav.jp_pushDelegate respondsToSelector:@selector(jp_navigationControllerShouldPushRight)]) {
+            return [nav.jp_pushDelegate jp_navigationControllerShouldPushRight];
+        }
+        else{
+            return YES;
+        }
+    }
+    return NO;
+}
+
 
 # pragma mark --------------------------------------
 # pragma mark JPNavigationInteractiveTransitionDelegate
@@ -159,6 +178,7 @@
 
 #pragma mark --------------------------------------------------
 #pragma mark Notification Observer
+
 -(void)closePopForAllViewControllerNote:(NSNotification *)note{
     
     // Every notification will call this method when alloc many instance of this class, so we need a flag to distinguish those notification, this flag is the root navigation controller. see jp_closePopForAllViewController.

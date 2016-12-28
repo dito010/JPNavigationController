@@ -39,8 +39,28 @@
     }
     else{
         // right-slip --> pop.
-        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_navigationDidSrolledRight object:self.navigationController userInfo:nil];
-        [gestureRecognizer addTarget:_target action:action];
+        
+        
+        // Forbid pop when the start point beyond user setted range for pop.
+        // 当开始触发的点大于用户指定的最大触发点的时候, 禁止pop.
+        
+        CGPoint beginningLocation = [gestureRecognizer locationInView:gestureRecognizer.view];
+        CGFloat maxAllowedInitialDistance = self.navigationController.jp_interactivePopMaxAllowedInitialDistanceToLeftEdge;
+        if (maxAllowedInitialDistance >= 0 && beginningLocation.x > maxAllowedInitialDistance) {
+            return NO;
+        }
+        else{
+            if ([self.delegate respondsToSelector:@selector(navigationControllerRightSlipShouldBegain)]) {
+                BOOL result = [self.delegate navigationControllerRightSlipShouldBegain];
+                if (result) {
+                    [[NSNotificationCenter defaultCenter]postNotificationName:kJp_navigationDidSrolledRight object:self.navigationController userInfo:nil];
+                    [gestureRecognizer addTarget:_target action:action];
+                }
+                else{
+                    return NO;
+                }
+            }
+        }
     }
     
     
@@ -59,16 +79,6 @@
     // 根控制器不允许pop.
     
     if (self.navigationController.viewControllers.count <= 1) {
-        return NO;
-    }
-    
-    
-    // Forbid pop when the start point beyond user setted range for pop.
-    // 当开始触发的点大于用户指定的最大触发点的时候, 禁止pop.
-    
-    CGPoint beginningLocation = [gestureRecognizer locationInView:gestureRecognizer.view];
-    CGFloat maxAllowedInitialDistance = self.navigationController.jp_interactivePopMaxAllowedInitialDistanceToLeftEdge;
-    if (maxAllowedInitialDistance >= 0 && beginningLocation.x > maxAllowedInitialDistance) {
         return NO;
     }
     

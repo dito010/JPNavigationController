@@ -40,7 +40,7 @@
  */
 @protocol JPNavigationControllerDelegate <NSObject>
 
-@required
+@optional
 /*!
  * \~english
  * The delegate method need to override if need push gesture transition animation when left-slip.
@@ -49,6 +49,17 @@
  * 实现push左滑手势需要实现的代理方法.
  */
 -(void)jp_navigationControllerDidPushLeft;
+
+/*!
+ * \~english
+ * Ask the delegate should response right-slip.
+ * @return  the result of asking the delegate should response right-slip.
+ *
+ * \~chinese
+ * 是否可以响应右滑手势.
+ * @return  the result of asking the delegate should response right-slip.
+ */
+-(BOOL)jp_navigationControllerShouldPushRight;
 
 @end
 
