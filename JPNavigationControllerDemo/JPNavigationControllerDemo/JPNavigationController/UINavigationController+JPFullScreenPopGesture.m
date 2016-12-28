@@ -10,6 +10,21 @@
 
 @implementation UINavigationController (JPFullScreenPopGesture)
 
+-(void)setJp_prefersStatusBarStyle:(NSInteger)jp_prefersStatusBarStyle{
+    UINavigationController *nav = self.navigationController;
+    if (nav) {
+        NSDictionary *dict = @{
+                               @"rootNavigationForCurVC" : nav,
+                               @"tempValue" : @(jp_prefersStatusBarStyle)
+                               };
+        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_prefersStatusBarStyleNote object:dict];
+    }
+}
+
+-(NSInteger)jp_prefersStatusBarStyle{
+    return 0;
+}
+
 -(void)setJp_interactivePopMaxAllowedInitialDistanceToLeftEdge:(CGFloat)jp_interactivePopMaxAllowedInitialDistanceToLeftEdge{
     
     CGSize screenSize = [UIScreen mainScreen].bounds.size;

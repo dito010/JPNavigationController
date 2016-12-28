@@ -79,9 +79,9 @@
     [super viewDidLoad];
     
     // Hide navigation bar.
-    // 彻底隐藏导航栏
-    
-    [self setNavigationBarHidden:YES];
+    // 隐藏导航栏
+//    [self setNavigationBarHidden:YES];
+    self.navigationBar.hidden = YES;
     
     
     // Add pan gesture(lazying load) and, add delegate to pan, close system interactivePopGestureRecognizer at the same time.
@@ -111,6 +111,7 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForAllViewControllerNote:) name:kJp_closePopForAllViewControllersNote object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForCurViewControllerNote:) name:kJp_closePopForCurrentViewControllerNote object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(perfersStatusBarStyle:) name:kJp_prefersStatusBarStyleNote object:nil];
 }
 
 -(void)dealloc{
@@ -177,7 +178,25 @@
 
 
 #pragma mark --------------------------------------------------
-#pragma mark Notification Observer
+#pragma mark Notification
+
+-(void)perfersStatusBarStyle:(NSNotification *)note{
+    
+    // Every notification will call this method when alloc many instance of this class, so we need a flag to distinguish those notification, this flag is the root navigation controller. see jp_prefersStatusBarStyle.
+    // 如果一次加载了多个nav, 通知混在一起了, 要用一个标示(临时关闭pop功能的根控制器)区分. 更多信息, 请看jp_prefersStatusBarStyle
+    
+    NSDictionary *dict = note.object;
+    JPStatusBarStyle style = [dict[@"tempValue"] integerValue];
+    JPNavigationController *nav= dict[@"rootNavigationForCurVC"];
+    if (self == nav) {
+        if (style & JPStatusBarStyleDefault) {
+            self.navigationBar.barStyle = UIBarStyleDefault;
+        }
+        else if (style & JPStatusBarStyleLight){
+            self.navigationBar.barStyle = UIBarStyleBlack;
+        }
+    }
+}
 
 -(void)closePopForAllViewControllerNote:(NSNotification *)note{
     

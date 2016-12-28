@@ -15,6 +15,10 @@
 #import <UIKit/UIKit.h>
 #import "JPNavigationController.h"
 
+typedef NS_OPTIONS(NSInteger, JPStatusBarStyle) {
+    JPStatusBarStyleDefault = 1 << 0, // 默认样式, 状态栏文字为黑色.
+    JPStatusBarStyleLight = 1 << 1 // 状态栏文字为黑色.
+};
 
 // a note for max pop gesture change.
 static NSString * kJp_interactivePopMaxNote = @"Jp_interactivePopMaxNote";
@@ -22,6 +26,8 @@ static NSString * kJp_interactivePopMaxNote = @"Jp_interactivePopMaxNote";
 static NSString * kJp_closePopForCurrentViewControllerNote = @"Jp_closePopForCurrentViewControllerNote";
 // a note for close pop gesture for all view controllers.
 static NSString * kJp_closePopForAllViewControllersNote = @"Jp_closePopForAllViewControllersNote";
+// a note for change statusBarStyle.
+static NSString * kJp_prefersStatusBarStyleNote = @"kJp_prefersStatusBarStyleNote";
 
 @interface UINavigationController (JPFullScreenPopGesture)
 
@@ -71,6 +77,15 @@ static NSString * kJp_closePopForAllViewControllersNote = @"Jp_closePopForAllVie
  * 实现左滑left-slip push到下一个控制器的代理.
  */
 @property(nonatomic)id<JPNavigationControllerDelegate> jp_pushDelegate;
+
+/*!
+ * \~english
+ * The style of status bar.
+ *
+ * \~chinese
+ * 状态栏样式(注意: 这个开关会影响全局).
+ */
+@property(nonatomic)NSInteger jp_prefersStatusBarStyle;
 
 /*!
  * \~english

@@ -39,6 +39,10 @@ static NSString *reuseID = @"reuse";
     // Become the delegate of JPNavigationControllerDelegate protocol and, implemented protocol method, then you own left-slip to push function.
     // 成为JPNavigationControllerDelegate协议的代理, 实现协议方法即可拥有左滑push功能.
     self.navigationController.jp_pushDelegate = self;
+    
+    // Custom status bar style.
+    // 自定义状态栏的样式(注意: 这个开关会影响全局).
+    self.navigationController.jp_prefersStatusBarStyle = JPStatusBarStyleLight;
 }
 
 
