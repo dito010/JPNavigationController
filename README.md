@@ -168,6 +168,7 @@ self.navigationController.jp_closePopForAllViewController = YES;
 
 ```objective-c
 Objective-C:
+
 self.navigationController.jp_prefersStatusBarStyle = JPStatusBarStyleLight;
 ```
 
@@ -355,6 +356,7 @@ self.navigationController.jp_closePopForAllViewController = YES;
 #### 选择状态栏样式
 ```objective-c
 Objective-C:
+
 self.navigationController.jp_prefersStatusBarStyle = JPStatusBarStyleLight;
 ```
 
