@@ -3,7 +3,7 @@
 <p align="center" >
 <img src="Images/logo.png" title="JPNavigationController logo" float=left>
 </p>
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/pod-1.2.5-brightgreen.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/platform-iOS-ff69b4.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/about%20me-NewPan-blue.svg)](http://www.jianshu.com/users/e2f2d779c022/latest_articles)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/pod-1.2.6-brightgreen.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/platform-iOS-ff69b4.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/about%20me-NewPan-blue.svg)](http://www.jianshu.com/users/e2f2d779c022/latest_articles)
 
 This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for each single support. 
 
@@ -164,6 +164,12 @@ Objective-C:
 self.navigationController.jp_closePopForAllViewController = YES;
 ```
 
+#### Perfers status bar style
+
+```objective-c
+Objective-C:
+self.navigationController.jp_prefersStatusBarStyle = JPStatusBarStyleLight;
+```
 
 Installation
 ------------
@@ -180,7 +186,7 @@ There are two ways to use JPNavigationController in your project:
 ```
 platform :ios, '8.0'
 target “YourProjectName” do
-pod 'JPNavigationController', '~> 1.2.5'
+pod 'JPNavigationController', '~> 1.2.6'
 end
 ```
 
@@ -346,6 +352,11 @@ Objective-C:
 self.navigationController.jp_closePopForAllViewController = YES;
 ```
 
+#### 选择状态栏样式
+```objective-c
+Objective-C:
+self.navigationController.jp_prefersStatusBarStyle = JPStatusBarStyleLight;
+```
 
 集成到你的项目
 ------------
@@ -362,7 +373,7 @@ self.navigationController.jp_closePopForAllViewController = YES;
 ```
 platform :ios, '8.0'
 target “YourProjectName” do
-pod 'JPNavigationController', '~> 1.2.5'
+pod 'JPNavigationController', '~> 1.2.6'
 end
 ```
 
