@@ -3,7 +3,8 @@
 <p align="center" >
 <img src="Images/logo.png" title="JPNavigationController logo" float=left>
 </p>
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/pod-1.2.6-brightgreen.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/platform-iOS-ff69b4.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/about%20me-NewPan-blue.svg)](http://www.jianshu.com/users/e2f2d779c022/latest_articles)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/pod-1.2.6-green.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/platform-iOS-ff69b4.svg)](https://github.com/Chris-Pan/JPNavigationController) [![pod](https://img.shields.io/badge/about%20me-NewPan-blue.svg)](http://www.jianshu.com/users/e2f2d779c022/latest_articles)
+![pod](https://img.shields.io/travis/rust-lang/rust/master.svg)
 
 This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for each single support. 
 
