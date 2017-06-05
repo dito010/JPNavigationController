@@ -1,9 +1,13 @@
-//
-//  JPAnimatedTransitioningBase.m
-//  CustomPopAnimation
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 #import "JPAnimatedTransitioningBase.h"
 
@@ -11,9 +15,11 @@
 
 @property (nonatomic, weak) id <UIViewControllerContextTransitioning> transitionContext;
 
-@property (nonatomic, weak) UIViewController  *fromViewController;
-@property (nonatomic, weak) UIViewController  *toViewController;
-@property (nonatomic, weak) UIView            *containerView;
+@property (nonatomic, weak) UIViewController *fromViewController;
+
+@property (nonatomic, weak) UIViewController *toViewController;
+
+@property (nonatomic, weak) UIView *containerView;
 
 @end
 
@@ -32,7 +38,6 @@
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    
     self.fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     self.toViewController   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     self.containerView      = [transitionContext containerView];

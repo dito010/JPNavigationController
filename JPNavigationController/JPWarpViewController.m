@@ -1,34 +1,29 @@
-//
-//  JPWarpViewController.m
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 #import "JPWarpViewController.h"
 #import "JPWarpNavigationController.h"
 #import "UIViewController+JPNavigationController.h"
 
 @interface JPWarpViewController()
-/*!
- * \~english
- * The warpNav after warped the viewController user passed in(Lazy loading)
- *
- * \~chinese
- * 包装了用户传进来的控制器以后的warpNav(懒加载的)
+/**
+ * The warpNav after warped the viewController user passed in(Lazy loading).
  */
 @property(nonatomic, weak)JPWarpNavigationController *warpNav;
 
-/*!
- * \~english
- * The view Controller user passed in(the view controller be pushed in navigationController's stack now)
- * Use for help find the viewController wanna pop to in method popToViewController:animated:
- * @see jp_rootNavigationController
+/**
+ * The view Controller user passed in(the view controller be pushed in navigationController's stack now).
+ * Use for help find the viewController wanna pop to in method popToViewController:animated:.
  *
- * \~chinese
- * 用户传进来的控制器(当前压入栈的控制器)
- * 用于辅助 popToViewController:animated: 找到要pop到的控制器
- * @see jp_rootNavigationController
+ * @see jp_rootNavigationController.
  */
 @property(nonatomic, weak)UIViewController *jp_passInViewController;
 

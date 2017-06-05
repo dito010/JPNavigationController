@@ -1,13 +1,17 @@
-//
-//  JPNavigationControllerKit.h
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 /**
  * You only to import this file to your project when you use this framework.
- * 当你要使用这个框架的时候, 只需要导入这个头文件就可以了.
+ *
  * @see JPNavigationController.
  * @see UINavigationController+JPLink.
  * @see UINavigationController+JPFullScreenPopGesture.

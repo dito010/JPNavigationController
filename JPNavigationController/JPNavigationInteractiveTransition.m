@@ -1,9 +1,13 @@
-//
-//  JPNavigationInteractiveTransition.m
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 #import "JPNavigationInteractiveTransition.h"
 #import "JPPushAnimatedTransitioning.h"
@@ -12,48 +16,28 @@
 
 @interface JPNavigationInteractiveTransition()
 
-/*!
- * \~english
+/**
  * root navigation controller.
- *
- * \~chinese
- * 根导航控制器.
  */
 @property (nonatomic, weak) JPNavigationController *nav;
 
-/*!
- * \~english
+/**
  * Percent Driven Interactive Transition.
- *
- * \~chinese
- * 百分比手势驱动交互实例.
  */
 @property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 
-/*!
- * \~english
- * is Gesture Push.
- *
- * \~chinese
- * 是否是Push.
+/**
+ * Is Gesture Push.
  */
 @property(nonatomic, assign)BOOL isGesturePush;
 
-/*!
- * \~english
+/**
  * Animation srouce.
- *
- * \~chinese
- * 动画提供者.
  */
 @property(nonatomic, strong)JPPushAnimatedTransitioning *transitioning;
 
-/*!
- * \~english
+/**
  * Snap image.
- *
- * \~chinese
- * 截屏图片.
  */
 @property(nonatomic, strong)UIImage *snapImage;
 
@@ -68,8 +52,8 @@ const CGFloat JPPushBorderlineDelta = 0.5;
     self = [super init];
     if (self) {
         self.nav = (JPNavigationController *)nav;
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledRight:) name:kJp_navigationDidSrolledRight object:nil];
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledLeft:) name:kJp_navigationDidSrolledLeft object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledRight:) name:JPNavigationControllerDidScrolledRightNotification object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(navigationDidScrolledLeft:) name:JPNavigationControllerDidScrolledLeftNotification object:nil];
     }
     return self;
 }

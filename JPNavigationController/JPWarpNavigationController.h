@@ -1,9 +1,13 @@
-//
-//  JPWarpNavigationController.h
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 /**
  * This class use for warping the viewController user passed in, this framework will warp all viewControllers user passed in by this class, so actually set navigationBar's properties of this class's  when user set navigationBar's properties.
@@ -20,21 +24,19 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface JPWarpNavigationController : UINavigationController
 
-/*!
- * \~english
+/**
  * The UIViewController(JPWarpViewController class) warp this class.
  * Be used for manage close pop for single viewController.
- * @see JPManageSinglePopVCTool
- * @see closePopForCurViewControllerNote: in JPNavigationController
  *
- * \~chinese
- * Nav外包装的viewController(JPWarpViewController class).
- * 用来辅助管理关闭单个页面的pop手势.
  * @see JPManageSinglePopVCTool
- * @see closePopForCurViewControllerNote: in JPNavigationController
+ * @see closePopForCurViewControllerNote: in JPNavigationController.
  */
 @property(nonatomic, weak)UIViewController *jp_warpViewController;
 
 @end
+
+NS_ASSUME_NONNULL_END

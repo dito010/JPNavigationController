@@ -1,8 +1,13 @@
-//
-//  UIViewController+JPNavigationController.h
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 /**
  * You do not need to care about this category.
@@ -13,28 +18,24 @@
 #import "JPNavigationController.h"
 #import "JPWarpViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIViewController (JPNavigationController)
 
-/*!
- * \~english
+/**
  * The warped navigation controller.
- * @see JPWarpNavigationController.
  *
- * \~chinese
- * 每个VC外包的导航控制器.
  * @see JPWarpNavigationController.
  */
 @property (nonatomic) JPNavigationController *jp_navigationController;
 
-/*!
- * \~english
+/**
  * The warped view Controller.
- * @see JPWarpViewController.
  *
- * \~chinese
- * 用户传进来的VC外包的UIViewController.
  * @see JPWarpViewController.
  */
 @property(nonatomic)JPWarpViewController *jp_warpViewController;
 
 @end
+
+NS_ASSUME_NONNULL_END

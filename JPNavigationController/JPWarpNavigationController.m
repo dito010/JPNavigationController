@@ -1,12 +1,15 @@
-//
-//  JPWarpNavigationController.m
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 #import "JPWarpNavigationController.h"
-#import "JPLinkContainerView.h"
 #import "UINavigationController+JPLink.h"
 #import "JPNavigationBar.h"
 #import "JPNavigationController.h"
@@ -16,21 +19,17 @@
 
 @interface JPWarpNavigationController()
 
-/*!
- * \~english
+/**
  * Compatible pop gesture's link view in screen bottom.
- *
- * \~chinese
- * 兼容pop手势的底部联动视图
  */
 @property(nonatomic, strong)JPLinkContainerView *linkView;
 
 @end
 
-
 #define kDefaultBackImageName @"JPImage.bundle/backImage"
 #define JPScreenH [UIScreen mainScreen].bounds.size.height
 #define JPScreenW [UIScreen mainScreen].bounds.size.width
+
 @implementation JPWarpNavigationController
 
 -(JPLinkContainerView *)linkView{
@@ -52,7 +51,6 @@
     JPNavigationBar *navBar = [[JPNavigationBar alloc]init];
     [self setValue:navBar forKey:@"navigationBar"];
     
-    
     // Save root navigation Controller.
     // 保存根导航控制器
     
@@ -63,12 +61,12 @@
     // 监听最大pop手势范围改变通知
     
     SEL popNoteSel = @selector(setJp_interactivePopMaxAllowedInitialDistanceToLeftEdgeNote:);
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:popNoteSel name:kJp_interactivePopMaxNote object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:popNoteSel name:JPNavigationControllerDidPopMaxNotification object:nil];
 }
 
 
 -(void)dealloc{
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:kJp_interactivePopMaxNote object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:JPNavigationControllerDidPopMaxNotification object:nil];
     self.jp_rootNavigationController = nil;
     
     if (self.jp_linkView.superview) {

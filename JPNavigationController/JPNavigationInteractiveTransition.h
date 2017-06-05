@@ -1,9 +1,13 @@
-//
-//  JPNavigationInteractiveTransition.h
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 /**
  * This class is responsible for observe user's push and pop action. it will set self be the delegate of root navigation controller and alloc UIPercentDrivenInteractiveTransition instance, return custom push transition animation when user push. it will set root navigation controller delegate be nil, let system handle pop gesture when pop.
@@ -12,19 +16,18 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class UIViewController, UIPercentDrivenInteractiveTransition, JPNavigationInteractiveTransition;
 
 @protocol JPNavigationInteractiveTransitionDelegate <NSObject>
 
 @required
-/*!
- * \~english
+
+/**
  * This method will be called when user left-slip.
- * @param navInTr   the delegate of root navigation controller.
  *
- * \~chinese
- * 当用户左滑push的时候会调用这个方法.
- * @param navInTr   根导航控制器代理.
+ * @param navInTr   the delegate of root navigation controller.
  */
 -(void)didPushLeft:(JPNavigationInteractiveTransition *)navInTr;
 
@@ -32,37 +35,24 @@
 
 @interface JPNavigationInteractiveTransition : NSObject <UINavigationControllerDelegate>
 
-/*!
- * \~english
- * delegate
- *
- * \~chinese
- * 代理
- */
-@property(nonatomic, strong)id<JPNavigationInteractiveTransitionDelegate> delegate;
+@property(nonatomic, weak)id<JPNavigationInteractiveTransitionDelegate> delegate;
 
-/*!
- * \~english
+/**
  * Initialze Method.
- * @param nav  root navigation controller.
- * @return     a instance.
  *
- * \~chinese
- * 初始化方法
- * @param nav  根导航控制器.
- * @return     当前类的实例对象.
+ * @param nav  root navigation controller.
+ *
+ * @return     a instance.
  */
 - (instancetype)initWithViewController:(UINavigationController *)nav;
 
-/*!
- * \~english
+/**
  * This method will be called when pan gesture be triggered.
- * @param recognizer    pan gesture.
  *
- * \~chinese
- * 当触发pan手势的时候会来到这个方法.
- * @param recognizer    pan手势.
+ * @param recognizer  pan gesture.
  */
 - (void)handleControllerPop:(UIPanGestureRecognizer *)recognizer;
 
 @end
+
+NS_ASSUME_NONNULL_END

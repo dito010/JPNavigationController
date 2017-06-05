@@ -7,25 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F5187001DF55B6C005FD35D /* UIViewController+JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5186FF1DF55B6C005FD35D /* UIViewController+JPNavigationController.m */; };
+		4880E1A31EE5AA2100220CE5 /* JPAnimatedTransitioningBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1861EE5AA2100220CE5 /* JPAnimatedTransitioningBase.m */; };
+		4880E1A41EE5AA2100220CE5 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1881EE5AA2100220CE5 /* JPFullScreenPopGestureRecognizerDelegate.m */; };
+		4880E1A51EE5AA2100220CE5 /* JPImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4880E1891EE5AA2100220CE5 /* JPImage.bundle */; };
+		4880E1A71EE5AA2100220CE5 /* JPManageSinglePopVCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E18D1EE5AA2100220CE5 /* JPManageSinglePopVCTool.m */; };
+		4880E1A81EE5AA2100220CE5 /* JPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E18F1EE5AA2100220CE5 /* JPNavigationBar.m */; };
+		4880E1A91EE5AA2100220CE5 /* JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1911EE5AA2100220CE5 /* JPNavigationController.m */; };
+		4880E1AA1EE5AA2100220CE5 /* JPNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1941EE5AA2100220CE5 /* JPNavigationInteractiveTransition.m */; };
+		4880E1AB1EE5AA2100220CE5 /* JPPushAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1961EE5AA2100220CE5 /* JPPushAnimatedTransitioning.m */; };
+		4880E1AC1EE5AA2100220CE5 /* JPSnapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1981EE5AA2100220CE5 /* JPSnapTool.m */; };
+		4880E1AD1EE5AA2100220CE5 /* JPWarpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E19A1EE5AA2100220CE5 /* JPWarpNavigationController.m */; };
+		4880E1AE1EE5AA2100220CE5 /* JPWarpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E19C1EE5AA2100220CE5 /* JPWarpViewController.m */; };
+		4880E1AF1EE5AA2100220CE5 /* UINavigationController+JPFullScreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E19E1EE5AA2100220CE5 /* UINavigationController+JPFullScreenPopGesture.m */; };
+		4880E1B01EE5AA2100220CE5 /* UINavigationController+JPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1A01EE5AA2100220CE5 /* UINavigationController+JPLink.m */; };
+		4880E1B11EE5AA2100220CE5 /* UIViewController+JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4880E1A21EE5AA2100220CE5 /* UIViewController+JPNavigationController.m */; };
 		C430A6C2A14F90F88DE2FD8D /* libPods-JPNavigationControllerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E39489FDC98927C7F1B79F /* libPods-JPNavigationControllerDemo.a */; };
-		CF2697251DE3588C00953D37 /* JPPushAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */; };
 		CF55A0B01DDF71170002CDF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0AF1DDF71170002CDF7 /* main.m */; };
 		CF55A0B31DDF71170002CDF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0B21DDF71170002CDF7 /* AppDelegate.m */; };
 		CF55A0BB1DDF71170002CDF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0BA1DDF71170002CDF7 /* Assets.xcassets */; };
-		CF55A0E41DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0C71DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m */; };
-		CF55A0E51DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0C91DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m */; };
-		CF55A0E61DDF71AC0002CDF7 /* JPImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0CA1DDF71AC0002CDF7 /* JPImage.bundle */; };
-		CF55A0E71DDF71AC0002CDF7 /* JPLinkContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0CC1DDF71AC0002CDF7 /* JPLinkContainerView.m */; };
-		CF55A0E81DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0CE1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m */; };
-		CF55A0E91DDF71AC0002CDF7 /* JPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D01DDF71AC0002CDF7 /* JPNavigationBar.m */; };
-		CF55A0EA1DDF71AC0002CDF7 /* JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D21DDF71AC0002CDF7 /* JPNavigationController.m */; };
-		CF55A0EB1DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */; };
-		CF55A0ED1DDF71AC0002CDF7 /* JPSnapTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */; };
-		CF55A0EE1DDF71AC0002CDF7 /* JPWarpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DB1DDF71AC0002CDF7 /* JPWarpNavigationController.m */; };
-		CF55A0EF1DDF71AC0002CDF7 /* JPWarpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */; };
-		CF55A0F01DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */; };
-		CF55A0F11DDF71AC0002CDF7 /* UINavigationController+JPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */; };
 		CF55A0F41DDF71F40002CDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF55A0F31DDF71F40002CDF7 /* Main.storyboard */; };
 		CF55A0F71DDF721A0002CDF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0F61DDF721A0002CDF7 /* ViewController.m */; };
 		CF55A0FD1DDF72370002CDF7 /* JPLinkSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = CF55A0F91DDF72370002CDF7 /* JPLinkSubview.m */; };
@@ -40,42 +39,40 @@
 
 /* Begin PBXFileReference section */
 		04E39489FDC98927C7F1B79F /* libPods-JPNavigationControllerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JPNavigationControllerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F5186FE1DF55B6C005FD35D /* UIViewController+JPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JPNavigationController.h"; sourceTree = "<group>"; };
-		5F5186FF1DF55B6C005FD35D /* UIViewController+JPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JPNavigationController.m"; sourceTree = "<group>"; };
-		CF2697231DE3588C00953D37 /* JPPushAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPushAnimatedTransitioning.h; sourceTree = "<group>"; };
-		CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPushAnimatedTransitioning.m; sourceTree = "<group>"; };
+		4880E1851EE5AA2100220CE5 /* JPAnimatedTransitioningBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAnimatedTransitioningBase.h; sourceTree = "<group>"; };
+		4880E1861EE5AA2100220CE5 /* JPAnimatedTransitioningBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAnimatedTransitioningBase.m; sourceTree = "<group>"; };
+		4880E1871EE5AA2100220CE5 /* JPFullScreenPopGestureRecognizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFullScreenPopGestureRecognizerDelegate.h; sourceTree = "<group>"; };
+		4880E1881EE5AA2100220CE5 /* JPFullScreenPopGestureRecognizerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFullScreenPopGestureRecognizerDelegate.m; sourceTree = "<group>"; };
+		4880E1891EE5AA2100220CE5 /* JPImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPImage.bundle; sourceTree = "<group>"; };
+		4880E18C1EE5AA2100220CE5 /* JPManageSinglePopVCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPManageSinglePopVCTool.h; sourceTree = "<group>"; };
+		4880E18D1EE5AA2100220CE5 /* JPManageSinglePopVCTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPManageSinglePopVCTool.m; sourceTree = "<group>"; };
+		4880E18E1EE5AA2100220CE5 /* JPNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationBar.h; sourceTree = "<group>"; };
+		4880E18F1EE5AA2100220CE5 /* JPNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationBar.m; sourceTree = "<group>"; };
+		4880E1901EE5AA2100220CE5 /* JPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationController.h; sourceTree = "<group>"; };
+		4880E1911EE5AA2100220CE5 /* JPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationController.m; sourceTree = "<group>"; };
+		4880E1921EE5AA2100220CE5 /* JPNavigationControllerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationControllerKit.h; sourceTree = "<group>"; };
+		4880E1931EE5AA2100220CE5 /* JPNavigationInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationInteractiveTransition.h; sourceTree = "<group>"; };
+		4880E1941EE5AA2100220CE5 /* JPNavigationInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationInteractiveTransition.m; sourceTree = "<group>"; };
+		4880E1951EE5AA2100220CE5 /* JPPushAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPushAnimatedTransitioning.h; sourceTree = "<group>"; };
+		4880E1961EE5AA2100220CE5 /* JPPushAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPushAnimatedTransitioning.m; sourceTree = "<group>"; };
+		4880E1971EE5AA2100220CE5 /* JPSnapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSnapTool.h; sourceTree = "<group>"; };
+		4880E1981EE5AA2100220CE5 /* JPSnapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSnapTool.m; sourceTree = "<group>"; };
+		4880E1991EE5AA2100220CE5 /* JPWarpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWarpNavigationController.h; sourceTree = "<group>"; };
+		4880E19A1EE5AA2100220CE5 /* JPWarpNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPWarpNavigationController.m; sourceTree = "<group>"; };
+		4880E19B1EE5AA2100220CE5 /* JPWarpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWarpViewController.h; sourceTree = "<group>"; };
+		4880E19C1EE5AA2100220CE5 /* JPWarpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPWarpViewController.m; sourceTree = "<group>"; };
+		4880E19D1EE5AA2100220CE5 /* UINavigationController+JPFullScreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JPFullScreenPopGesture.h"; sourceTree = "<group>"; };
+		4880E19E1EE5AA2100220CE5 /* UINavigationController+JPFullScreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPFullScreenPopGesture.m"; sourceTree = "<group>"; };
+		4880E19F1EE5AA2100220CE5 /* UINavigationController+JPLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JPLink.h"; sourceTree = "<group>"; };
+		4880E1A01EE5AA2100220CE5 /* UINavigationController+JPLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPLink.m"; sourceTree = "<group>"; };
+		4880E1A11EE5AA2100220CE5 /* UIViewController+JPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JPNavigationController.h"; sourceTree = "<group>"; };
+		4880E1A21EE5AA2100220CE5 /* UIViewController+JPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JPNavigationController.m"; sourceTree = "<group>"; };
 		CF55A0AB1DDF71170002CDF7 /* JPNavigationControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPNavigationControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF55A0AF1DDF71170002CDF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF55A0B11DDF71170002CDF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF55A0B21DDF71170002CDF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CF55A0BA1DDF71170002CDF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF55A0BF1DDF71170002CDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF55A0C61DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAnimatedTransitioningBase.h; sourceTree = "<group>"; };
-		CF55A0C71DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAnimatedTransitioningBase.m; sourceTree = "<group>"; };
-		CF55A0C81DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPFullScreenPopGestureRecognizerDelegate.h; sourceTree = "<group>"; };
-		CF55A0C91DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPFullScreenPopGestureRecognizerDelegate.m; sourceTree = "<group>"; };
-		CF55A0CA1DDF71AC0002CDF7 /* JPImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPImage.bundle; sourceTree = "<group>"; };
-		CF55A0CB1DDF71AC0002CDF7 /* JPLinkContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLinkContainerView.h; sourceTree = "<group>"; };
-		CF55A0CC1DDF71AC0002CDF7 /* JPLinkContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLinkContainerView.m; sourceTree = "<group>"; };
-		CF55A0CD1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPManageSinglePopVCTool.h; sourceTree = "<group>"; };
-		CF55A0CE1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPManageSinglePopVCTool.m; sourceTree = "<group>"; };
-		CF55A0CF1DDF71AC0002CDF7 /* JPNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationBar.h; sourceTree = "<group>"; };
-		CF55A0D01DDF71AC0002CDF7 /* JPNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationBar.m; sourceTree = "<group>"; };
-		CF55A0D11DDF71AC0002CDF7 /* JPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationController.h; sourceTree = "<group>"; };
-		CF55A0D21DDF71AC0002CDF7 /* JPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationController.m; sourceTree = "<group>"; };
-		CF55A0D31DDF71AC0002CDF7 /* JPNavigationControllerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationControllerKit.h; sourceTree = "<group>"; };
-		CF55A0D41DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationInteractiveTransition.h; sourceTree = "<group>"; };
-		CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationInteractiveTransition.m; sourceTree = "<group>"; };
-		CF55A0D81DDF71AC0002CDF7 /* JPSnapTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSnapTool.h; sourceTree = "<group>"; };
-		CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSnapTool.m; sourceTree = "<group>"; };
-		CF55A0DA1DDF71AC0002CDF7 /* JPWarpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWarpNavigationController.h; sourceTree = "<group>"; };
-		CF55A0DB1DDF71AC0002CDF7 /* JPWarpNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPWarpNavigationController.m; sourceTree = "<group>"; };
-		CF55A0DC1DDF71AC0002CDF7 /* JPWarpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWarpViewController.h; sourceTree = "<group>"; };
-		CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPWarpViewController.m; sourceTree = "<group>"; };
-		CF55A0DE1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JPFullScreenPopGesture.h"; sourceTree = "<group>"; };
-		CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPFullScreenPopGesture.m"; sourceTree = "<group>"; };
-		CF55A0E01DDF71AC0002CDF7 /* UINavigationController+JPLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JPLink.h"; sourceTree = "<group>"; };
-		CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JPLink.m"; sourceTree = "<group>"; };
 		CF55A0F31DDF71F40002CDF7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CF55A0F51DDF721A0002CDF7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CF55A0F61DDF721A0002CDF7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -107,6 +104,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4880E1841EE5AA2100220CE5 /* JPNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				4880E1851EE5AA2100220CE5 /* JPAnimatedTransitioningBase.h */,
+				4880E1861EE5AA2100220CE5 /* JPAnimatedTransitioningBase.m */,
+				4880E1871EE5AA2100220CE5 /* JPFullScreenPopGestureRecognizerDelegate.h */,
+				4880E1881EE5AA2100220CE5 /* JPFullScreenPopGestureRecognizerDelegate.m */,
+				4880E1891EE5AA2100220CE5 /* JPImage.bundle */,
+				4880E18C1EE5AA2100220CE5 /* JPManageSinglePopVCTool.h */,
+				4880E18D1EE5AA2100220CE5 /* JPManageSinglePopVCTool.m */,
+				4880E18E1EE5AA2100220CE5 /* JPNavigationBar.h */,
+				4880E18F1EE5AA2100220CE5 /* JPNavigationBar.m */,
+				4880E1901EE5AA2100220CE5 /* JPNavigationController.h */,
+				4880E1911EE5AA2100220CE5 /* JPNavigationController.m */,
+				4880E1921EE5AA2100220CE5 /* JPNavigationControllerKit.h */,
+				4880E1931EE5AA2100220CE5 /* JPNavigationInteractiveTransition.h */,
+				4880E1941EE5AA2100220CE5 /* JPNavigationInteractiveTransition.m */,
+				4880E1951EE5AA2100220CE5 /* JPPushAnimatedTransitioning.h */,
+				4880E1961EE5AA2100220CE5 /* JPPushAnimatedTransitioning.m */,
+				4880E1971EE5AA2100220CE5 /* JPSnapTool.h */,
+				4880E1981EE5AA2100220CE5 /* JPSnapTool.m */,
+				4880E1991EE5AA2100220CE5 /* JPWarpNavigationController.h */,
+				4880E19A1EE5AA2100220CE5 /* JPWarpNavigationController.m */,
+				4880E19B1EE5AA2100220CE5 /* JPWarpViewController.h */,
+				4880E19C1EE5AA2100220CE5 /* JPWarpViewController.m */,
+				4880E19D1EE5AA2100220CE5 /* UINavigationController+JPFullScreenPopGesture.h */,
+				4880E19E1EE5AA2100220CE5 /* UINavigationController+JPFullScreenPopGesture.m */,
+				4880E19F1EE5AA2100220CE5 /* UINavigationController+JPLink.h */,
+				4880E1A01EE5AA2100220CE5 /* UINavigationController+JPLink.m */,
+				4880E1A11EE5AA2100220CE5 /* UIViewController+JPNavigationController.h */,
+				4880E1A21EE5AA2100220CE5 /* UIViewController+JPNavigationController.m */,
+			);
+			name = JPNavigationController;
+			path = ../../JPNavigationController;
+			sourceTree = "<group>";
+		};
 		5315A53634E41D8BED554680 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +170,7 @@
 		CF55A0AD1DDF71170002CDF7 /* JPNavigationControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CF55A0C51DDF71AC0002CDF7 /* JPNavigationController */,
+				4880E1841EE5AA2100220CE5 /* JPNavigationController */,
 				CF55A0B11DDF71170002CDF7 /* AppDelegate.h */,
 				CF55A0B21DDF71170002CDF7 /* AppDelegate.m */,
 				CF55A0F31DDF71F40002CDF7 /* Main.storyboard */,
@@ -168,43 +201,6 @@
 				CF55A0AF1DDF71170002CDF7 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CF55A0C51DDF71AC0002CDF7 /* JPNavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				CF55A0C61DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.h */,
-				CF55A0C71DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m */,
-				CF55A0C81DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.h */,
-				CF55A0C91DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m */,
-				CF55A0CA1DDF71AC0002CDF7 /* JPImage.bundle */,
-				CF55A0CB1DDF71AC0002CDF7 /* JPLinkContainerView.h */,
-				CF55A0CC1DDF71AC0002CDF7 /* JPLinkContainerView.m */,
-				CF55A0CD1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.h */,
-				CF55A0CE1DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m */,
-				CF55A0CF1DDF71AC0002CDF7 /* JPNavigationBar.h */,
-				CF55A0D01DDF71AC0002CDF7 /* JPNavigationBar.m */,
-				CF55A0D11DDF71AC0002CDF7 /* JPNavigationController.h */,
-				CF55A0D21DDF71AC0002CDF7 /* JPNavigationController.m */,
-				CF55A0D31DDF71AC0002CDF7 /* JPNavigationControllerKit.h */,
-				CF55A0D41DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.h */,
-				CF55A0D51DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m */,
-				CF2697231DE3588C00953D37 /* JPPushAnimatedTransitioning.h */,
-				CF2697241DE3588C00953D37 /* JPPushAnimatedTransitioning.m */,
-				CF55A0D81DDF71AC0002CDF7 /* JPSnapTool.h */,
-				CF55A0D91DDF71AC0002CDF7 /* JPSnapTool.m */,
-				CF55A0DA1DDF71AC0002CDF7 /* JPWarpNavigationController.h */,
-				CF55A0DB1DDF71AC0002CDF7 /* JPWarpNavigationController.m */,
-				CF55A0DC1DDF71AC0002CDF7 /* JPWarpViewController.h */,
-				CF55A0DD1DDF71AC0002CDF7 /* JPWarpViewController.m */,
-				CF55A0DE1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.h */,
-				CF55A0DF1DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m */,
-				CF55A0E01DDF71AC0002CDF7 /* UINavigationController+JPLink.h */,
-				CF55A0E11DDF71AC0002CDF7 /* UINavigationController+JPLink.m */,
-				5F5186FE1DF55B6C005FD35D /* UIViewController+JPNavigationController.h */,
-				5F5186FF1DF55B6C005FD35D /* UIViewController+JPNavigationController.m */,
-			);
-			path = JPNavigationController;
 			sourceTree = "<group>";
 		};
 		EA51D6E6746475BD3A6F7B8C /* Frameworks */ = {
@@ -278,10 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF55A0FE1DDF72370002CDF7 /* JPLinkSubview.xib in Resources */,
+				4880E1A51EE5AA2100220CE5 /* JPImage.bundle in Resources */,
 				CF55A1041DDF72480002CDF7 /* JPThirdVc.xib in Resources */,
 				CF55A1101DDF744E0002CDF7 /* JPFourthVc.xib in Resources */,
 				CF55A0BB1DDF71170002CDF7 /* Assets.xcassets in Resources */,
-				CF55A0E61DDF71AC0002CDF7 /* JPImage.bundle in Resources */,
 				CF55A10B1DDF72BD0002CDF7 /* LaunchScreen.storyboard in Resources */,
 				CF55A0F41DDF71F40002CDF7 /* Main.storyboard in Resources */,
 			);
@@ -343,25 +339,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF55A0F71DDF721A0002CDF7 /* ViewController.m in Sources */,
-				CF55A0E41DDF71AC0002CDF7 /* JPAnimatedTransitioningBase.m in Sources */,
-				CF55A0EA1DDF71AC0002CDF7 /* JPNavigationController.m in Sources */,
-				CF55A0EB1DDF71AC0002CDF7 /* JPNavigationInteractiveTransition.m in Sources */,
-				CF55A0E71DDF71AC0002CDF7 /* JPLinkContainerView.m in Sources */,
-				CF55A0ED1DDF71AC0002CDF7 /* JPSnapTool.m in Sources */,
-				CF55A0EE1DDF71AC0002CDF7 /* JPWarpNavigationController.m in Sources */,
+				4880E1AC1EE5AA2100220CE5 /* JPSnapTool.m in Sources */,
+				4880E1AE1EE5AA2100220CE5 /* JPWarpViewController.m in Sources */,
+				4880E1A71EE5AA2100220CE5 /* JPManageSinglePopVCTool.m in Sources */,
+				4880E1A41EE5AA2100220CE5 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */,
+				4880E1A31EE5AA2100220CE5 /* JPAnimatedTransitioningBase.m in Sources */,
+				4880E1B11EE5AA2100220CE5 /* UIViewController+JPNavigationController.m in Sources */,
 				CF55A1031DDF72480002CDF7 /* JPThirdVc.m in Sources */,
-				CF55A0E91DDF71AC0002CDF7 /* JPNavigationBar.m in Sources */,
 				CF55A0B31DDF71170002CDF7 /* AppDelegate.m in Sources */,
-				CF55A0E81DDF71AC0002CDF7 /* JPManageSinglePopVCTool.m in Sources */,
+				4880E1A81EE5AA2100220CE5 /* JPNavigationBar.m in Sources */,
 				CF55A0B01DDF71170002CDF7 /* main.m in Sources */,
+				4880E1AD1EE5AA2100220CE5 /* JPWarpNavigationController.m in Sources */,
+				4880E1AA1EE5AA2100220CE5 /* JPNavigationInteractiveTransition.m in Sources */,
 				CF55A10F1DDF744E0002CDF7 /* JPFourthVc.m in Sources */,
-				CF55A0EF1DDF71AC0002CDF7 /* JPWarpViewController.m in Sources */,
 				CF55A0FF1DDF72370002CDF7 /* JPSecondVC.m in Sources */,
-				CF55A0F01DDF71AC0002CDF7 /* UINavigationController+JPFullScreenPopGesture.m in Sources */,
-				CF55A0E51DDF71AC0002CDF7 /* JPFullScreenPopGestureRecognizerDelegate.m in Sources */,
-				CF55A0F11DDF71AC0002CDF7 /* UINavigationController+JPLink.m in Sources */,
-				5F5187001DF55B6C005FD35D /* UIViewController+JPNavigationController.m in Sources */,
-				CF2697251DE3588C00953D37 /* JPPushAnimatedTransitioning.m in Sources */,
+				4880E1B01EE5AA2100220CE5 /* UINavigationController+JPLink.m in Sources */,
+				4880E1A91EE5AA2100220CE5 /* JPNavigationController.m in Sources */,
+				4880E1AB1EE5AA2100220CE5 /* JPPushAnimatedTransitioning.m in Sources */,
+				4880E1AF1EE5AA2100220CE5 /* UINavigationController+JPFullScreenPopGesture.m in Sources */,
 				CF55A0FD1DDF72370002CDF7 /* JPLinkSubview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

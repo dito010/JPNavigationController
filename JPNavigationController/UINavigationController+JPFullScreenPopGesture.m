@@ -1,12 +1,25 @@
-//
-//  UINavigationController+JPFullScreenPopGesture.m
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 #import "UINavigationController+JPFullScreenPopGesture.h"
 #import "objc/runtime.h"
+
+// a note for max pop gesture change.
+NSString * const JPNavigationControllerDidPopMaxNotification = @"com.newpan.navigation.did.pop.max";
+// a note for close pop gesture for current view controller.
+NSString * const JPNavigationControllerClosePopForCurrentVCNotification = @"com.newpan.navigation.did.close.pop.for.current.viewController";
+// a note for close pop gesture for all view controllers.
+NSString * const JPNavigationControllerClosePopForAllVCNotification = @"com.newpan.navigation.did.close.pop.for.all.viewControllers";
+// a note for change statusBarStyle.
+NSString * const JPNavigationControllerDidChangedStatusBarNotification = @"com.newpan.navigation.did.changed.statusbar";
 
 @implementation UINavigationController (JPFullScreenPopGesture)
 
@@ -17,7 +30,7 @@
                                @"rootNavigationForCurVC" : nav,
                                @"tempValue" : @(jp_prefersStatusBarStyle)
                                };
-        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_prefersStatusBarStyleNote object:dict];
+        [[NSNotificationCenter defaultCenter]postNotificationName:JPNavigationControllerDidChangedStatusBarNotification object:dict];
     }
 }
 
@@ -39,7 +52,7 @@
                                @"navigation" : self,
                                @"tempValue" : @(jp_interactivePopMaxAllowedInitialDistanceToLeftEdge)
                                };
-        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_interactivePopMaxNote object:dict];
+        [[NSNotificationCenter defaultCenter]postNotificationName:JPNavigationControllerDidPopMaxNotification object:dict];
     }
 }
 
@@ -59,7 +72,7 @@
                                @"rootNavigationForCurVC" : nav,
                                @"tempValue" : @(jp_closePopForCurrentViewController)
                                };
-        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_closePopForCurrentViewControllerNote object:dict];
+        [[NSNotificationCenter defaultCenter]postNotificationName:JPNavigationControllerClosePopForCurrentVCNotification object:dict];
     }
 }
 
@@ -74,7 +87,7 @@
                                @"rootNavigationForAllVC" : nav,
                                @"tempValue" : @(jp_closePopForAllViewController)
                                };
-        [[NSNotificationCenter defaultCenter]postNotificationName:kJp_closePopForAllViewControllersNote object:dict];
+        [[NSNotificationCenter defaultCenter]postNotificationName:JPNavigationControllerClosePopForAllVCNotification object:dict];
     }
 }
 

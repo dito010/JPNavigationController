@@ -1,15 +1,24 @@
-//
-//  JPFullScreenPopGestureRecognizerDelegate.m
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 #import "JPFullScreenPopGestureRecognizerDelegate.h"
 #import "UIViewController+JPNavigationController.h"
 #import "UINavigationController+JPFullScreenPopGesture.h"
 #import "JPSnapTool.h"
 #import "JPManageSinglePopVCTool.h"
+
+// a note for navigation controller left slip.
+NSString * const JPNavigationControllerDidScrolledLeftNotification = @"com.newpan.navigation.did.scrolled.left.notification";
+// a note for navigation controller right slip.
+NSString * const JPNavigationControllerDidScrolledRightNotification = @"com.newpan.navigation.did.scrolled.right.notification";
 
 @implementation JPFullScreenPopGestureRecognizerDelegate
 
@@ -30,7 +39,7 @@
                                        @"navigationController" : self.navigationController
                                        };
                 // left-slip --> push.
-                [[NSNotificationCenter defaultCenter]postNotificationName:kJp_navigationDidSrolledLeft object:dict userInfo:nil];
+                [[NSNotificationCenter defaultCenter]postNotificationName:JPNavigationControllerDidScrolledLeftNotification object:dict userInfo:nil];
                 [gestureRecognizer removeTarget:_target action:action];
                 return YES;
             }
@@ -39,7 +48,6 @@
     }
     else{
         // right-slip --> pop.
-        
         
         // Forbid pop when the start point beyond user setted range for pop.
         // 当开始触发的点大于用户指定的最大触发点的时候, 禁止pop.
@@ -53,7 +61,7 @@
             if ([self.delegate respondsToSelector:@selector(navigationControllerRightSlipShouldBegain)]) {
                 BOOL result = [self.delegate navigationControllerRightSlipShouldBegain];
                 if (result) {
-                    [[NSNotificationCenter defaultCenter]postNotificationName:kJp_navigationDidSrolledRight object:self.navigationController userInfo:nil];
+                    [[NSNotificationCenter defaultCenter]postNotificationName:JPNavigationControllerDidScrolledRightNotification object:self.navigationController userInfo:nil];
                     [gestureRecognizer addTarget:_target action:action];
                 }
                 else{

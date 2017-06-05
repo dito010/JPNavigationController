@@ -1,9 +1,13 @@
-//
-//  JPNavigationController.m
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 #import "JPNavigationController.h"
 #import "UIViewController+JPNavigationController.h"
@@ -19,30 +23,18 @@
 
 @interface JPNavigationController()<JPNavigationInteractiveTransitionDelegate, JPFullScreenPopGestureRecognizerDelegate_Delegate>
 
-/*!
- * \~english
+/**
  * The instance of pan gesture.
- *
- * \~chinese
- * 全屏pan手势实例.
  */
 @property (nonatomic, strong)UIPanGestureRecognizer *jp_fullscreenPopGestureRecognizer;
 
-/*!
- * \~english
+/**
  * The delegate of pan gesture.
- *
- * \~chinese
- * pan手势代理者.
  */
 @property (nonatomic, strong) JPFullScreenPopGestureRecognizerDelegate *jp_popGestureRecognizerDelegate;
 
-/*!
- * \~english
+/**
  * The delegate of current navigation controller.
- *
- * \~chinese
- * 当前导航控制器代理
  */
 @property(nonatomic, strong)JPNavigationInteractiveTransition *navInTr;
 
@@ -80,7 +72,7 @@
     
     // Hide navigation bar.
     // 隐藏导航栏
-//    [self setNavigationBarHidden:YES];
+    // [self setNavigationBarHidden:YES];
     self.navigationBar.hidden = YES;
     
     
@@ -109,9 +101,9 @@
     // Add observe for close single view controller notification and close all view controllers notificatoin.
     // 添加监听关闭所有控制器pop手势和关闭单个页面pop手势通知.
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForAllViewControllerNote:) name:kJp_closePopForAllViewControllersNote object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForCurViewControllerNote:) name:kJp_closePopForCurrentViewControllerNote object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(perfersStatusBarStyle:) name:kJp_prefersStatusBarStyleNote object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForAllViewControllerNote:) name:JPNavigationControllerClosePopForAllVCNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closePopForCurViewControllerNote:) name:JPNavigationControllerClosePopForCurrentVCNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(perfersStatusBarStyle:) name:JPNavigationControllerDidChangedStatusBarNotification object:nil];
 }
 
 -(void)dealloc{
@@ -183,7 +175,7 @@
 -(void)perfersStatusBarStyle:(NSNotification *)note{
     
     // Every notification will call this method when alloc many instance of this class, so we need a flag to distinguish those notification, this flag is the root navigation controller. see jp_prefersStatusBarStyle.
-    // 如果一次加载了多个nav, 通知混在一起了, 要用一个标示(临时关闭pop功能的根控制器)区分. 更多信息, 请看jp_prefersStatusBarStyle
+    // 如果一次加载了多个nav, 通知混在一起了, 要用一个标示(临时关闭pop功能的根控制器)区分. 更多信息, 请看jp_prefersStatusBarStyle.
     
     NSDictionary *dict = note.object;
     JPStatusBarStyle style = [dict[@"tempValue"] integerValue];

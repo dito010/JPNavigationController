@@ -1,9 +1,13 @@
-//
-//  JPNavigationController.h
-//  JPNavigationController
-//
-//  Hello! I am NewPan from Guangzhou of China, Glad you could use my framework, If you have any question or wanna to contact me, please open https://github.com/Chris-Pan or http://www.jianshu.com/users/e2f2d779c022/latest_articles
-//
+/*
+ * This file is part of the JPNavigationController package.
+ * (c) NewPan <13246884282@163.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Click https://github.com/Chris-Pan
+ * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
+ */
 
 /**
  * This class is the root navigation controller, it's navigationBar is hidden, it manage all push and pop function.
@@ -29,34 +33,24 @@
 
 #import <UIKit/UIKit.h>
 
-/*!
- * \~english
+NS_ASSUME_NONNULL_BEGIN
+
+/**
  * Just follow the JPNavigationControllerDelegate protocol and override the delegate-method in this protocol use [self.navigationController pushViewController:aVc animated:YES] if need push gesture transition animation when left-slip.
  * You should preload the data of next viewController need to display for a good user experience.
- *
- * \~chinese
- * 如果需要在某个界面实现push左滑手势动画, 只需要遵守这个协议, 并且实现以下这个的协议方法, 在协议方法里使用[self.navigationController pushViewController:aVc animated:YES], 就可拥有左滑push动画了.
- * 关于数据预加载, 为了获得良好的用户体验, 建议在push之前就把要push到的页面的数据请求到本地, push过去直接能展示数据.
  */
 @protocol JPNavigationControllerDelegate <NSObject>
 
 @optional
-/*!
- * \~english
+
+/**
  * The delegate method need to override if need push gesture transition animation when left-slip.
- *
- * \~chinese
- * 实现push左滑手势需要实现的代理方法.
  */
 -(void)jp_navigationControllerDidPushLeft;
 
-/*!
- * \~english
+/**
  * Ask the delegate should response right-slip.
- * @return  the result of asking the delegate should response right-slip.
  *
- * \~chinese
- * 是否可以响应右滑手势.
  * @return  the result of asking the delegate should response right-slip.
  */
 -(BOOL)jp_navigationControllerShouldPushRight;
@@ -67,16 +61,12 @@
 
 @interface JPNavigationController : UINavigationController
 
-/*!
- * \~english
+/**
  * The array of viewControllers in this navigationController stack(JPWarpViewController class).
- *
- * \~chinese
- * 根控制器栈里所有的viewControllers集合(JPWarpViewController class).
  */
 @property (nonatomic, copy, readonly)NSArray<JPWarpViewController *> *jp_viewControllers;
 
 @end
 
-
+NS_ASSUME_NONNULL_END
 
