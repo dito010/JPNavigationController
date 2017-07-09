@@ -111,7 +111,7 @@ if (vc) {
 ```
 
 
-#### Customize UINavigationBar
+#### Custom UINavigationBar
 
 ```objective-c
 Objective-C:
