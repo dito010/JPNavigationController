@@ -9,11 +9,8 @@
  * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
  */
 
-#ifndef JPNavigationControllerKit_h
-#define JPNavigationControllerKit_h
+#import "JPNavigationControllerGestureRecognizer.h"
 
-#import "JPNavigationController.h"
-#import "UIColor+ImageGenerate.h"
-#import "UINavigationController+FulllScreenPopPush.h"
+@implementation JPNavigationControllerGestureRecognizer
 
-#endif /* JPNavigationControllerKit_h */
+@end

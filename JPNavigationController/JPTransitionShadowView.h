@@ -9,11 +9,19 @@
  * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
  */
 
-#ifndef JPNavigationControllerKit_h
-#define JPNavigationControllerKit_h
+#import <UIKit/UIKit.h>
 
-#import "JPNavigationController.h"
-#import "UIColor+ImageGenerate.h"
-#import "UINavigationController+FulllScreenPopPush.h"
+extern const CGFloat JPMixShadowViewShadowWidth;
 
-#endif /* JPNavigationControllerKit_h */
+NS_ASSUME_NONNULL_BEGIN
+
+@interface JPTransitionShadowView : UIView
+
+/**
+ * Shadow imageView.
+ */
+@property(nonatomic, strong, readonly, nullable) UIImageView *shadowImv;
+
+@end
+
+NS_ASSUME_NONNULL_END

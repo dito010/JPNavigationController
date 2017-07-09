@@ -5,24 +5,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * Click https://github.com/Chris-Pan
+ * Click https://github.com/newyjp
  * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
- */
-
-/**
- * This class is a super class for push animation.
  */
 
 #import <UIKit/UIKit.h>
 
+extern const CGFloat JPBaseAnimationTransitionInterlaceFactor;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JPAnimatedTransitioningBase : NSObject<UIViewControllerAnimatedTransitioning>
+@interface JPBaseAnimationTransition : NSObject<UIViewControllerAnimatedTransitioning>
 
 /**
  *  Transition Duration.
  */
-@property (nonatomic) NSTimeInterval  transitionDuration;
+@property (nonatomic, assign, readonly) NSTimeInterval  transitionDuration;
 
 /**
  *  From view controller.
@@ -40,14 +38,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, weak) UIView *containerView;
 
 /**
- *  Animate Transition Event.
+ *  Animate Transition.
  */
-- (void)animateTransitionEvent;
+- (void)animateTransition;
 
 /**
  *  Complete transition.
  */
-- (void)completeTransition;
+- (void)transitionComplete;
+
+/**
+ *  Fetch tabbar if existed.
+ */
+- (UITabBar * _Nullable)fetchTabbar;
 
 @end
 

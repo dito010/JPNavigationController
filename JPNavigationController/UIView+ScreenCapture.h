@@ -9,11 +9,19 @@
  * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
  */
 
-#ifndef JPNavigationControllerKit_h
-#define JPNavigationControllerKit_h
+#import <UIKit/UIKit.h>
 
-#import "JPNavigationController.h"
-#import "UIColor+ImageGenerate.h"
-#import "UINavigationController+FulllScreenPopPush.h"
+NS_ASSUME_NONNULL_BEGIN
 
-#endif /* JPNavigationControllerKit_h */
+@interface UIView (ScreenCapture)
+
+/**
+ * Capture current view generate a image.
+ *
+ * @return a image of current view.
+ */
+- (UIImage *)jp_captureCurrentView;
+
+@end
+
+NS_ASSUME_NONNULL_END

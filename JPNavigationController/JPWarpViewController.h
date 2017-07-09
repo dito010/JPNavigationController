@@ -5,16 +5,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * Click https://github.com/Chris-Pan
+ * Click https://github.com/newyjp
  * or http://www.jianshu.com/users/e2f2d779c022/latest_articles to contact me.
  */
 
-/**
- * This class be used for warping the ViewController from user by UINavigationController, then warp the UINavigationController by UIViewController and pass the overall ViewController back. Wanna know more details please see http://www.jianshu.com/p/88bc827f0692
- * 这个类负责将用户的ViewController包装一层导航控制器, 再将这个导航控制器外面包装一层ViewController, 并将包装好的控制器返回.具体细节请看我的简书文章http://www.jianshu.com/p/88bc827f0692
- */
-
 #import <UIKit/UIKit.h>
+
+@class JPNavigationController;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,16 +23,28 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @see jp_rootNavigationController
  */
-@property(nonatomic, weak, readonly)UIViewController *jp_passInViewController;
+@property(nonatomic, weak, readonly) UIViewController *userViewController;
 
 /**
+ * Initially method.
  * This method be used for warping the ViewController from user by UINavigationController, then warp the UINavigationController by UIViewController and pass the overall ViewController back. Wanna know more details please see http://www.jianshu.com/p/88bc827f0692.
  *
- * @param viewController    The viewController need be warped.
+ * @param rootViewController The viewController need be warped.
+ * @param rootNavigationController The root navigation controller, @see JPNavigationController.
  *
- * @reseult                 The viewController be warped.
+ * @return The viewController be warped.
  */
--(JPWarpViewController *)warpViewController:(UIViewController *)viewController;
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController rootNavigationController:(JPNavigationController *)rootNavigationController;
+
+/**
+ * Use customize pop gesture need add pop gesture in current viewController.
+ */
+- (void)addPopGesture;
+
+/**
+ * Remove pop gesture in current viewController.
+ */
+- (void)removePopGesture;
 
 @end
 
