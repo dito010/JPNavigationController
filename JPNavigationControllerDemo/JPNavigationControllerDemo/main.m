@@ -2,8 +2,8 @@
 //  main.m
 //  JPNavigationControllerDemo
 //
-//  Created by 尹久盼 on 16/11/19.
-//  Copyright © 2016年 newpan. All rights reserved.
+//  Created by 尹久盼 on 2017/6/25.
+//  Copyright © 2017年 尹久盼. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,8 +1,7 @@
 platform :ios, '8.0'
-target “JPNavigationControllerDemo” do
 
-pod 'AFNetworking', '~> 3.1.0'
+target "JPNavigationControllerDemo" do
 
-pod 'MLeaksFinder' # 内存泄漏
+pod 'JPVideoPlayer', '~> 2.2.2'
 
 end

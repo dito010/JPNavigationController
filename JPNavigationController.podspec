@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "JPNavigationController"
-  s.version      = "1.2.7"
+  s.version      = "2.0.0"
   s.summary      = "This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for each single support."
 
 s.description  =  'FullScreen pop gesture support'\
@@ -12,9 +12,10 @@ s.description  =  'FullScreen pop gesture support'\
                     'Add link view hovering in screen bottom support'\
                     'Customize pop and push gesture distance on the left side of the screen support'\
                     'Close pop gesture for single viewController support'\
-                    'Close pop gesture for all viewController support'
+                    'Close pop gesture for all viewController support'\
+                    'Smooth AVPlayer playing when perform pop gesture'
 
-  s.homepage     = "https://github.com/Chris-Pan/JPNavigationController"
+  s.homepage     = "https://github.com/newyjp/JPNavigationController"
   s.license      = "MIT"
   s.author             = { "NewPan" => "13246884282@163.com" }
 
@@ -24,9 +25,9 @@ s.description  =  'FullScreen pop gesture support'\
   # s.tvos.deployment_target = "9.0"
 
 
-  s.source       = { :git => 'https://github.com/Chris-Pan/JPNavigationController.git', :tag => s.version }
+  s.source       = { :git => 'https://github.com/newyjp/JPNavigationController.git', :tag => s.version }
   s.source_files  = 'JPNavigationController/**/*.{h,m}'
-  s.resource     = 'JPNavigationController/JPImage.bundle'
+  s.resource     = 'JPNavigationController/JPNavigationController.bundle'
   s.frameworks = 'Foundation', 'UIKit'
   s.requires_arc = true
 

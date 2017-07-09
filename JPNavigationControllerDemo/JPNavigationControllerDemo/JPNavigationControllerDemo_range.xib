@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JPNavigationControllerDemo_range">
+            <connections>
+                <outlet property="blankWidCons" destination="Bxd-Nc-JDE" id="ANu-d2-bFo"/>
+                <outlet property="view" destination="Z9T-mz-Xu1" id="0DA-lu-i63"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Z9T-mz-Xu1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNO-Sa-0I1">
+                    <rect key="frame" x="0.0" y="0.0" width="355" height="667"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手势响应区" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-qP-inL">
+                            <rect key="frame" x="129" y="223" width="97" height="23"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <color key="textColor" red="1" green="0.79745548963546753" blue="0.022350188344717026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.10500242561101913" green="0.64840763807296753" blue="0.97662979364395142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Aig-qP-inL" firstAttribute="top" secondItem="MNO-Sa-0I1" secondAttribute="top" constant="223" id="5UP-Dz-PB1"/>
+                        <constraint firstItem="Aig-qP-inL" firstAttribute="centerX" secondItem="MNO-Sa-0I1" secondAttribute="centerX" id="vOm-qj-1mD"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bJ-Yv-YtW">
+                    <rect key="frame" x="355" y="0.0" width="20" height="667"/>
+                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Bxd-Nc-JDE"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJY-48-VZ7">
+                    <rect key="frame" x="148" y="471" width="79" height="30"/>
+                    <state key="normal" title="PopToXXVc">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="popToVcBtnClick:" destination="-1" eventType="touchUpInside" id="68Q-E0-KJ4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6bJ-Yv-YtW" secondAttribute="bottom" id="1l7-hR-h0b"/>
+                <constraint firstAttribute="trailing" secondItem="6bJ-Yv-YtW" secondAttribute="trailing" id="HMe-It-o6l"/>
+                <constraint firstItem="MNO-Sa-0I1" firstAttribute="top" secondItem="Z9T-mz-Xu1" secondAttribute="top" id="NbK-G6-I5f"/>
+                <constraint firstItem="MNO-Sa-0I1" firstAttribute="leading" secondItem="Z9T-mz-Xu1" secondAttribute="leading" id="T04-LY-tFm"/>
+                <constraint firstItem="6bJ-Yv-YtW" firstAttribute="top" secondItem="Z9T-mz-Xu1" secondAttribute="top" id="cSd-7e-BqT"/>
+                <constraint firstItem="kJY-48-VZ7" firstAttribute="centerX" secondItem="Z9T-mz-Xu1" secondAttribute="centerX" id="r1u-TA-5Yh"/>
+                <constraint firstAttribute="bottom" secondItem="kJY-48-VZ7" secondAttribute="bottom" constant="166" id="scf-Qq-wUS"/>
+                <constraint firstItem="6bJ-Yv-YtW" firstAttribute="leading" secondItem="MNO-Sa-0I1" secondAttribute="trailing" id="srV-An-3df"/>
+                <constraint firstAttribute="bottom" secondItem="MNO-Sa-0I1" secondAttribute="bottom" id="ysp-RI-8YG"/>
+            </constraints>
+            <point key="canvasLocation" x="420.5" y="459.5"/>
+        </view>
+    </objects>
+</document>
