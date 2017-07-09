@@ -10,7 +10,7 @@
 This library provides an fullScreen pop and push gesture for UINavigationController with customize UINavigationBar for each single support and, smooth playing video use `AVPlayer` when perform pop gesture support. 
 
 <p align="left" >
-<img src="Images/JPNavigationController.gif" title="JPNavigationController Demo" float=left>
+<img src="Images/demo.gif" title="JPNavigationController Demo" float=left>
 </p>
 
 
