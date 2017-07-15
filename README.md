@@ -34,9 +34,10 @@ This library provides an fullScreen pop and push gesture for UINavigationControl
 
 ## Getting Started
 
-- Read the [[iOS]UINavigationController全屏pop之为每个控制器自定义UINavigationBar](http://www.jianshu.com/p/88bc827f0692)
-- Read the [[iOS]UINavigationController全屏pop之为每个控制器添加底部联动视图](http://www.jianshu.com/p/3ed21414551a)
-- Read the [[iOS]UINavigationController全屏pop之为控制器添加左滑push](http://www.jianshu.com/p/ff68b5e646fc)
+- Read the [[iOS]UINavigationController全屏 pop 之为每个控制器自定义 UINavigationBar](http://www.jianshu.com/p/88bc827f0692)
+- Read the [[iOS]UINavigationController全屏 pop 之为每个控制器添加底部联动视图](http://www.jianshu.com/p/3ed21414551a)
+- Read the [[iOS]UINavigationController全屏 pop 之为控制器添加左滑 push](http://www.jianshu.com/p/ff68b5e646fc)
+- Read the [[iOS]调和 pop 手势导致 AVPlayer 播放卡顿](http://www.jianshu.com/p/be02059b9e6a)
 - Try the example by downloading the project from Github
 
 
@@ -235,9 +236,11 @@ All source code is licensed under the [MIT License](https://github.com/newyjp/JP
 
 ## 了解实现思路和源码解析
 
-- 阅读我的简书文章 [[iOS]UINavigationController全屏pop之为每个控制器自定义UINavigationBar](http://www.jianshu.com/p/88bc827f0692)
-- 阅读我的简书文章 [[iOS]UINavigationController全屏pop之为每个控制器添加底部联动视图](http://www.jianshu.com/p/3ed21414551a)
-- 阅读我的简书文章 [[iOS]UINavigationController全屏pop之为控制器添加左滑push](http://www.jianshu.com/p/ff68b5e646fc)
+- 阅读我的简书文章 [[iOS]UINavigationController全屏 pop 之为每个控制器自定义UINavigationBar](http://www.jianshu.com/p/88bc827f0692)
+- 阅读我的简书文章 [[iOS]UINavigationController 全屏 pop 之为每个控制器添加底部联动视图](http://www.jianshu.com/p/3ed21414551a)
+- 阅读我的简书文章 [[iOS]UINavigationController全屏 pop 之为控制器添加左滑 push](http://www.jianshu.com/p/ff68b5e646fc)
+- 阅读我的简书文章 [[iOS]调和 pop 手势导致 AVPlayer 播放卡顿](http://www.jianshu.com/p/be02059b9e6a)
+
 - 下载我Github上的demo
 
 
