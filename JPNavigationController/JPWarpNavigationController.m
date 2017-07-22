@@ -48,12 +48,12 @@ static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigation
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // default color for navigation bar.
-    [self.navigationBar setBackgroundImage:[[UIColor whiteColor] jp_image] forBarMetrics:UIBarMetricsDefault];
-    
     // Replace system's NavigationBar with custom NavigationBar.
     JPNavigationBar *customNavBar = [[JPNavigationBar alloc]init];
     [self setValue:customNavBar forKey:@"navigationBar"];
+    
+    // default color for navigation bar.
+    [self.navigationBar setBackgroundImage:[[UIColor whiteColor] jp_image] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (UIViewController *)childViewControllerForStatusBarStyle{
