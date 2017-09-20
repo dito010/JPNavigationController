@@ -30,7 +30,6 @@
 static NSString *const kJPNavigationControllerDemoHomeReuseID = @"com.newpan.navigationcontroller.home.reuse.id";
 static const CGFloat kJPNavigationControllerDemoHomeBottomImageHeiDelta = 0.7f;
 static const CGFloat kJPNavigationControllerDemoHomeBottomImageViewScrollSpeedDelta = 0.6f;
-static const CGFloat kJPNavigationControllerDemoHomeTabbarHei = 49.f;
 @implementation JPNavigationControllerDemo_home
 
 - (void)viewDidLoad {
@@ -48,8 +47,8 @@ static const CGFloat kJPNavigationControllerDemoHomeTabbarHei = 49.f;
     _bottomImv = ({
         UIImageView *imv = [UIImageView new];
         imv.image = [UIImage imageNamed:@"left"];
-        imv.frame = CGRectMake(0, 0, screenSize.width, screenSize.width * kJPNavigationControllerDemoHomeBottomImageHeiDelta);
         [self.view addSubview:imv];
+        imv.frame = CGRectMake(0, 0, screenSize.width, screenSize.width * kJPNavigationControllerDemoHomeBottomImageHeiDelta);
         
         imv;
     });
@@ -61,7 +60,7 @@ static const CGFloat kJPNavigationControllerDemoHomeTabbarHei = 49.f;
         tableView.dataSource = self;
         tableView.delegate = self;
         [self.view addSubview:tableView];
-        tableView.contentInset = UIEdgeInsetsMake(screenSize.width * kJPNavigationControllerDemoHomeBottomImageHeiDelta, 0, kJPNavigationControllerDemoHomeTabbarHei, 0);
+        tableView.contentInset = UIEdgeInsetsMake(screenSize.width * kJPNavigationControllerDemoHomeBottomImageHeiDelta - 20.f, 0, 0, 0);
         
         tableView;
     });
@@ -73,6 +72,12 @@ static const CGFloat kJPNavigationControllerDemoHomeTabbarHei = 49.f;
     
     // 注册成为导航控制器代理.
     [self.navigationController jp_registerNavigtionControllerDelegate:self];
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 
@@ -119,7 +124,7 @@ static const CGFloat kJPNavigationControllerDemoHomeTabbarHei = 49.f;
 //}
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    printf("左滑了");
+    NSLog(@"左滑了");
 }
 
 

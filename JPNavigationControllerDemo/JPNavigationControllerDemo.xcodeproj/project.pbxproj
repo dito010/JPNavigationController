@@ -10,12 +10,10 @@
 		48843BE01EFFBB4300948951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843BDF1EFFBB4300948951 /* main.m */; };
 		48843BE31EFFBB4300948951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843BE21EFFBB4300948951 /* AppDelegate.m */; };
 		48843BEB1EFFBB4300948951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48843BEA1EFFBB4300948951 /* Assets.xcassets */; };
-		48843BEE1EFFBB4300948951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48843BEC1EFFBB4300948951 /* LaunchScreen.storyboard */; };
 		48843BF81EFFBD2A00948951 /* JPNavigationControllerDemo_home.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843BF71EFFBD2A00948951 /* JPNavigationControllerDemo_home.m */; };
 		48843C001EFFBD9F00948951 /* JPNavigationControllerDemo_more.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843BFF1EFFBD9F00948951 /* JPNavigationControllerDemo_more.m */; };
 		48843C161F00024C00948951 /* JPNavigationControllerDemo_linkBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 48843C151F00024C00948951 /* JPNavigationControllerDemo_linkBar.m */; };
 		48EA43821F1229E300067F48 /* JPBaseAnimationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA43661F1229E300067F48 /* JPBaseAnimationTransition.m */; };
-		48EA43831F1229E300067F48 /* JPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA43681F1229E300067F48 /* JPNavigationBar.m */; };
 		48EA43841F1229E300067F48 /* JPNavigationController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48EA43691F1229E300067F48 /* JPNavigationController.bundle */; };
 		48EA43851F1229E300067F48 /* JPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA436B1F1229E300067F48 /* JPNavigationController.m */; };
 		48EA43861F1229E300067F48 /* JPNavigationControllerGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EA436E1F1229E300067F48 /* JPNavigationControllerGestureRecognizer.m */; };
@@ -32,6 +30,7 @@
 		48F041C81F10C3BB00AE46D3 /* JPNavigationControllerDemo_range.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F041C61F10C3BB00AE46D3 /* JPNavigationControllerDemo_range.m */; };
 		48F041C91F10C3BB00AE46D3 /* JPNavigationControllerDemo_range.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F041C71F10C3BB00AE46D3 /* JPNavigationControllerDemo_range.xib */; };
 		592C04A638715C176A3399D5 /* libPods-JPNavigationControllerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A65C21EF3800DCBFE195D6 /* libPods-JPNavigationControllerDemo.a */; };
+		CF2A9E661F71E7930040175F /* UINavigationBar+HitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2A9E651F71E7930040175F /* UINavigationBar+HitTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		48843BE11EFFBB4300948951 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48843BE21EFFBB4300948951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		48843BEA1EFFBB4300948951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		48843BED1EFFBB4300948951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48843BEF1EFFBB4300948951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48843BF61EFFBD2A00948951 /* JPNavigationControllerDemo_home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationControllerDemo_home.h; sourceTree = "<group>"; };
 		48843BF71EFFBD2A00948951 /* JPNavigationControllerDemo_home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationControllerDemo_home.m; sourceTree = "<group>"; };
@@ -52,8 +50,6 @@
 		48A97A497D8C28458D2FBC6B /* Pods-JPNavigationControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JPNavigationControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JPNavigationControllerDemo/Pods-JPNavigationControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		48EA43651F1229E300067F48 /* JPBaseAnimationTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPBaseAnimationTransition.h; sourceTree = "<group>"; };
 		48EA43661F1229E300067F48 /* JPBaseAnimationTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPBaseAnimationTransition.m; sourceTree = "<group>"; };
-		48EA43671F1229E300067F48 /* JPNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationBar.h; sourceTree = "<group>"; };
-		48EA43681F1229E300067F48 /* JPNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationBar.m; sourceTree = "<group>"; };
 		48EA43691F1229E300067F48 /* JPNavigationController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPNavigationController.bundle; sourceTree = "<group>"; };
 		48EA436A1F1229E300067F48 /* JPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNavigationController.h; sourceTree = "<group>"; };
 		48EA436B1F1229E300067F48 /* JPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationController.m; sourceTree = "<group>"; };
@@ -86,6 +82,8 @@
 		48F041C61F10C3BB00AE46D3 /* JPNavigationControllerDemo_range.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNavigationControllerDemo_range.m; sourceTree = "<group>"; };
 		48F041C71F10C3BB00AE46D3 /* JPNavigationControllerDemo_range.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPNavigationControllerDemo_range.xib; sourceTree = "<group>"; };
 		C3A65C21EF3800DCBFE195D6 /* libPods-JPNavigationControllerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JPNavigationControllerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2A9E641F71E7930040175F /* UINavigationBar+HitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+HitTest.h"; sourceTree = "<group>"; };
+		CF2A9E651F71E7930040175F /* UINavigationBar+HitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+HitTest.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +125,6 @@
 				48843BE11EFFBB4300948951 /* AppDelegate.h */,
 				48843BE21EFFBB4300948951 /* AppDelegate.m */,
 				48843BEA1EFFBB4300948951 /* Assets.xcassets */,
-				48843BEC1EFFBB4300948951 /* LaunchScreen.storyboard */,
 				48843BEF1EFFBB4300948951 /* Info.plist */,
 				48843BDE1EFFBB4300948951 /* Supporting Files */,
 			);
@@ -173,8 +170,8 @@
 			children = (
 				48EA43651F1229E300067F48 /* JPBaseAnimationTransition.h */,
 				48EA43661F1229E300067F48 /* JPBaseAnimationTransition.m */,
-				48EA43671F1229E300067F48 /* JPNavigationBar.h */,
-				48EA43681F1229E300067F48 /* JPNavigationBar.m */,
+				CF2A9E641F71E7930040175F /* UINavigationBar+HitTest.h */,
+				CF2A9E651F71E7930040175F /* UINavigationBar+HitTest.m */,
 				48EA43691F1229E300067F48 /* JPNavigationController.bundle */,
 				48EA436A1F1229E300067F48 /* JPNavigationController.h */,
 				48EA436B1F1229E300067F48 /* JPNavigationController.m */,
@@ -284,7 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48843BEE1EFFBB4300948951 /* LaunchScreen.storyboard in Resources */,
 				48F041C91F10C3BB00AE46D3 /* JPNavigationControllerDemo_range.xib in Resources */,
 				48F041C11F10921200AE46D3 /* JPNavigationControllerDemo_more.xib in Resources */,
 				48843BEB1EFFBB4300948951 /* Assets.xcassets in Resources */,
@@ -358,11 +354,11 @@
 				48EA43851F1229E300067F48 /* JPNavigationController.m in Sources */,
 				48EA438C1F1229E300067F48 /* UIColor+ImageGenerate.m in Sources */,
 				48EA43881F1229E300067F48 /* JPPushAnimationTransition.m in Sources */,
+				CF2A9E661F71E7930040175F /* UINavigationBar+HitTest.m in Sources */,
 				48F041C41F10948E00AE46D3 /* JPQRCodeTool.m in Sources */,
 				48EA438E1F1229E300067F48 /* UIViewController+ViewControllers.m in Sources */,
 				48EA43891F1229E300067F48 /* JPTransitionShadowView.m in Sources */,
 				48EA43821F1229E300067F48 /* JPBaseAnimationTransition.m in Sources */,
-				48EA43831F1229E300067F48 /* JPNavigationBar.m in Sources */,
 				48EA43871F1229E300067F48 /* JPNavigationControllerTransition.m in Sources */,
 				48843C001EFFBD9F00948951 /* JPNavigationControllerDemo_more.m in Sources */,
 				48EA438D1F1229E300067F48 /* UIView+ScreenCapture.m in Sources */,
@@ -370,17 +366,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		48843BEC1EFFBB4300948951 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48843BED1EFFBB4300948951 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		48843BF01EFFBB4300948951 /* Debug */ = {
@@ -478,12 +463,14 @@
 			baseConfigurationReference = 27D36F9F29D73FA0C86B5E0E /* Pods-JPNavigationControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = U7FB52A877;
 				INFOPLIST_FILE = JPNavigationControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = babyChatTeacher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newpan.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -492,12 +479,14 @@
 			baseConfigurationReference = 48A97A497D8C28458D2FBC6B /* Pods-JPNavigationControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = U7FB52A877;
 				INFOPLIST_FILE = JPNavigationControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = babyChatTeacher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newpan.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

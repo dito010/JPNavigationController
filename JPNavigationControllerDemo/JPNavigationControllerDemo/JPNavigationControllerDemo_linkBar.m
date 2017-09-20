@@ -81,6 +81,11 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.navigationItem.title = @"联动视图";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    if (@available(iOS 11.0, *)) {
+        self.navigationController.navigationBar.prefersLargeTitles = YES;
+    } else {
+        // Fallback on earlier versions
+    }
     
     [self setupNavigationEvents];
     [self addVideoContainer];
