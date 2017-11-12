@@ -1,1 +1,0 @@
-../../../JPVideoPlayer/JPVideoPlayer/UINavigationController+Landscape.h

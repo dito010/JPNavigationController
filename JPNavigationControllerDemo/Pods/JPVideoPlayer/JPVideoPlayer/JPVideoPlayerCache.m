@@ -20,6 +20,7 @@
 #include <sys/param.h>
 #include <sys/mount.h>
 #import <CommonCrypto/CommonDigest.h>
+#import "NSURL+QueryStrip.h"
 
 @interface JPVideoPlayerCacheToken()
 
@@ -64,7 +65,7 @@
     NSFileManager *_fileManager;
 }
 
--(instancetype)init{
+- (instancetype)init{
     self = [super init];
     if (self) {
         // Create IO serial queue
@@ -97,15 +98,14 @@
     return instance;
 }
 
--(void)dealloc{
+- (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
-#pragma mark -----------------------------------------
-#pragma mark Store Video Options
+#pragma mark - Store Video Options
 
--(void)downloadVideoDidStart:(NSNotification *)notification{
+- (void)downloadVideoDidStart:(NSNotification *)notification{
     JPVideoPlayerDownloaderOperation *operation = notification.object;
     NSURL *url = operation.request.URL;
     NSString *key = [[JPVideoPlayerManager sharedManager] cacheKeyForURL:url];
@@ -116,7 +116,7 @@
     }
 }
 
--(nullable JPVideoPlayerCacheToken *)storeVideoData:(nullable NSData *)videoData expectedSize:(NSUInteger)expectedSize forKey:(nullable NSString *)key completion:(nullable JPVideoPlayerStoreDataFinishedBlock)completionBlock{
+- (nullable JPVideoPlayerCacheToken *)storeVideoData:(nullable NSData *)videoData expectedSize:(NSUInteger)expectedSize forKey:(nullable NSString *)key completion:(nullable JPVideoPlayerStoreDataFinishedBlock)completionBlock{
     
     if (videoData.length==0) return nil;
     
@@ -204,13 +204,12 @@
     }
 }
 
--(void)cancelCurrentComletionBlock{
+- (void)cancelCurrentComletionBlock{
     self.completionBlockEnable = NO;
 }
 
 
-#pragma mark -----------------------------------------
-#pragma mark Query and Retrieve Options
+#pragma mark - Query and Retrieve Options
 
 - (nullable NSOperation *)queryCacheOperationForKey:(nullable NSString *)key done:(nullable JPVideoPlayerCacheQueryCompletedBlock)doneBlock {
     if (!key) {
@@ -254,7 +253,7 @@
     return operation;
 }
 
--(void)diskVideoExistsWithKey:(NSString *)key completion:(JPVideoPlayerCheckCacheCompletionBlock)completionBlock{
+- (void)diskVideoExistsWithKey:(NSString *)key completion:(JPVideoPlayerCheckCacheCompletionBlock)completionBlock{
     dispatch_async(_ioQueue, ^{
         BOOL exists = [_fileManager fileExistsAtPath:[JPVideoPlayerCachePathTool videoCacheFullPathForKey:key]];
 
@@ -270,13 +269,12 @@
     });
 }
 
--(BOOL)diskVideoExistsWithPath:(NSString * _Nullable)fullVideoCachePath{
+- (BOOL)diskVideoExistsWithPath:(NSString * _Nullable)fullVideoCachePath{
     return [_fileManager fileExistsAtPath:fullVideoCachePath];
 }
 
 
-#pragma mark -----------------------------------------
-#pragma mark Clear Cache Events
+#pragma mark - Clear Cache Events
 
 - (void)removeFullCacheForKey:(nullable NSString *)key withCompletion:(nullable JPVideoPlayerNoParamsBlock)completion{
     dispatch_async(self.ioQueue, ^{
@@ -291,7 +289,7 @@
     });
 }
 
--(void)removeTempCacheForKey:(NSString * _Nonnull)key withCompletion:(nullable JPVideoPlayerNoParamsBlock)completion{
+- (void)removeTempCacheForKey:(NSString * _Nonnull)key withCompletion:(nullable JPVideoPlayerNoParamsBlock)completion{
     dispatch_async(self.ioQueue, ^{
         NSString *path = [JPVideoPlayerCachePathTool videoCachePathForAllTemporaryFile];
         path = [path stringByAppendingPathComponent:[[JPVideoPlayerCache sharedCache] cacheFileNameForKey:key]];
@@ -415,14 +413,18 @@
 }
 
 
-#pragma mark -----------------------------------------
-#pragma mark File Name
+#pragma mark - File Name
 
--(nullable NSString *)cacheFileNameForKey:(nullable NSString *)key{
+- (nullable NSString *)cacheFileNameForKey:(nullable NSString *)key{
     return [self cachedFileNameForKey:key];
 }
 
--(nullable NSString *)cachedFileNameForKey:(nullable NSString *)key {
+- (nullable NSString *)cachedFileNameForKey:(nullable NSString *)key {
+    if ([key length]) {
+        NSString *strippedQueryKey = [[NSURL URLWithString:key] absoluteStringByStrippingQuery];
+        key = [strippedQueryKey length] ? strippedQueryKey : key;
+    }
+    
     const char *str = key.UTF8String;
     if (str == NULL) str = "";
     unsigned char r[CC_MD5_DIGEST_LENGTH];
@@ -435,10 +437,9 @@
 }
 
 
-#pragma mark -----------------------------------------
-#pragma mark Cache Info
+#pragma mark - Cache Info
 
--(BOOL)haveFreeSizeToCacheFileWithSize:(NSUInteger)fileSize{
+- (BOOL)haveFreeSizeToCacheFileWithSize:(NSUInteger)fileSize{
     unsigned long long freeSizeOfDevice = [self getDiskFreeSize];
     if (fileSize > freeSizeOfDevice) {
         return NO;
@@ -446,7 +447,7 @@
     return YES;
 }
 
--(unsigned long long)getSize{
+- (unsigned long long)getSize{
     __block unsigned long long size = 0;
     dispatch_sync(self.ioQueue, ^{
         NSString *tempFilePath = [JPVideoPlayerCachePathTool videoCachePathForAllTemporaryFile];
@@ -463,7 +464,7 @@
             
             NSDirectoryEnumerator *fileEnumerator_full = [_fileManager enumeratorAtPath:fullFilePath];
             for (NSString *fileName in fileEnumerator_full) {
-                NSString *filePath = [tempFilePath stringByAppendingPathComponent:fileName];
+                NSString *filePath = [fullFilePath stringByAppendingPathComponent:fileName];
                 NSDictionary<NSString *, id> *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
                 size += [attrs fileSize];
             }
@@ -472,7 +473,7 @@
     return size;
 }
 
--(NSUInteger)getDiskCount{
+- (NSUInteger)getDiskCount{
     __block NSUInteger count = 0;
     dispatch_sync(self.ioQueue, ^{
         NSString *tempFilePath = [JPVideoPlayerCachePathTool videoCachePathForAllTemporaryFile];
@@ -487,7 +488,7 @@
     return count;
 }
 
--(void)calculateSizeWithCompletionBlock:(JPVideoPlayerCalculateSizeBlock)completionBlock{
+- (void)calculateSizeWithCompletionBlock:(JPVideoPlayerCalculateSizeBlock)completionBlock{
     
     NSString *tempFilePath = [JPVideoPlayerCachePathTool videoCachePathForAllTemporaryFile];
     NSString *fullFilePath = [JPVideoPlayerCachePathTool videoCachePathForAllFullFile];
@@ -533,8 +534,7 @@
 }
 
 
-#pragma mark -----------------------------------------
-#pragma mark Private
+#pragma mark - Private
 
 - (void)deleteOldFiles {
     [self deleteOldFilesWithCompletionBlock:nil];

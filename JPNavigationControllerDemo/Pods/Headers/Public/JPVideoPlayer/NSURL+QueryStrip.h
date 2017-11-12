@@ -1,0 +1,1 @@
+../../../JPVideoPlayer/JPVideoPlayer/NSURL+QueryStrip.h

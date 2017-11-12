@@ -20,6 +20,8 @@ typedef NS_ENUM(NSInteger, JPVideoPlayerVideoViewStatus) {
     JPVideoPlayerVideoViewStatusAnimating
 };
 
+typedef void(^JPVideoPlayerScreenAnimationCompletion)(void);
+
 @protocol JPVideoPlayerDelegate <NSObject>
 
 @optional
@@ -31,7 +33,7 @@ typedef NS_ENUM(NSInteger, JPVideoPlayerVideoViewStatus) {
  *
  * @return Return NO to prevent the downloading of the video on cache misses. If not implemented, YES is implied.
  */
--(BOOL)shouldDownloadVideoForURL:(nonnull NSURL *)videoURL;
+- (BOOL)shouldDownloadVideoForURL:(nonnull NSURL *)videoURL;
 
 /**
  * Controls which video should automatic replay when the video is play completed.
@@ -40,28 +42,28 @@ typedef NS_ENUM(NSInteger, JPVideoPlayerVideoViewStatus) {
  *
  * @return Return NO to prevent replay for the video. If not implemented, YES is implied.
  */
--(BOOL)shouldAutoReplayAfterPlayCompleteForURL:(nonnull NSURL *)videoURL;
+- (BOOL)shouldAutoReplayAfterPlayCompleteForURL:(nonnull NSURL *)videoURL;
 
 /**
  * Controls the progress view's frame on top or on bottom, by default it is on bottom.
  *
  * @return Return YES to take the progress view to top.
  */
--(BOOL)shouldProgressViewOnTop;
+- (BOOL)shouldProgressViewOnTop;
 
 /**
  * Controls the color of the layer under video palyer. by default it is NO, means that the color of the layer is `clearColor`.
  *
  * @return YES to make the color of the layer be `blackColor`.
  */
--(BOOL)shouldDisplayBlackLayerBeforePlayStart;
+- (BOOL)shouldDisplayBlackLayerBeforePlayStart;
 
 /**
  * Notify the playing status.
  *
  * @param playingStatus      The current playing status.
  */
--(void)playingStatusDidChanged:(JPVideoPlayerPlayingStatus)playingStatus;
+- (void)playingStatusDidChanged:(JPVideoPlayerPlayingStatus)playingStatus;
 
 /**
  * Notify the download progress value. this method will be called on main thread.
@@ -69,14 +71,14 @@ typedef NS_ENUM(NSInteger, JPVideoPlayerVideoViewStatus) {
  *
  * @param downloadingProgress The current download progress value.
  */
--(void)downloadingProgressDidChanged:(CGFloat)downloadingProgress;
+- (void)downloadingProgressDidChanged:(CGFloat)downloadingProgress;
 
 /**
  * Notify the playing progress value. this method will be called on main thread.
  *
  * @param playingProgress    The current playing progress value.
  */
--(void)playingProgressDidChanged:(CGFloat)playingProgress;
+- (void)playingProgressDidChanged:(CGFloat)playingProgress;
 
 @end
 
@@ -118,7 +120,7 @@ typedef NS_ENUM(NSInteger, JPVideoPlayerVideoViewStatus) {
  *
  * @param url The url for the video.
  */
--(void)jp_playVideoHiddenStatusViewWithURL:(nullable NSURL *)url;
+- (void)jp_playVideoHiddenStatusViewWithURL:(nullable NSURL *)url;
 
 /**
  * Play `video` with an `url` on the view.
@@ -155,65 +157,74 @@ typedef NS_ENUM(NSInteger, JPVideoPlayerVideoViewStatus) {
  * @param options        The options to use when downloading the video. @see JPVideoPlayerOptions for the possible values.
  * @param progressBlock  A block called while video is downloading.
  *                       @note the progress block is executed on a background queue.
- * @param completedBlock A block called when operation has been completed. This block has no return value 
+ * @param completedBlock A block called when operation has been completed. This block has no return value
  *   and takes the requested video temporary cache path as first parameter. In case of error the fullCacheVideoPath parameter
  *                       is nil and the second parameter may contain an NSError. The third parameter is a enum
  *                       indicating if the video was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
 - (void)jp_playVideoWithURL:(nullable NSURL *)url
-                           options:(JPVideoPlayerOptions)options
-                          progress:(nullable JPVideoPlayerDownloaderProgressBlock)progressBlock
-                         completed:(nullable JPVideoPlayerCompletionBlock)completedBlock;
+                    options:(JPVideoPlayerOptions)options
+                   progress:(nullable JPVideoPlayerDownloaderProgressBlock)progressBlock
+                  completed:(nullable JPVideoPlayerCompletionBlock)completedBlock;
 
 #pragma mark - Play Control
 
 /**
  * Call this method to stop play video.
  */
--(void)jp_stopPlay;
+- (void)jp_stopPlay;
 
 /**
  *  Call this method to pause play.
  */
--(void)jp_pause;
+- (void)jp_pause;
 
 /**
  *  Call this method to resume play.
  */
--(void)jp_resume;
+- (void)jp_resume;
 
 /**
  * Call this method to play or pause audio of current video.
  *
  * @param mute the audio status will change to.
  */
--(void)jp_setPlayerMute:(BOOL)mute;
+- (void)jp_setPlayerMute:(BOOL)mute;
 
 /**
  * Call this method to get the audio statu for current player.
  *
  * @return the audio status for current player.
  */
--(BOOL)jp_playerIsMute;
+- (BOOL)jp_playerIsMute;
 
 #pragma mark - Landscape Or Portrait Control
 
 /**
- * Controls the landscape animation of status bar.
- *
- * @param viewController the need landscape `UIViewController`.
+ * Call this method to enter full screen.
  */
--(void)jp_perfersLandscapeForViewController:(UIViewController * _Nullable)viewController;
+- (void)jp_gotoLandscape;
 
 /**
  * Call this method to enter full screen.
+ *
+ * @param animated   need landscape animation or not.
+ * @param completion call back when landscape finished.
  */
--(void)jp_landscape;
+- (void)jp_gotoLandscapeAnimated:(BOOL)animated completion:(JPVideoPlayerScreenAnimationCompletion _Nullable)completion;
 
 /**
  * Call this method to exit full screen.
  */
--(void)jp_portrait;
+- (void)jp_gotoPortrait;
+
+/**
+ * Call this method to exit full screen.
+ *
+ * @param animated   need portrait animation or not.
+ * @param completion call back when portrait finished.
+ */
+- (void)jp_gotoPortraitAnimated:(BOOL)animated completion:(JPVideoPlayerScreenAnimationCompletion _Nullable)completion;
 
 @end
