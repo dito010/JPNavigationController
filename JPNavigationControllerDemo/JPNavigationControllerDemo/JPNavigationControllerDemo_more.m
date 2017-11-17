@@ -59,7 +59,7 @@
 
 -(void)goQRCode{
     UIViewController *vc = [[UIViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
+//    vc.hidesBottomBarWhenPushed = YES;
     vc.view.backgroundColor = [UIColor whiteColor];
     vc.title = @"扫描加入 NewPan 和他的朋友们群";
     

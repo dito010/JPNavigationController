@@ -18,6 +18,8 @@ typedef UIViewController *_Nullable(^JPNavigationContollerPopHandle)(NSArray<UIV
 
 @protocol JPNavigationControllerProtocol <NSObject>
 
+#pragma mark - Properties
+
 /**
  * The root navigation controller.
  *
@@ -68,6 +70,8 @@ typedef UIViewController *_Nullable(^JPNavigationContollerPopHandle)(NSArray<UIV
  * @see `JPWarpNavigationController`.
  */
 @property(nonatomic)UIView * jp_linkView;
+
+#pragma mark - Method
 
 /**
  * Register delegate to observer the delegate events.

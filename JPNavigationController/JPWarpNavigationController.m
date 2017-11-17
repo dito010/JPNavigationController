@@ -31,9 +31,14 @@
  */
 @property(nonatomic, strong) JPLinkContainerView *linkContainerView;
 
+/*
+ * initializedFlagOfTopViewController.
+ */
+@property(nonatomic, assign) BOOL initializedTopViewController;
+
 @end
 
-static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigationController.bundle/backImage";
+static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigationController.bundle/jp_navigation_controller_back";
 
 @implementation JPWarpNavigationController
 
@@ -50,6 +55,35 @@ static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigation
     
     // default color for navigation bar.
     [self.navigationBar setBackgroundImage:[[UIColor whiteColor] jp_image] forBarMetrics:UIBarMetricsDefault];
+    self.initializedTopViewController = NO;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+ 
+    NSArray<UIScrollView *> *scrollViews = [self  findAllScrollViewInView:self.topViewController.view];
+    for (UIScrollView *scrollView in scrollViews) {
+        if ([scrollView isKindOfClass:[UIScrollView class]]) {
+            // correct the bottom offset for scrollView and scrollIndicatorInsets.
+            CGFloat scrollViewBottomPoint = scrollView.frame.origin.y + scrollView.frame.size.height;
+            CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+            UIEdgeInsets scrollEdgeInsets = scrollView.contentInset;
+            if (!self.tabBarController.tabBar.hidden && scrollViewBottomPoint == screenHeight && scrollEdgeInsets.bottom == 0) {
+                scrollEdgeInsets.bottom += self.tabBarController.tabBar.frame.size.height;
+                scrollView.contentInset = scrollEdgeInsets;
+                
+                UIEdgeInsets indictorInsets = scrollView.scrollIndicatorInsets;
+                indictorInsets.bottom += self.tabBarController.tabBar.frame.size.height;
+                scrollView.scrollIndicatorInsets = indictorInsets;
+            }
+
+            // offset to the correct position.
+            if (!self.initializedTopViewController) {
+                [scrollView setContentOffset:CGPointMake(0, -scrollView.contentInset.top)];
+                self.initializedTopViewController = YES;
+            }
+        }
+    }
 }
 
 - (UIViewController *)childViewControllerForStatusBarStyle{
@@ -211,6 +245,7 @@ static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigation
     UIImage *backImg = [[UIImage imageNamed:kJPWarpNavigationControllerBackImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:backImg style:UIBarButtonItemStylePlain target:self action:@selector(didTapBackButton)];
     
+    
     JPWarpViewController *warpViewController = [[JPWarpViewController alloc]initWithRootViewController:viewController rootNavigationController:_rootNavigationController];
     
     // capture screen for custom pop if need.
@@ -247,6 +282,28 @@ static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigation
 
 
 #pragma mark - Private
+
+static NSMutableArray<UIScrollView *>*_allScrollViews;
+- (NSArray<UIScrollView *> *)findAllScrollViewInView:(UIView *)view {
+    if (!_allScrollViews) {
+        _allScrollViews = [NSMutableArray array];
+    }
+    [_allScrollViews removeAllObjects];
+    return [self internalFindAllScrollViewInView:view];
+}
+
+- (NSArray<UIScrollView *> *)internalFindAllScrollViewInView:(UIView *)view {
+    if ([view isKindOfClass:[UIScrollView class]]) {
+        [_allScrollViews addObject:(UIScrollView *)view];
+    }
+    else {
+        for (UIView *subview in view.subviews) {
+            [self internalFindAllScrollViewInView:subview];
+        }
+    }
+    
+    return _allScrollViews;
+}
 
 - (JPLinkContainerView *)linkContainerView{
     if (!_linkContainerView) {

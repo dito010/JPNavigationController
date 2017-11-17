@@ -38,11 +38,20 @@ static const CGFloat kJPNavigationControllerDemoHomeBottomImageViewScrollSpeedDe
     [self setup];
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    self.tableView.frame = self.view.bounds;
+}
+
 
 #pragma mark - Setup
 
 - (void)setup{
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    
+#warning 注意: tabBar 的 translucent 默认为 YES, 使用 JPNavigationCotroller 不能修改 tabBar 的透明属性. 这是因为 Xcode 9 以后, 苹果对导航控制器内部做了一些修改, 一旦将 tabBar 设为不透明, 当前架构下的 UI 就会错乱, 设置 tabBar 的 backgroundImage 为不透明图片, 或者设置 backgroundColor 为不透明的颜色值也是一样的会出错.
+    // self.tabBarController.tabBar.translucent = NO;
     
     _bottomImv = ({
         UIImageView *imv = [UIImageView new];
@@ -56,11 +65,10 @@ static const CGFloat kJPNavigationControllerDemoHomeBottomImageViewScrollSpeedDe
     _tableView = ({
         UITableView *tableView = [UITableView new];
         tableView.backgroundColor = [UIColor clearColor];
-        tableView.frame = self.view.bounds;
         tableView.dataSource = self;
         tableView.delegate = self;
         [self.view addSubview:tableView];
-        tableView.contentInset = UIEdgeInsetsMake(screenSize.width * kJPNavigationControllerDemoHomeBottomImageHeiDelta - 20.f, 0, 0, 0);
+        tableView.contentInset = UIEdgeInsetsMake(screenSize.width * kJPNavigationControllerDemoHomeBottomImageHeiDelta, 0, 0, 0);
         
         tableView;
     });
