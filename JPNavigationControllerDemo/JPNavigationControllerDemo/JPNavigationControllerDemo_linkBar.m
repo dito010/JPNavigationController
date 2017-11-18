@@ -89,8 +89,8 @@
 }
 
 - (void)setupNavigationEvents{
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIColor colorWithRed:0.18 green:0.66 blue:0.15 alpha:1] jp_image] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIColor whiteColor] jp_image] forBarMetrics:UIBarMetricsDefault];
     
     // 因为界面中有 AVPLayer 在播放视频, 所以为了保证 pop 手势执行的过程中视频能正常播放, 使用自定义的 pop 动画.
     self.navigationController.jp_useCustomPopAnimationForCurrentViewController = YES;

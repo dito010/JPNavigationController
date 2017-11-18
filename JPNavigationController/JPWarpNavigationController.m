@@ -60,28 +60,13 @@ static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigation
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
- 
+    
     NSArray<UIScrollView *> *scrollViews = [self  findAllScrollViewInView:self.topViewController.view];
     for (UIScrollView *scrollView in scrollViews) {
-        if ([scrollView isKindOfClass:[UIScrollView class]]) {
-            // correct the bottom offset for scrollView and scrollIndicatorInsets.
-            CGFloat scrollViewBottomPoint = scrollView.frame.origin.y + scrollView.frame.size.height;
-            CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-            UIEdgeInsets scrollEdgeInsets = scrollView.contentInset;
-            if (!self.tabBarController.tabBar.hidden && scrollViewBottomPoint == screenHeight && scrollEdgeInsets.bottom == 0) {
-                scrollEdgeInsets.bottom += self.tabBarController.tabBar.frame.size.height;
-                scrollView.contentInset = scrollEdgeInsets;
-                
-                UIEdgeInsets indictorInsets = scrollView.scrollIndicatorInsets;
-                indictorInsets.bottom += self.tabBarController.tabBar.frame.size.height;
-                scrollView.scrollIndicatorInsets = indictorInsets;
-            }
-
-            // offset to the correct position.
-            if (!self.initializedTopViewController) {
-                [scrollView setContentOffset:CGPointMake(0, -scrollView.contentInset.top)];
-                self.initializedTopViewController = YES;
-            }
+        // offset to the correct position.
+        if (!self.initializedTopViewController) {
+            [scrollView setContentOffset:CGPointMake(0, -scrollView.contentInset.top)];
+            self.initializedTopViewController = YES;
         }
     }
 }
@@ -204,11 +189,7 @@ static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigation
 #pragma mark - Link View
 
 - (void)addLinkView{
-    
     // If jp_linkViewHeight > 0, we think have a link view in bottom.
-    // framework will check the viewController passed in by use is a class of `UITableViewController` or not, if YES, framework will add a contentInset for this viewController.
-    
-    UIViewController *childViewController = self.viewControllers.firstObject;
     if (self.linkViewHeight > 0 && self.linkView) {
         
         if (self.linkView.superview) {
@@ -217,13 +198,6 @@ static NSString *const kJPWarpNavigationControllerBackImageName = @"JPNavigation
         
         self.linkView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.linkViewHeight);
         [self.linkContainerView addSubview:self.linkView];
-        
-        if ([childViewController isKindOfClass:[UITableViewController class]]) {
-            UITableViewController *aVc = (UITableViewController *)self.viewControllers.firstObject;
-            aVc.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.linkViewHeight, 0);
-            // for test
-            // NSLog(@"avc%@", NSStringFromUIEdgeInsets(aVc.tableView.contentInset));
-        }
     }
 }
 
