@@ -12,6 +12,7 @@
 #import "JPNavigationControllerDemo_range.h"
 #import "JPNavigationControllerKit.h"
 #import "JPNavigationControllerCompat.h"
+#import "JPNavigationControllerDemo_linkBar.h"
 
 @interface JPNavigationControllerDemo_range ()
 
@@ -28,7 +29,11 @@
 }
 
 - (IBAction)popToVcBtnClick:(id)sender {
-    [self.navigationController jp_popToViewControllerClassString:@"JPNavigationControllerDemo_linkBar" handle:^UIViewController * _Nullable(NSArray<UIViewController *> * _Nullable viewControllers, NSError * _Nullable error) {
+    
+    NSArray<UIViewController *> *viewControllersInNavigationControllerStack = [self.navigationController.jp_rootNavigationController jp_viewControllers];
+    NSLog(@"导航控制器里所有的子控制器 : %@", viewControllersInNavigationControllerStack);
+    
+    [self.navigationController jp_popToViewControllerWithClass:[JPNavigationControllerDemo_linkBar class] handler:^UIViewController * _Nullable(NSArray<UIViewController *> * _Nullable viewControllers, NSError * _Nullable error) {
         
         if (!error) {
             return viewControllers.firstObject;
