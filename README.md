@@ -98,17 +98,17 @@ if (vc) {
 
 
 // Plan B: use jp_popToViewControllerClassString:handle:animated:.
-[self.navigationController jp_popToViewControllerClassString:@"JPNavigationControllerDemo_linkBar" handle:^UIViewController * _Nullable(NSArray<UIViewController *> * _Nullable viewControllers, NSError * _Nullable error) {
-
-    if (!error) {
-        return viewControllers.firstObject;
-    }
-    else{
-        NSLog(@"%@", error);
-        return nil;
-    }
-
-} animated:YES];
+[self.navigationController jp_popToViewControllerWithClass:[JPNavigationControllerDemo_linkBar class] handler:^UIViewController * _Nullable(NSArray<UIViewController *> * _Nullable viewControllers, NSError * _Nullable error) {
+        
+        if (!error) {
+            return viewControllers.firstObject;
+        }
+        else{
+            NSLog(@"%@", error);
+            return nil;
+        }
+        
+    } animated:YES];
 ```
 
 
@@ -301,17 +301,17 @@ if (vc) {
 
 
 // 方案 B: jp_popToViewControllerClassString:handle:animated:.
-[self.navigationController jp_popToViewControllerClassString:@"JPNavigationControllerDemo_linkBar" handle:^UIViewController * _Nullable(NSArray<UIViewController *> * _Nullable viewControllers, NSError * _Nullable error) {
-
-    if (!error) {
-        return viewControllers.firstObject;
-    }
-    else{
-        NSLog(@"%@", error);
-        return nil;
-    }
-
-} animated:YES];
+[self.navigationController jp_popToViewControllerWithClass:[JPNavigationControllerDemo_linkBar class] handler:^UIViewController * _Nullable(NSArray<UIViewController *> * _Nullable viewControllers, NSError * _Nullable error) {
+        
+        if (!error) {
+            return viewControllers.firstObject;
+        }
+        else{
+            NSLog(@"%@", error);
+            return nil;
+        }
+        
+    } animated:YES];
 ```
 
 
